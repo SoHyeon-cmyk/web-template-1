@@ -1,0 +1,240 @@
+/*노말라이즈*/
+@import url('https://fonts.googleapis.com/css2?family=Katibeh&family=Nanum+Gothic:wght@400;700;800&display=swap');
+*{margin:0; padding:0;}
+ul,li{list-style:none;}
+a{
+  text-decoration: none;
+  color:inherit;
+}
+body{
+  font-family: "Nanum Gothic", Georgia;
+  font-size:14px;
+  color:#111;
+}
+/*======================================*/
+/*공통속성*/
+.container{
+  width:1000px;
+  margin:0 auto;
+  box-sizing:border-box;
+  padding:100px 20px;
+}
+/*=======================================*/
+/*header*/
+header{
+  width:100%;
+  background-color:#fff;
+  box-shadow:0 1px 2px rgba(0,0,0,0.2);
+}
+header > .container{
+  padding:24px 10px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo{
+  font-family: "Katibeh";
+  font-size:42px;
+  height:20px;
+  transform:translateY(-24px);
+  letter-spacing: 2px;
+}
+
+nav{
+  display:flex;
+}
+nav > ul{
+  display:flex;
+}
+.gnb > li{
+  margin:0 20px;
+  transform:translateY(2px);
+}
+.icon > li{
+  margin:0 5px;
+  font-size:20px;
+}
+/*메뉴에 hover효과*/
+nav li:hover,
+nav li.active{
+  color:orange;
+}
+
+/*배너*/
+#banner{
+  min-width:1000px;
+  height:600px;
+  background:url(../img/main.jpg) center/cover;
+  color:#fff;
+}
+#banner h1, h1, #contact h1{
+  font-family: Georgia,"Nanum Gothic";
+  font-size:60px;
+  font-weight: normal;
+}
+#banner h1 i{
+  color:orange; 
+  padding-left:20px;
+}
+#banner h2{
+  font-size:30px;
+  margin:10px 0 40px;
+}
+#banner .btn button{
+  padding:8px 34px;
+  margin-right:10px;
+  font-size:14px;
+  border:2px solid #fff;
+  background-color:transparent;
+  color:#fff;
+  cursor:pointer;
+  transition:all .3s;
+}
+/*버튼에 hover효과*/
+#banner .btn button:hover{
+  border-color:#fc0;
+  color:#fc0;
+}
+#works{
+  background-color: gold;
+  min-width: 1000px;
+}
+#works .container{
+  width: 800px;
+  padding:100px 0;
+  display: flex;
+}
+#works .box{
+  width: 200px;
+  text-align: center;
+}
+#works img{
+  border-radius: 50px;
+}
+#works .box h3{
+  margin-top: 20px 0 5px;
+}
+#about>.container>p{
+  font-size: 20px;
+  text-indent: 70px;
+}
+#about h1 i{
+  margin-right: 20px;
+}
+#about .member{
+  margin: 60px 0;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+#about .member h3{
+  font-size: 14px;
+  margin: 20px 0 5px;
+  letter-spacing: 6px;
+}
+#about .member p{
+  color: #383838;
+  letter-spacing: 2px;
+}
+#about .txt{
+  display: flex;
+}
+#about .txt>li{
+  padding: 0 20px;
+  text-align: justify;
+  line-height: 1.6;
+}
+#contact{
+  min-width: 1000px;
+  background-color: #383838;
+  color: aliceblue;
+}
+#contact h1 i{
+  margin-right: 20px;
+}
+#contact >.container>p{
+  font-size: 18px;
+  text-indent: 70px;
+}
+#contact .contact-wrap{
+  display: flex;
+  margin-top: 80px;
+}
+.contact-wrap>div{
+  width: 50%;
+}
+.contact-wrap>.address{
+  padding: 0 70px;
+  box-sizing: border-box;
+}
+.contact-wrap>.address>p{
+  margin-bottom: 40px;
+  line-height: 40px;
+}
+.contact-wrap>.address>p>i{
+  font-size: 35px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.contact-input label{
+  display: block;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.contact-input .wrap{
+  display: flex;
+  justify-content: space-between;
+}
+.contact-input .wrap p{
+  width: 235px;
+}
+.contact-input .wrap >textarea{
+  width: 240px;
+  height: 130px;
+  border: 0;
+  outline: 0;
+  padding: 10px;
+  box-sizing: border-box;
+
+}
+input[type=text]{
+  width: 100%;
+  border: 0;
+  line-height: 40px;
+  margin-bottom: 5px;
+  text-indent: 10px;
+  outline: 0;
+}
+input[type=submit]{
+  padding: 6px 24px;
+  background-color: #fc0;
+  border: 0;
+  color: #111;
+  cursor: pointer;
+}
+input[type=submit]:hover{
+  background-color: orange;
+}
+hr{
+  border: 1px solid white;
+  margin: 50px 0;
+}
+footer>.container{
+  padding: 30px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer p{
+  padding-left: 70px;
+}
+footer span{
+  margin-right: 30px;
+}
+footer p a{
+  background-color: yellow;
+}
+footer .icon{
+  display: flex;
+}
