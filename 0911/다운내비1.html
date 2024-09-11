@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    ul,li{
+      list-style: none;
+    }
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+    .menu{
+      width: 1200px;
+      background-color: rgb(255, 123, 0);
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 50px;
+      box-sizing: border-box;
+      color: aliceblue;
+      font-family: 맑은 고딕;
+    }
+    .gnb{
+      display: flex;
+      width: 800px;
+      font-size: 18px;
+    }
+    
+    .gnb>li{
+      font-weight: bold;
+      margin-right: 60px;
+    position: relative;
+    width: 16.66%;
+    text-indent: 1px;
+  }
+  .sub{
+    display: none;
+    position: absolute;
+    font-size: 14px;
+    width: 150px;
+    margin-top: 17px;
+  }
+  .sub>li{
+    background-color: rgb(126, 126, 126);
+    font-weight: normal;
+  }
+  .sub a{
+    display: block;
+    padding: 10px;
+  }
+  .gnb>li:hover>.sub{
+    display: block;
+  }
+  .sub>li:hover>a{
+    background-color: rgb(59, 59, 59);
+  }
+    img{
+      background-size: cover;
+    }
+    article{
+      width: 1200px;
+      height: 800px;
+      background-color: gainsboro;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="menu">
+      <a href="#"><img width="120" height="28" src="../0910/img/logo_2015 2.png" alt="" class="logo"></a>
+      <ul class="gnb">
+        <li><a href="#">About</a>
+          <ul class="sub">
+            <li><a href="#">My name</a></li>
+            <li><a href="#">Birth day</a></li>
+            <li><a href="#">Education</a></li>
+          </ul>
+        </li>
+        <li><a href="#">News</a>
+          <ul class="sub">
+            <li><a href="#">Today News</a></li>
+            <li><a href="#">Social</a></li>
+            <li><a href="#">Information</a></li>
+          </ul>
+        </li>
+        <li><a href="#">PORTFOLIO</a>
+          <ul class="sub">
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Printout</a></li>
+            <li><a href="#">My Photo</a></li>
+            <li><a href="#">Illustration</a></li>
+          </ul>
+        </li>
+        <li><a href="#">BOARD</a>
+          <ul class="sub">
+            <li><a href="#">Notice</a></li>
+            <li><a href="#">Free Board</a></li>
+            <li><a href="#">Contact Me</a></li>
+          </ul>
+        </li>
+        <li><a href="#">ALBUM</a>
+          <ul class="sub">
+            <li><a href="#">Our Family</a></li>
+            <li><a href="#">My Friends</a></li>
+          </ul>
+        </li>
+        <li><a href="#">CONTACT</a>
+          <ul class="sub">
+            <li><a href="#">Location</a></li>
+            <li><a href="#">E-mail</a></li>
+            <li><a href="#">Mobile Phone</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <article></article>
+</body>
+</html>

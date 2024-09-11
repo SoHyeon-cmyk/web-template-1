@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사이드메뉴</title>
+  <script src="https://kit.fontawesome.com/632d3e2496.js" crossorigin="anonymous"></script>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  ul,li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  html,body{
+    height: 100%;
+  }
+  .container{
+    width: 100%;
+    height: 100%;
+    background: url(/이미지/main.jpg) center/cover;
+    position: relative;
+  }
+  .sidebar{
+    width: 360px;
+    height: 100%;
+    background-color: rgb(37, 46, 56);
+    color: aliceblue;
+    position: fixed;
+    padding: 180px 90px;
+    z-index: 90;
+  }
+  .sidebar>button{
+    border: 0;
+    background-color: transparent;
+    color: aliceblue;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  .sidebar>button:hover{
+    color: aqua;
+  }
+  .gnb{
+    border-bottom: 1px solid aliceblue;
+  }
+  .sidebar p{
+    margin: 30px 0;
+    font-size: 13px;
+  }
+  .gnb>li{
+    margin-bottom: 60px;
+  }
+  .gnb>li:last-child{
+    margin-bottom: 30px;
+  }
+  .user i{
+    font-size: 30px;
+  }
+  .tit{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(38, 47, 56);
+  }
+  .tit h1{
+    font-size: 42px;
+  }
+  .tit h2{
+    font-size: 20px;
+    margin: 30px 0;
+  }
+  .tit button{
+    border: 2px solid rgb(38, 47, 56);
+    background-color: transparent;
+    padding: 10px 30px;
+    color:rgb(38, 47, 56);
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .tit button:hover{
+    background-color: black;
+    color: aliceblue;
+  }
+  .dot{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .dot>li{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  .dot>li.on, .dot>li:hover{
+    background-color: black;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <button type="button">
+        <i class="fas fa-times"></i>
+      </button>
+      <ul class="gnb">
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">NEWS</a></li>
+        <li><a href="#">PORTFOLIO</a></li>
+        <li><a href="#">BOARD</a></li>
+        <li><a href="#">ALBUM</a></li>
+        <li><a href="3">CONTACT </a></li>
+      </ul>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+      <div class="user">
+        <a href=""><i class="fas fa-user-circle"></i></a>
+        <a href=""><i class="fas fa-user-circle"></i></a>
+        <a href=""><i class="fas fa-user-circle"></i></a>
+      </div>
+
+    </div>
+      <div class="tit">
+        <h1>LOGO</h1>
+        <h2>Lorem ipsum dolor sit amet, consectetur <br>adipisicing elit. Maxime sapiente illum perferendis nesciu</h2>
+        <button type="button">button</button>
+      </div>
+      <ul class="dot">
+        <li class="on"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+  </div>
+</body>
+</html>
