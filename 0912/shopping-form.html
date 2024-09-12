@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    img{
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .thumbs>img{
+      width: 520px;
+      height: 520px;
+      background-size: auto;
+    }
+    .box{
+      width: 1080px;
+      display: flex;
+      margin: 100px auto;
+      align-items: center;
+      outline: 1px solid #666;
+      padding-bottom: 30px;
+    }
+    .left{
+      padding:5px 10px;
+      box-sizing: border-box;
+    }
+    .list{
+      display: flex;
+      width: 520px;
+      justify-content: space-around;
+      padding-top: 20px;
+    }
+    .right{
+      padding: 60px 10px 10px;
+      box-sizing: border-box;
+      width: 520px;
+    }
+    h1,h2{
+      margin: 20px 0;
+    }
+    h1{
+      font-size: 45px;
+      padding-top:30px ;
+    }
+    h2{
+      font-size: 28px;
+    }
+    select{
+      padding: 10px 50px 10px 10px;
+      font-size: 18px;
+      font-weight: 700;
+      margin: 20px 20px 20px 0;
+    }
+    .type{
+      font-size: 23px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+    article{
+      margin: 20px 0 20px 20px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+    article:first-child{
+      background-color: lightcoral;
+    }
+    article:nth-of-type(2){
+      background-color: lightskyblue;
+    }
+    article:last-child{
+      background-color: wheat;
+    }
+    .txt{
+      margin: 20px 0;
+    }
+    h3{
+      margin: 20px 0;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .sub{
+      margin: 20px 0;
+      width: 520px;
+      padding-left: 50px;
+    }
+    button{
+    width: 180px;
+    padding: 10px 20px;
+    margin-right: 20px;
+    border-radius: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <div class="left">
+        <div class="thumbs">
+          <img src="/이미지/Untitled (1)/Frame 5.png" alt="">
+        </div>
+        <div class="list">
+          <img src="/이미지/Untitled (1)/Frame 1.png" alt="">
+          <img src="/이미지/Untitled (1)/Frame 2.png" alt="">
+          <img src="/이미지/Untitled (1)/Frame 3.png" alt="">
+          <img src="/이미지/Untitled (1)/Frame 4.png" alt="">
+          <img src="/이미지/Untitled (1)/Frame 6.png" alt="">
+        </div>
+      </div>
+      <div class="right">
+        <h1>Division Title</h1>
+        <h2> 10,000 &#92;</h2>
+        <form>
+          <select name="type" id="">
+            <option value="type">bottle</option>
+            <option value="type">package</option>
+          </select>
+          <select name="ml" id="ml"> 
+            <option value="ml">160ml</option>
+            <option value="ml">320ml</option>
+          </select>
+        </form>
+          <div class="type"> COLOR
+            <article></article>
+            <article></article>
+            <article></article>
+          </div>
+        <div class="txt on">
+          <hr>
+          <h3>DESCRIPTION</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit tempore eum, ratione, in facilis ullam laboriosam commodi nam excepturi, dolores vel expedita doloremque voluptatibus recusandae quas sunt qui. Esse, similique?</p>
+          <br>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero earum facilis in mollitia illum, alias maiores voluptas repellat optio dolorum eligendi? Suscipit voluptatum sint accusantium labore nam ut dignissimos harum.</p>
+        </div>
+        <hr>
+        <h3>+ DESCRIPTION</h3>
+        <hr>
+        <div class="sub">
+          <button type="button">BUTTON</button>
+          <button type="button">BUTTON</button>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

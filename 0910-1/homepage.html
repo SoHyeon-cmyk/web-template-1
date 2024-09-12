@@ -5,55 +5,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/0910-1/css/style.css">
-  <title>homepage</title>
+  <script src="https://kit.fontawesome.com/632d3e2496.js" crossorigin="anonymous"></script>
+  <title>스파게티 코드</title>
 </head>
 
 <body>
   <header>
-    <div class="container">
+    <nav>
+    <div class="menu">
       <a href="#"><img src="/0910-1/img/header_logo.png" alt="" class="logo"></a>
-      <nav>
-        <ul class="menu">
-        <li><a href="#">관람 정보</a></li>
-        <li><a href="#">전시</a></li>
-        <li><a href="#">소장품</a></li>
-        <li><a href="#">소식&#183;참여</a></li>
-        <li><a href="#">박물관 소개</a></li>
-        <button type="button"> 로그인</button>
+      <ul class="gnb">
+        <li><a href="#">관람 정보</a>
+          <ul class="sub">
+            <li><a href="#">관광안내</a></li>
+            <li><a href="#">전시해설</a></li>
+            <li><a href="#">예약하기</a></li>
+            <li><a href="#">관람&#183;편의시설</a></li>
+            <li><a href="#">접근성안내</a></li>
+            <li><a href="#">오시는 길</a></li>
+          </ul>
+        </li>
+        <li><a href="#">전시</a>
+          <ul class="sub">
+            <li><a href="#">상설전시</a></li>
+            <li><a href="#">특별전시</a></li>
+            <li><a href="#">온라인전시관</a></li>
+          </ul>
+        </li>
+        <li><a href="#">소장품</a>
+          <ul class="sub">
+            <li><a href="#">큐레이터 추천 소장품</a></li>
+            <li><a href="#">소장품 검색</a></li>
+            <li><a href="#">국보&#183;보물 검색</a></li>
+            <li><a href="#">3D 데이터 검색</a></li>
+            <li><a href="#">수어 동영상</a></li>
+          </ul>
+        </li>
+        <li><a href="#">소식&#183;참여</a>
+          <ul class="sub">
+            <li><a href="#">소식</a></li>
+            <li><a href="#">영상</a></li>
+            <li><a href="#">자원봉사 안내</a></li>
+            <li><a href="#">청년멘토</a></li>
+            <li><a href="#">전자 민원</a></li>
+          </ul>
+        </li>
+        <li><a href="#">박물관 소개</a>
+          <ul class="sub">
+            <li><a href="#">인사말</a></li>
+            <li><a href="#">비전과 전략</a></li>
+            <li><a href="#">발자취</a></li>
+            <li><a href="#">소식 및 업무</a></li>
+            <li><a href="#">시설 소개</a></li>
+          </ul>
+        </li>
+        <button type="button">로그인</button>
       </ul>
-      </nav>
+    </div>
+  </nav>
     </div>
   </header>
   <div id="slider">
     <div class="image-box">
       <img src="/0910-1/img/2114647.jpg" alt="" class="slide">
-      <!-- <img src="/0910-1/img/2076964.jpg" alt="" class="slide">
-      <img src="/0910-1/img/2231183.jpg" alt="" class="slide"> -->
+      <!-- <img src="/이미지/2076964.jpg" alt="" class="slide">
+      <img src="/이미지/2231183.jpg" alt="" class="slide"> -->
     </div>
   </div>
-  <div class="notice mid">
+  <div class="notice-mid">
     <div class="container">
-      <div class="text txt1">
-        <h1>관람시간</h1>
-        <p><div class="bold">월/화/목/금/일 10:00 ~ 18:00 
-          <div class="bold">수/토</div> 10:00 ~ 21:00</div></p>
-          <p>* 입장 마감은 폐관30분 전까지</p>
-      </div>
-      <div class="text txt2">
-        <h1>관람료</h1>
-        <p>무료 특별전시는 유료</p>
-      </div>
+      <!-- <div class="notice left"></div>
+        <div class="text txt1">
+          <h1>관람시간</h1>
+          <p  class="p1">월/화/목/금/일 10:00 ~ 18:00 <br>수/토 10:00 ~ 21:00</p>
+            <p>* 입장 마감은 폐관30분 전까지</p>
+        </div>
+        <div class="text txt2">
+          <h1>관람료 무료</h1>
+          <p> 특별전시는 유료</p>
+        </div>
+        -->
+      <div class="notice right">
+        <button type="button">오시는 길 </button>
+        <button type="button">예매하기 </button>
+    </div> 
     </div>
   </div>
-  <!-- <div class="banner">
+  <div class="banner">
     <div class="container">
       <div class="banner-bar">
-        <h1></h1>
-        <section> 카테고리
-          <option value="">테마</option>
-          <option value="">지역</option>
-          <option value="">특별전</option>
-        </section>
+        <h1>관람정보</h1>
+          <select>
+            <option value="">테마별</option>
+            <option value="">지역별</option>
+            <option value="">특별전</option>
+          </select>
       </div>
       <div class="gallery">
         <div class="info">
@@ -70,45 +116,49 @@
           <p></p>
           <p></p>
         </div>
-      </div>
+      </div>`
     </div>
   </div>
   <div class="notice-bottom">
     <div class="container">
+      <h1>알립니다</h1>
+      <nav>
+        <ul>
+          <li><a href="#">알림</a></li>
+          <li><a href="#">고시/공고</a></li>
+          <li><a href="#">채용안내</a></li>```
+          <li><a href="#">보도자료</a></li>
+        </ul>
+        <button type="button"><i class="fas fa-plus"></i></button>
+      </nav>
       <table>
-        <thead>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </thead>
         <tr>
-          <td></td>
-          <td></td>
+          <td>박물관 휴관 안내(2024.09.17)</td>
+          <td>2024.09.06</td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
+          <td>2024년 국립중앙바물관 보존과학 심화연수 모... </td>
+          <td>2024.09.02</td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
+          <td>『박물관 보존과학』 제32집 원고 모집 알림</td>
+          <td>2024.08.01</td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
+          <td>서화관 일부 전시실서화I실, 서화II실-202-1...</td>
+          <td>2024.07.12</td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
+          <td>『박물관과 연구』 제2집 원고 모집 안내</td>
+          <td>2024.07.10</td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
+          <td>구석기실, 신석기실, 청동기ㆍ고조선실, 부여...</td>
+          <td>2024.06.03</td>
         </tr>
       </table>
     </div>
-  </div> -->
-  
+  </div> 
+
 </body>
 </html>

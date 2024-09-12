@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>slide</title>
+  <script src="https://kit.fontawesome.com/632d3e2496.js" crossorigin="anonymous"></script>
+  <style>
+    *{margin: 0; padding: 0;}
+    ul,li{
+      list-style: none;
+    }
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+    #gallery{
+      width: 1080px;
+      margin: 100px auto 0;
+      outline: 1px solid red;
+      position: relative;
+      overflow: hidden;
+    }
+    #gallery> .box{
+      width: 1800px;
+      display: flex;
+      transform: translateX(-360deg);
+    }
+    #gallery li{
+      padding: 0 80px;
+      width: 200px;
+      text-align: center;
+      color: #666;
+    }
+    .box img{
+      border-radius: 50%;
+      margin-bottom: 30px;
+    }
+    .box li h2{
+      font-size: 20px;
+    }
+    .box li p:nth-of-type(1){
+      font-size: 14px;
+    }
+    .box li p{
+      margin: 20px 0;
+    }
+    .icon i{
+      font-size: 30px;
+      margin: 0 5px;
+    }
+    .left, .right{
+      position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: 0;
+    font-size: 40px;
+    cursor: pointer;
+    }
+    .right{
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+  <section id="gallery">
+      <ul class="box">
+        <li><img src="/이미지/Frame1.png" alt="">
+        <h2>Segmet Title</h2>
+        <p>비 많이오고 뼈도 아프고...</p>
+        <p>잠 못자고 이번주에 20시간은 잤나...</p>
+        <div class="icon">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </li>
+        <li><img src="/이미지/Frame2.png" alt="">
+        <h2>Segmet Title</h2>
+        <p>졸려죽겠다</p>
+        <p>고앵이 발바닥 입에 넣고싶다</p>
+        <div class="icon">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </li>
+        <li><img src="/이미지/Frame3.png" alt="">
+        <h2>Segmet Title</h2>
+        <p>점심 뭐먹지....</p>
+        <p>아니 중앙동 먹을 데가 왜이리 없어</p>
+        <div class="icon">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </li>
+        <li><img src="/이미지/Frame4.png" alt="">
+        <h2>Segmet Title</h2>
+        <p>비 좀 그만왔음 좋겟다...</p>
+        <p>이제 9월인데 뭔 비가 이렇게 많이 와....</p>
+        <div class="icon">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </li>
+        <li><img src="/이미지/Frame5.png" alt="">
+        <h2>Segmet Title</h2>
+        <p>졸리다...</p>
+        <p>그냥 이불들어가서 잠 한숨 때리고 싶다....</p>
+        <div class="icon">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </li>
+      </ul>
+    <button class="left" type="button"><i class="fas fa-chevron-left"></i></button>
+    <button class="right" type="button"><i class="fas fa-chevron-right"></i></button>
+  </section>
+</body>
+</html>

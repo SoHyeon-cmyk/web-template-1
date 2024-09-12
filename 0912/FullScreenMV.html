@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/632d3e2496.js" crossorigin="anonymous"></script>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    ul,li{
+      list-style: none;
+    }
+    a{
+      text-decoration: none; color: inherit;
+    }
+    .container{
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      color: aliceblue;
+      font-family: "Berlin Sans FB";
+    }
+    video{
+      position: absolute;
+      width: 100%;
+      height: auto;
+      min-width: 1600px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .logo{
+      position: absolute;
+      left: 10px;
+      top: 20px;
+    }
+    .gnb{
+      position: absolute;
+      right: 10px;
+      top: 40px;
+      display: flex;
+    }
+    .gnb>li{
+      margin: 0 20px;
+      font-size: 20px;
+    }
+    .title{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .title>h1{
+      font-weight: 500;
+      font-size: 80px;
+      margin-bottom: 10px;
+    }
+    .title>h2{
+      font-weight: 500;
+      font-size: 30px;
+    }
+    .lang{
+      position: absolute;
+      left: -20px;
+      bottom: 60px;
+      rotate: -90deg;
+    }
+    .lang>button{
+      border: none;
+      background-color: transparent;
+      color: aliceblue;
+      font-family: "Berlin Sans FB";
+      font-size: 18px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .icon{
+      position: absolute;
+      width: 20px;
+      bottom: 20px;
+      right: 10px;
+    }
+    i{
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <section class="container">
+    <video src="/이미지/풀스크린영상/video.mp4" autoplay muted loop>
+      <p>이 브라우저는 비디오를 지원하지 않습니다.</p>
+    </video>
+    <div class="logo">
+      <a href=""><img src="/이미지/풀스크린영상/logo.png" alt=""></a>
+    </div>
+    <ul class="gnb">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Resume</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="title">
+      <h1>YOUR NAME</h1>
+      <h2>I'm a WEB DEVELOPER</h2>
+    </div>
+    <div class="lang">
+      <button type="button">KOR</button>
+      <button type="button">ENG</button>
+    </div>
+    <ul class="icon">
+      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+      <li><a href="#"><i class="fab fa-behance"></i></a></li>
+      <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+  </section>
+</body>
+</html>

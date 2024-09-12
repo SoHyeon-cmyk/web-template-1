@@ -18,47 +18,69 @@ header{
   padding: 10px 50px;
   margin-bottom: 50px;
 }
-.container{
+header>.container{
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.menu{
+.gnb{
   display: flex;
 }
-.menu button{
-  border: 0;
-  background-color: transparent;
-  color: aliceblue;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
+.gnb>li:hover>.sub{
+  display: block;
 }
-.menu li{
-font-size: 20px;
-font-weight: bold;
-margin-right: 50px;
+.gnb>li{
+  position: relative;
 }
-.notice .text{
+.sub{
   display: flex;
-  align-items: center;
-  margin: 30px 0;
-  margin-left:5% ;
+  display: none;
+  position: absolute;
 }
-.text>h1,p{
-  margin-right: 30px;
+.sub>li{
+  display: flex;
 }
-
 .image-box>img{
   width: 100%;
   height: 100%;
+}
+.notice-mid>.container{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+.right>button{
+  border:0;
+  background-color:rgb(42, 52, 63) ;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: aliceblue;
+  border-radius: 10px;
+}
+.banner-bar{
+  display: flex;
+  justify-content: space-around;
+}
+.notice-bottom{
+  width: 40%;
+}
+.notice-bottom nav{
+  display: flex;
+  justify-content: space-between;
+}
+.notice-bottom nav ul{
+  display: flex;
+}
+.notice-bottom li{
+  margin-right: 30px;
 }
 /* .slider {
   position: relative;
   overflow: hidden;
   
-  width: 2971px;
-  height: 1426px;
+  width: 1200px;
+  height: 840px;
   margin: 35px;
 }
 .slide {
