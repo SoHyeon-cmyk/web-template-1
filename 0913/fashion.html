@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쇼핑몰</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    ul,
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: 0;
+      color: inherit;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      background-image: url(/이미지/Urban_Fashion_img/background.png);
+      background-position: center;
+      background-size: cover;
+      padding-left: 5%;
+      padding-right: 5%;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .navbar {
+      width: 100%;
+      height: 15vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      width: 160px;
+      cursor: pointer;
+    }
+
+    .navbar .cart {
+      width: 40px;
+      cursor: pointer;
+    }
+
+    nav {
+      flex: 1;
+      padding-left: 60px;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 20px;
+    }
+
+    .content h1 {
+      font-size: 60px;
+      font-weight: 100;
+      margin-top: 24px;
+      margin-bottom: 15px;
+      color: #232d60;
+    }
+
+    .content p {
+      font-size: 20px;
+      color: #6a7199;
+    }
+
+    .content {
+      margin-left: 10%;
+      margin-top: 10%;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(120deg, #87adfe, #ff77cd);
+      padding: 10px 20px;
+      border-radius: 6px;
+      color: aliceblue;
+      box-shadow: 3px 8px 22px rgba(94, 28, 68, 0.15);
+    }
+
+    .arrow-icons {
+      display: flex;
+      margin-top: 40px;
+    }
+
+    .arrow-icons img {
+      width: 40px;
+      margin-right: 25px;
+      cursor: pointer;
+    }
+    .feature-img{
+      height: 90%;
+      position: absolute;
+      bottom: 0;
+      right: 160px;
+    }
+    .socail-links{
+      position: absolute;
+      transform: rotate(-90deg);
+      left: -80px;
+      bottom: 180px;
+    }
+    .socail-links a{
+      color: #6a7199;
+      padding-right: 20px;
+      font-size: 14px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="navbar">
+      <img src="/이미지/Urban_Fashion_img/logo.png" alt="" class="logo">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Collection</a></li>
+          <li><a href="#">Category</a></li>
+        </ul>
+      </nav>
+      <img src="/이미지/Urban_Fashion_img/cart.png" alt="" class="cart">
+    </div>
+    <div class="content">
+      <a href="#" class="btn">2024 Collections</a>
+      <h1>You should always <br> feel pretty</h1>
+      <p>Clothes that are sure to hear heat up your winter.</p>
+      <div class="arrow-icons">
+        <img src="/이미지/Urban_Fashion_img/back-arrow.png" alt="">
+        <img src="/이미지/Urban_Fashion_img/next-arrow.png" alt="">
+      </div>
+    </div>
+    <img src="/이미지/Urban_Fashion_img/img.png" alt="" class="feature-img">
+    <div class="socail-links">
+      <a href="#">FACEBOOK</a>
+      <a href="#">INSTAGRAM</a>
+      <a href="#">TWITTER</a>
+    </div>
+  </div>
+</body>
+</html>

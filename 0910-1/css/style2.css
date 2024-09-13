@@ -1,0 +1,90 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+ul,li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+header{
+  background-color: rgb(42, 52, 63);
+  height: 100%;
+  width: 100%;
+  color: aliceblue;
+  box-sizing: border-box;
+  padding: 5px 30px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+header ul{
+  display: flex;
+  margin-top: 5px;
+}
+header li{
+  padding: 10px 20px;
+}
+.menu{
+  display: flex;
+  justify-content: space-between;
+}
+.sub{
+  display: none;
+  position: absolute;
+  color:rgb(42, 52, 63) ;
+  margin-top: 27px;
+  background-color: rgb(252, 252, 253);
+  padding: 10px -20px 10px 0;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.sub li:last-child{
+  border-bottom: 0;
+}
+.gnb>li:hover>.sub{
+  animation: dropdown .3s ease-out;
+  display: block;
+}
+@keyframes dropdown {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.outer{
+  height: 1130px;
+  margin: 30px 0;
+  overflow: hidden;
+}
+.inner-list{
+  display: flex;
+  transition: 1s ease-in-out;
+  height: 100%;
+}
+.guide-bar{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+.notice{
+  display: flex;
+  align-items: center;
+}
+.notice p{
+  margin:0 20px;
+} 
+.reservation>button{
+  background-color: transparent;
+  color:(42, 52, 63) ;
+  padding: 20px 30px;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 2px solid (42, 52, 63);
+  margin-left: 20px;
+  cursor: pointer;
+}
