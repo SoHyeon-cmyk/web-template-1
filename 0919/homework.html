@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/632d3e2496.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    ul,li{
+      list-style: none;
+    }
+    a {
+      text-decoration: 0;
+      color: inherit;
+    }
+    section{
+      width: 1200px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .container1 {
+      width: 1200px;
+      margin: auto;
+      padding: 40px 90px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .container1::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 430px;
+      height: 340px;
+      background-color: gold;
+      border-radius: 0 40px 40px 0;
+      top: calc(50% - 170px);
+      z-index: -5;
+      left: 0;
+    }
+
+    .container1>.thumbs {
+      width: 560px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .container1>.txt {
+      width: 420px;
+    }
+    .txt >h1{
+      font-size: 60px;
+      letter-spacing: -2px;
+      margin: 20px 0;
+      line-height: 1.2;
+      text-indent: 4px;
+    }
+    b{
+      font-size: 20px;
+      color: rgb(151, 151, 151);
+      letter-spacing: 3px;
+      font-weight: normal;
+    }
+    .txt p{
+      font-size: 16px;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+    .txt button{
+      background-color: rgb(31, 31, 31);
+      color: aliceblue;
+      padding: 15px 25px;
+      font-size: 15px;
+      transition: all 0.2s ease-in-out;
+      border: 0;
+    }
+    .txt button:hover{
+      background-color: gold;
+      color: black;
+      border: 0;
+    }
+    .thumbs>.box>li{
+      width: 270px;
+      height: 320px;
+      background-color: white;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+      padding: 45px 20px;
+      border-radius: 10px;
+    }
+    .thumbs>.box:nth-of-type(2){
+      margin-top: 140px;
+    }
+    .box>li>.user{
+      font-size: 40px;
+      background-color: gray;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box i{
+      color: aliceblue;
+    }
+    .box:first-child>li:first-child>.user{
+      background-color: pink;
+    }
+    .box:first-child>li:last-child>.user{
+      background-color: lightskyblue;
+    }
+    .box:last-child>li:first-child>.user{
+      background-color: lightcoral;
+    }
+    .box:last-child>li:last-child>.user{
+      background-color:deepskyblue;
+    }
+    .box h2{
+      font-size: 18px;
+      margin: 25px 0;
+    }
+    .box p{
+      font-size: 14px;
+    }
+    .container2{
+      width: 1200px;
+      margin: 220px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 110px;
+      position: relative;
+    }
+    .container2>.txt{
+      width: 490px;
+      padding: 0 20px;
+    }
+    .container2 h1{
+      font-size: 50px;
+      line-height: 1.1;
+      margin: 30px 0;
+    }
+    .container2 p{
+      font-size: 16px;
+      line-height: 2;
+      margin-bottom: 20px;
+    }
+     .container2 a{
+      text-decoration: underline;
+    }
+    .container2::before{
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 160px;
+      background-color: gold;
+      top: calc(50% - 17px);
+      left: 0;
+      z-index: -50;
+    }
+    .container2::after{
+      content: "";
+      width: 340px;
+      height: 345px;
+      position: absolute;
+      background-color: gold;
+      border-radius: 50%;
+      right: -30px;
+      top: -230px;
+      z-index: -50;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+  <div class="container1">
+    <div class="thumbs">
+      <ul class="box">
+        <li>
+          <div class="user">
+          <i class="fas fa-camera"></i>
+        </div>
+          <h2>Sample Headline</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing
+            elit. Vero necessitatibus amet excepturi est ad</p>
+        </li>
+        <li>
+          <div class="user">
+            <i class="fas fa-camera"></i>
+          </div>
+          <h2>Sample Headline</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing
+            elit. Vero necessitatibus amet excepturi est ad</p>
+        </li>
+      </ul>
+      <ul class="box">
+        <li>
+          <div class="user">
+            <i class="fas fa-camera"></i>
+          </div>
+          <h2>Sample Headline</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing
+            elit. Vero necessitatibus amet excepturi est ad</p>
+        </li>
+        <li>
+          <div class="user">
+            <i class="fas fa-camera"></i>
+          </div>
+          <h2>Sample Headline</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing
+            elit. Vero necessitatibus amet excepturi est ad</p>
+        </li>
+      </ul>
+    </div>
+    <div class="txt">
+      <h1>
+        <b>ABOUT</b> <br>
+        Need Amazing Design?
+      </h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing
+        elit. Recusandae, temporibus rerum! Quo eligendi at
+        dolore consectetur dolorum totam, nisi et sequi provident
+        eveniet modi expedita. Possimus harum tempore praesentium</p>
+      <button type="button">READ MORE</button>
+    </div>
+  </div>
+  <div class="container2">
+    <div class="txt">
+      <h1>Web Development &amp; Design</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ut at eos excepturi quisquam quia non commodi dolores illum minima assumenda soluta libero, nihil eum dicta nisi eaque tenetur unde.</p>
+
+      <i>Imgae by...</i>
+      <a href="#">LEARN MORE</a>
+    </div>
+    <div class="large-img">
+      <img src="/이미지/sample (1).jpg" alt="">
+    </div>
+  </div>
+</section>
+</body>
+</html>

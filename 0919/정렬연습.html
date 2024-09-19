@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>정렬연습</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    ul,li{
+      list-style: none;
+    }
+    section{
+      width: 100%;
+      min-width: 1200px;
+      height: 760px;
+      background-image: url(/이미지/main.jpg);
+      background-size: cover;
+      background-position: center;
+      color: aliceblue;
+    }
+    section>.container{
+      width: 1200px;
+      margin: auto;
+    }
+    section .title{
+      padding-top: 160px;
+      text-align: center;
+    }
+    .title>h1{
+      font-size: 72px;
+    }
+    .title p {
+      font-size: 14px;
+      margin: 40px 0 80px;
+    }
+    section .list{
+      display: flex;
+    }
+    .list li{
+      width: 33.3333%;
+      background-color: #333;
+      display: flex;
+      padding: 40px 10px;
+      gap: 20px;
+    }
+    .list h2{
+      font-size: 14px;
+    }
+    .list p{
+      font-size: 14px;
+      line-height: 1.5;
+      margin-top: 10px;
+    }
+    .list>li:hover{
+      background-color: #999;
+      color: #111;
+      cursor: pointer;
+    }
+    .list>li:hover::after{
+      content: "";
+      position: absolute;
+      width: 0;height: 0;
+      border-bottom: #999;
+      top: -20px;
+      left: calc(50% - 10px);
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <div class="container">
+      <div class="title">
+        <h1>Division Title</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur <br>
+        adipisicing elit. Illum illo quo obcaecati? Autem mollitia in ac</p>
+      </div>
+      <ul class="list">
+        <li><img src="https://picsum.photos/180/120" alt="">
+        <div class="txt">
+          <h2>DESCRIPTION</h2>
+          <p>Lorem ipsum, dolor sit <br> amet consectetur adipisicing elit. <br> Nobis, placeat id sint corporis <br>odio nemo saepe ipsum </p>
+        </div>
+      </li>
+        <li><img src="https://picsum.photos/180/120" alt="">
+        <div class="txt">
+          <h2>DESCRIPTION</h2>
+          <p>Lorem ipsum, dolor sit <br> amet consectetur adipisicing elit. <br> Nobis, placeat id sint corporis <br>odio nemo saepe ipsum </p>
+        </div>
+      </li>      <li><img src="https://picsum.photos/180/120" alt="">
+        <div class="txt">
+          <h2>DESCRIPTION</h2>
+          <p>Lorem ipsum, dolor sit <br> amet consectetur adipisicing elit. <br> Nobis, placeat id sint corporis <br>odio nemo saepe ipsum </p>
+        </div>
+      </li>
+    </div>
+  </section>
+</body>
+</html>

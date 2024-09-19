@@ -1,0 +1,284 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="/이미지/favicon_io/android-chrome-192x192.png" type="image/x-icon">
+  </head>
+  <style>
+    *{margin: 0; padding: 0;
+     box-sizing: border-box;}
+     ul,li{
+      list-style: none;
+     }
+     a{
+      text-decoration: none;
+     }
+     header{
+      width: 100%;
+      border-bottom: 1px solid gainsboro;
+     }
+     .inner{
+      min-height: 1180px;
+      height: 120px;
+      margin: auto;
+      position: relative;
+     }
+     header h1{
+      position: absolute;
+      left: 0;
+     }
+     header a{
+      font: bold 24px/1 Arial;
+      color: #444;
+     }
+     header .util{
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      display: flex;
+      gap: 20px;
+     }
+     header .util a{
+      font: 12px/1 Arial;
+      color: #999;
+     }
+     header #gnb{
+      position: absolute;
+      bottom: 1;
+      right: 0;
+      display: flex;
+      gap: 80px;
+     }
+     header .inner #gnb li a{
+      font: bold 15px/1 Ariel;
+      display: block;
+      padding: 20px 30px;
+      color: #555;
+      transition: all.5s;
+     }
+     header .inner #gnb li a:hover{
+      background-color: #555;
+      color: aliceblue;
+      font: bold 15px/1 Arial;
+     }
+     figure{
+      width: 100%;
+      /* 전체높이에서 헤더 크기만큼 빼줌 */
+      height: calc(100vh - 120px);
+      background-color: black;
+      position: relative;
+      overflow: hidden;
+      padding-top: 250px;
+     }
+     figure video{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      opacity: 0.3;
+     }
+     figure .inner{
+      position: relative;
+      width: 1180px;
+      margin: 0 auto;
+     }
+     figure .inner h1{
+      font: normal 120px/1 Arial;
+      color: aliceblue;
+      margin-bottom: 20px;
+     }
+     figure .inner p{
+      font: 16px/1.4 Arial;
+      color: #999;
+      margin-bottom: 60px;
+     }
+     figure .inner a{
+      display: block;
+      width: 400px;
+      height: 30px;
+      border: 1px solid #bbb;
+      font: bold 11px/30px Arial;
+      color: aliceblue;
+      text-align: center;
+      letter-spacing: 1px;
+      transition: all .5s;
+     }
+     figure .inner a:hover{
+      background-color: white;
+      color: #555;
+     }
+
+     section{
+      width: 100%;
+      padding: 200px 0;
+     }
+     section .inner{
+      width: 1180px;
+      margin: 0 auto;
+     }
+     section h1{
+      font: bold 24px/1 Arial;
+      color: #555;
+      text-align: center;
+      margin-bottom: 50px;
+     }
+     section .inner .wrap{
+      width: 100%;
+      display: flex;
+      gap: 20px;
+     }
+     section .inner .wrap article .pic img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+     }
+     section .pic{
+      width: 100%;
+      height: 120px;
+      background-color: #333;
+      margin-bottom: 15px;
+     }
+     section article h2{
+      margin-bottom: 10px;
+     }
+     section article a{
+      color: #333;
+      font: bold 16px/1 Arial;
+     }
+     section p{
+      font: 14px/1.4 Arial;
+      color: #777;
+     }
+     footer{
+      width: 100%;
+      background-color: #333;
+      padding: 100px 0;
+      border-top: 1px solid #888;
+     }
+     footer .inner{
+      width: 1180px;
+      margin: 0 auto;
+     }
+     footer .upper{
+      width: 100%;
+      border-bottom: 1px solid #777;
+      padding-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+     }
+     footer .inner .uppper h1{
+      font: bold 24px/1 Arial;
+      color: #666;
+     }
+     footer .inner .upper ul{
+      display: flex;
+      gap: 20px;
+     }
+     footer a{
+      font: bold 14px/1 Arial;
+      color: #666; 
+     }
+     footer .inner .lower{
+      width: 100%;
+      padding-top: 20px;
+     }
+     .lower address{
+      font: 12px/1.4 Arial;
+      width: 100%;
+      color: #777;
+      margin-bottom: 20px;
+     }
+     .footer .lower p{
+      font: 12px/1 Arial;
+      color: #777;
+     }
+  </style>
+  <body>
+    <header>
+      <div class="inner">
+        <h1><a href="#">Logo</a></h1>
+        <ul id="gnb">
+          <li><a href="#">DEPARTMENT</a></li>
+          <li><a href="#">GALLERY</a></li>
+          <li><a href="#">YOUTUBE</a></li>
+          <li><a href="#">COMMUNITY</a></li>
+          <li><a href="#">LOCATION</a></li>
+        </ul>
+        <ul class="util">
+          <li><a href="#">CONTACT</a></li>
+          <li><a href="#">HELP</a></li>
+          <li><a href="#">LOGIN</a></li>
+          <li><a href="#">JOIN</a></li>
+          <li><a href="#">SITEMAP</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <figure>
+      <video src="/이미지/img (2)/visual.mp4" autoplay muted loop></video>
+      <div class="inner">
+        <h1>INNOVATION</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Commodi necessitatibus quas sit accusamus fugit aspernatur provide</p>
+        <a href="#">View detail</a>
+      </div>
+    </figure>
+    <section>
+      <div class="inner">
+        <h1>RECENT NEWS</h1>
+        <div class="wrap">
+          <article>
+            <div class="pic">
+              <img src="/이미지/img (2)/news1.jpg" alt="">
+            </div>
+            <h2><a href="#">Lorem Ipsum</a></h2>
+            <p>whfflrh Qudkvmrh vlrhsgkrh wlqrkrhtlvek sjansjan vlrhsgody</p>
+          </article>
+          <article>
+            <div class="pic">
+              <img src="/이미지/img (2)/news2.jpg" alt="">
+            </div>
+            <h2><a href="#">Lorem Ipsum</a></h2>
+            <p>whfflrh Qudkvmrh vlrhsgkrh wlqrkrhtlvek sjansjan vlrhsgody</p>
+          </article>
+          <article>
+            <div class="pic">
+              <img src="/이미지/img (2)/news3.jpg" alt="">
+            </div>
+            <h2><a href="#">Lorem Ipsum</a></h2>
+            <p>whfflrh Qudkvmrh vlrhsgkrh wlqrkrhtlvek sjansjan vlrhsgody</p>
+          </article>
+          <article>
+            <div class="pic">
+              <img src="/이미지/img (2)/news4.jpg" alt="">
+            </div>
+            <h2><a href="#">Lorem Ipsum</a></h2>
+            <p>whfflrh Qudkvmrh vlrhsgkrh wlqrkrhtlvek sjansjan vlrhsgody</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="inner">
+        <div class="upper">
+          <h1>LOGO</h1>
+          <ul>
+            <li><a href="#">Policy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Family Site</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+        <div class="lower">
+          <address>경기도 안산시 단원구 고잔동 521-24 <br>
+          TEL : 031-123-4567  C.P : 010-1234-5678 </address>
+          <p>2024 LOGO &COPY; copyright all rifht reserved</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+  </html>
