@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    ul,li{
+      list-style: none;
+    }
+    a{
+      text-decoration: none; color: inherit;
+      transition: all .3s ease-in-out;
+    }
+    .container{
+      width: 1200px;
+      height: 80px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      outline: 2px solid rgb(199, 228, 253);
+    }
+    .right,.left{
+      display: flex;
+    }
+    li{
+      margin: 0 30px;
+      font-size:18px;
+      font-weight: 600;
+      color: rgb(66, 69, 92);
+      font-family: 맑은 고딕;
+    }
+    img{
+      margin: 0 120px;
+      cursor: pointer;
+    }
+    .left>li:first-child{
+      margin-left: 30px;
+    }
+    .right>li:last-child{
+      margin-right: 30px;
+    }
+    li:hover a{
+      color: rgb(0, 131, 253);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <ul class="left">
+      <li><a href="#">About</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Portfolio</a></li>
+    </ul>
+    <img width="50" height="50" src="/이미지/favicon_io/free-icon-moon-5132537.png" alt="">
+    <ul class="right">
+      <li><a href="#">Board</a></li>
+      <li><a href="#">Album</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</body>
+</html>

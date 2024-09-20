@@ -1,9 +1,12 @@
 *{
   margin: 0 ;
   padding: 0;
+  box-sizing: border-box;
 }
 body{
   position: relative;
+  min-width: 1200px;
+  padding: 0 5vw;
 }
 ul,li{
   list-style: none;
@@ -27,7 +30,7 @@ header ul{
   margin-top: 5px;
 }
 header li{
-  padding: 12px 30px;
+  padding: 20px 30px;
 }
 .gnb{
   font-weight: 600;
@@ -114,7 +117,25 @@ header li{
 .gallery>.box{
   margin: 0 20px;
 }
-
+.box>img{
+  display: block;
+}
+span{
+  width: 100px;
+  height: 40px;
+  display: inline-block;
+  background-color: rgb(42, 52, 63);
+  color: aliceblue;
+  text-align: center;
+  line-height: 40px;
+  margin: 10px 5px 10px 0;
+  font-weight: bold;
+}
+span+span{
+  background-color: white;
+  border:2px solid rgb(42, 52, 63);
+  color: rgb(42, 52, 63);
+}
 .showcase>h1{
   margin-top: 30px;
   margin-bottom: 50px;
@@ -130,7 +151,6 @@ margin-bottom: 10px;
 }
 hr{
   margin: 0 50px;
-  border: 2px solid rgb(42, 52, 63);
 }
 td{
   text-indent: 15px;
@@ -390,6 +410,7 @@ a {
 }
 .slide .box{
   margin-right: 50px;
+  margin-bottom: 40px;
 }
 figure{
   width: 700px;
@@ -398,4 +419,38 @@ figure{
   display: flex;
   justify-content: space-evenly;
   margin: 40px 0;
+}
+.footer-gnb{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+  padding: 0 5vw;
+}
+.tit{
+  font-size: 23px;
+  font-weight: 600;
+}
+.footer-sub li{
+  font-size: 16px;
+  margin:15px 0;
+}
+footer{
+  display: flex;
+  padding: 30px 5vw;
+  justify-content: space-around;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+footer>ul:last-child img{
+  width: 40px;
+  height: 40px;
+  display: inline;
+  margin: 0 10px;
+}
+footer li{
+  margin: 10px 0;
+}
+.li-tit a{
+  font-weight: bold;
 }
