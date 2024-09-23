@@ -5,110 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    #slide {
-    width:100%;
-    padding: 0 15vw;
-    position: relative;
-    margin:1vw 0 0 0;
-}
+    *{margin: 0; padding:0; box-sizing: border-box;}
+    ul,li{ list-style: none; padding: 0; margin: 0;}
+    .slide {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+    .slide_img{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      left: 0;
+      width: 100%;
+      height: 738.95px;
+      flex-shrink: 0;
+      transition: left 0.2s;
+    }
 
-#slide i{
-    font-size: 30px;
-}
+    .slide_button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: calc(50% - 16px );
 
-#slide .slider-container {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 15px;
-}
+      width: 32px;
+      height: 32px;
 
-#slide .slider-container span{
-    position: absolute;
-    z-index: 99;
-    top:50%;
-    cursor: pointer;
+      cursor: pointer;
+    }
+    .slide_prev_button {
+  left: 10px;
 }
-
-#slide .slider-container .leftBtn{
-    left: 12%;
-    transform: translate(0,-50%);
+.slide_next_button {
+  right: 10px;
 }
-
-#slide .slider-container .rightBtn{
-    right: 12%;
-    transform: translate(0,-50%);
+.slide_pagination{
+  display: flex;
+  gap: 5px;
 }
-
-#slide .slider-container .slider{
-    display:flex;
-    width: 101%;
+.slide_pagination>li{
+  color: transparent;
+  cursor: pointer
 }
-
-#slide .slider-container .slider span{
-    display: block;
-    position: relative;
-    min-width: 100%;
+.slide_pagination>li.active{
+  color: transparent;
 }
-
-#slide .slider-container .slider span .text-wrap{
-    position: absolute;
-    top:50%;
-    left:5%;
-    transform:translate(0,-50%);
-    width:29%;
-    color:#fff;
-}
-
-#slide .slider-container .slider span .text-wrap h1{
-    line-height: 140%;
-    font-size: 33px;
-}
-
-#slide .slider-container .slider span .text-wrap h4{
-    font-size: 13px;
-    margin:30px 0 0 0;
-}
-
-#slide .slider-container .slider span .text-wrap h5{
-    line-height: 140%;
-    font-size: 12px;
-    letter-spacing: 1px;
-    margin:0 0 10px 0;
+.slide_item_duplicate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 0px;
+  width: 100%;
+  height: 300px;
+  flex-shrink: 0;
+  transition: left 0.15s;
 }
   </style>
 </head>
-<div id="slide">
-  <div class="slider-container">
-      <span class="leftBtn">
-          <i class="fa-solid fa-chevron-left"></i>
-      </span>
-      <div class="slider">
-          <span class="first-img">div>
-              <img src="img/Untitled/2231183 1.png" alt="0" />
-          </span>
-          <span>
-              <img src="img/Untitled/2114647 1.png" alt="1" />
-          </span>
-          <span>
-              <img src="img/Untitled/2076964 1.png" alt="2" />
-          </span>
-          <span>
-              <img src="img/Untitled/2231183 1.png" alt="3" />
-          </span>
-          <span class="last-img">
-              <img src="img/Untitled/2114647 1.png" alt="4" />
-          </span>
-      </div>
-      <span class="rightBtn">
-          <i class="fa-solid fa-chevron-right"></i>
-      </span>
+<body>
+  <div class="slide">
+    <img src="img/Untitled/2114647 1.png" alt="" class="slide_img img1">
+    <img src="img/Untitled/2076964 1.png" alt="" class="slide_img img2">
+    <img src="img/Untitled/2231183 1.png" alt="" class="slide_img img3">
+    <img src="" alt="" class="slide-img4">
+    <img src="" alt="" class="slide-img5">
+    <div class="slide_prev_button slide_button">◀</div>
+      <div class="slide_next_button slide_button">▶</div>
+      <ul class="slide_pagination"></ul>
   </div>
-</div>
-
-<button class="slide-1">1</button>
-<button class="slide-2">2</button>
-<button class="slide-3">3</button>
   <script src="js/ex2.js"></script>
-  
 </body>
 </html>
