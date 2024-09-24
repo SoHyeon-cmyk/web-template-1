@@ -1,84 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Demo styles -->
   <style>
-    *{margin: 0; padding:0; box-sizing: border-box;}
-    ul,li{ list-style: none; padding: 0; margin: 0;}
-    .slide {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow: hidden;
+    html,
+    body {
       position: relative;
-      width: 100%;
+      height: 100%;
     }
-    .slide_img{
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 1200px;
+      height: 100%;
+    }
+    
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
       display: flex;
-      align-items: center;
       justify-content: center;
-      position: relative;
-      left: 0;
-      width: 100%;
-      height: 738.95px;
-      flex-shrink: 0;
-      transition: left 0.2s;
-    }
-
-    .slide_button{
-      display: flex;
-      justify-content: center;
+      width: 400px;
+      height: 500px;
       align-items: center;
-      position: absolute;
-      top: calc(50% - 16px );
-
-      width: 32px;
-      height: 32px;
-
-      cursor: pointer;
     }
-    .slide_prev_button {
-  left: 10px;
-}
-.slide_next_button {
-  right: 10px;
-}
-.slide_pagination{
-  display: flex;
-  gap: 5px;
-}
-.slide_pagination>li{
-  color: transparent;
-  cursor: pointer
-}
-.slide_pagination>li.active{
-  color: transparent;
-}
-.slide_item_duplicate {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  left: 0px;
-  width: 100%;
-  height: 300px;
-  flex-shrink: 0;
-  transition: left 0.15s;
-}
+    
+    .swiper-slide img {
+      display: block;
+      object-fit: cover;
+    }
   </style>
 </head>
+
 <body>
-  <div class="slide">
-    <img src="img/Untitled/2114647 1.png" alt="" class="slide_img img1">
-    <img src="img/Untitled/2076964 1.png" alt="" class="slide_img img2">
-    <img src="img/Untitled/2231183 1.png" alt="" class="slide_img img3">
-    <img src="" alt="" class="slide-img4">
-    <img src="" alt="" class="slide-img5">
-    <div class="slide_prev_button slide_button">◀</div>
-      <div class="slide_next_button slide_button">▶</div>
-      <ul class="slide_pagination"></ul>
-  </div>
-  <script src="js/ex2.js"></script>
+  <!-- Swiper -->
+  <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
+  centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </swiper-container>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
 </body>
+
 </html>

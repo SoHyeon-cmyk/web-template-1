@@ -33,7 +33,6 @@ header li{
   padding: 20px 30px;
 }
 .gnb{
-  font-weight: 600;
   font-size: 23px;
 }
 .menu{
@@ -428,7 +427,6 @@ figure{
 }
 .tit{
   font-size: 23px;
-  font-weight: 600;
 }
 .footer-sub li{
   font-size: 16px;
@@ -439,7 +437,6 @@ footer{
   padding: 30px 5vw;
   justify-content: space-around;
   font-size: 18px;
-  font-weight: 600;
 }
 
 footer>ul:last-child img{
@@ -453,4 +450,28 @@ footer li{
 }
 .li-tit a{
   font-weight: bold;
+}
+
+
+
+
+.swiper {
+  width: 1200px;
+  height: 500px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
