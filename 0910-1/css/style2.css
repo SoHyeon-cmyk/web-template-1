@@ -21,7 +21,7 @@ header{
   width: 100%;
   color: aliceblue;
   box-sizing: border-box;
-  padding: 10px 5vw;
+  padding: 10px 2vw;
   align-items: center;
   margin-bottom: 50px;
 }
@@ -39,6 +39,10 @@ header li{
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.menu>a{
+  margin-top: 8px;
 }
 .sub{
   display: none;
@@ -156,10 +160,13 @@ td{
   text-indent: 15px;
 }
 .notice-bottom{
-  margin: 70px 5vw 0;
+  margin: 50px 5vw 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.img-notice{
+  padding-top: 20px;
 }
 .notice-bottom button{
   background-color: transparent;
@@ -232,6 +239,7 @@ a {
   width: var(--side-bar-width);
   min-height: var(--side-bar-height);   
   margin-top: calc((80vh - var(--side-bar-height)) / 2);   
+  z-index: 600;
 }
 
 
@@ -379,6 +387,7 @@ a {
 }
 .lower{
   display: flex;
+  margin: 20px 1vw;
 }
 .event{
   padding: 10px 5vw;
@@ -407,6 +416,7 @@ a {
 }
 .slide{
   display: flex;
+  transform: translate3d(0, 0, 0);
 }
 .slide .box{
   margin-right: 50px;
@@ -459,6 +469,7 @@ footer li{
 .swiper {
   width: 1200px;
   height: 500px;
+  position: absolute;
 }
 
 .swiper-slide {
@@ -486,5 +497,5 @@ footer li{
   border: 0;
 }
 :root {
-  --swiper-theme-color: #444;
+  --swiper-theme-color: #00ccff !important;
 }
