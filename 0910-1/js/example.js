@@ -43,3 +43,18 @@ const getInterval = () => {
 }
 
 let interval = getInterval(); // interval 등록
+
+
+
+
+
+
+
+var swiper = new Swiper(".SildeBar", {
+  watchSlidesProgress: true,
+  slidesPerView: 4.7,
+    delay: 1200,
+    disableOnInteraction: false,
+  
+});
+

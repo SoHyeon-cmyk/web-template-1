@@ -113,10 +113,14 @@ header li{
   color: aliceblue;
 }
 .showcase{
-  margin: 10px 4vw;
+  margin: 10px 3vw;
 }
 .gallery{
   display: flex;
+}
+.gallery .swiper{
+  width: 90vw !important;
+  height: auto !important;
 }
 .gallery>.box{
   margin: 0 20px;
@@ -160,7 +164,7 @@ td{
   text-indent: 15px;
 }
 .notice-bottom{
-  margin: 50px 5vw 0;
+  margin: 50px 4vw 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -467,8 +471,8 @@ footer li{
 
 
 .swiper {
-  width: 1200px;
-  height: 500px;
+  width: 90vw;
+  height: auto;
   position: absolute;
 }
 
@@ -498,4 +502,41 @@ footer li{
 }
 :root {
   --swiper-theme-color: #00ccff !important;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+
+.gallery .swiper-slide {
+  width: 400px !important;
+  height: auto;
+  margin: 0 20px;
+  background-size: cover;
+}
+.gallery .swiper-slide img{
+  width: 400px;
+  height: 600px;
+  margin: 0 auto;
+  display: block;
+
+}
+span{
+width: 100px;
+height: 40px;
+display: inline-block;
+background-color: rgb(42, 52, 63);
+color: aliceblue;
+text-align: center;
+line-height: 40px;
+margin: 10px 5px 10px 0;
+font-weight: bold;
+}
+span+span{
+background-color: white;
+border:2px solid rgb(42, 52, 63);
+color: rgb(42, 52, 63);
 }
