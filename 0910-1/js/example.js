@@ -50,6 +50,7 @@ let interval = getInterval(); // interval 등록
 
 
 
+
 var swiper = new Swiper(".SildeBar", {
   watchSlidesProgress: true,
   slidesPerView: 4.7,
@@ -58,3 +59,28 @@ var swiper = new Swiper(".SildeBar", {
   
 });
 
+
+var swiper = new Swiper(".mySwiper", {
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 6000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+var swiper = new Swiper(".mySwiper1", {
+  watchSlidesProgress: true,
+  slidesPerView: 2, 
+
+    disableOnInteraction: false,
+  
+});

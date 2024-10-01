@@ -7,7 +7,7 @@
   <title>스파게티 코드</title>
   <link rel="stylesheet" href="css/style2.css">
   <script src="https://kit.fontawesome.com/632d3e2496.js" crossorigin="anonymous"></script>
-  <script src="/0910-1/js/example.js"></script>
+  <script src="js/example.js"></script>
   <link
   rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
@@ -223,8 +223,8 @@
       </div>
 
       <div class="notice-bottom">
+        <h1><i class="fas fa-microphone-alt"></i>안내사항</h1>
         <div class="container">
-          <h1><i class="fas fa-microphone-alt"></i>안내사항</h1>
           <button type="button">알림</button>
           <button type="button">고시/공고</button>
           <button type="button">채용 안내</button>
@@ -263,6 +263,7 @@
         </div>
       </div>
     </div>
+    
     <div class="lower">
     <div class="event">
       <div class="event-bar">
@@ -283,8 +284,9 @@
         </div>
       </div>
     </div>
+
     <figure>
-      <video src="https://www.museum.go.kr/museum/2023/uigwe_virtualtour"></video>
+      <img src="img/캡처.PNG" alt="">
       <h2>외규장각 의궤, 그 고귀함의 의미</h2>
     </figure>
   </div>
@@ -397,7 +399,7 @@
   <footer>
     <ul>
       <li><a href="#">문화유산표준관리시스템</a></li>
-      <li><a href="#">VCM 가상명품박물관</a></li>``
+      <li><a href="#">VCM 가상명품박물관</a></li>
     </ul>
     <ul>
       <li><a href="#">관련사이트 바로가기</a></li>
@@ -416,20 +418,24 @@
       <li><a href="#">찾아오시는길</a></li>
     </ul>
     <ul>
-
+      <li class="sns">
       <a href="#"><img src="img/naver.svg" alt=""></a>
       <a href="#"> <img src="img/twitter.svg" alt=""></a>
       <a href="#"><img src="img/facebook.svg" alt=""></a>
       <a href="#"><img src="img/instagram.svg" alt=""></a>
       <a href="#"><img src="img/youtube.svg" alt=""></a>
       <a href="#"><img src="img/audioclip.svg" alt=""></a>
-
-      <li><a href=""></a></li>
-      <li><a href=""></a></li>
+    </li>
+    <li class="address">04383 서울시 용산구 서빙고로 137(용산동6가 168-6) <br>
+      대표전화 02-2077-9000
+      <br>
+      © National Museum of Korea.</li>
+      <li class="license"><a href="#"><img class="Weblogo" src="img/web_access.png" alt=""><img class="FTlogo" src="img/logo_open.png" alt=""></a></li>
     </ul>
   </footer>
-  <script>
-    var swiper = new Swiper(".mySwiper", {
+
+<script>
+      var swiper = new Swiper(".mySwiper", {
       spaceBetween: 30,
       centeredSlides: true,
       autoplay: {
@@ -449,11 +455,12 @@
     var swiper = new Swiper(".mySwiper1", {
       watchSlidesProgress: true,
       slidesPerView: 2, 
-        delay: 1200,
+
         disableOnInteraction: false,
       
     });
-  </script>
+</script>
+  
 </body>
 
 </html>
