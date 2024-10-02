@@ -401,7 +401,7 @@ a {
 }
 .lower{
   display: flex;
-  margin: 20px 1vw;
+  margin: 20px 1vw 30px;
 }
 .event{
   padding: 10px 5vw;
@@ -457,6 +457,9 @@ figure>h1{
   justify-content: space-evenly;
   margin-top: 30px;
   padding: 0 5vw;
+}
+.bottom-nav .gnb>li:hover a{
+  text-decoration: underline;
 }
 .tit{
   font-size: 23px;
@@ -580,4 +583,5 @@ color: rgb(42, 52, 63);
   margin-top: 30px;
   line-height: 40px;
   color: #616161;
+  cursor: pointer;
 }

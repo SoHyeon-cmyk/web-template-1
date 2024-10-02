@@ -1,126 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <title>Swiper demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/632d3e2496.js" crossorigin="anonymous"></script>
+  <title>Document</title>
+<style>
+  *{margin: 0; padding: 0;}
+  ul,li{list-style: none;}
+  a{text-decoration: none; color: inherit;}
 
-  <!-- Demo styles -->
-  <style>
-    html,
-    body {
-      position: relative;
-      height: 100%;
-    }
+  .wrap{
+    border: 2px solid black;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .slider{
+    overflow: hidden;
+  }
+  .swiper_slider{
+    position: relative;
+    transition: 0.5s;
+  }
+  .swiper_slider li{
+    float: left;
+  }
+  .swiper_slider img{
+    vertical-align: top;
+  }
+  .prev{
+    position: absolute;
+    left: -50px;
+    top: 100px;
+  }
+  .next{
+    position: absolute;
+    right: -50px;
+    top: 100px;
+  }
+</style>
 
-
-    .swiper {
-      margin: 10px 4vw;
-    }
-
-    .gallery .swiper-slide {
-      width: 400px !important;
-      height: auto;
-      margin: 0 20px;
-      background-size: cover;
-    }
-    .gallery .swiper-slide img{
-      width: 400px;
-      height: 600px;
-      margin: 0 auto;
-      display: block;
-
-    }
-    span{
-  width: 100px;
-  height: 40px;
-  display: inline-block;
-  background-color: rgb(42, 52, 63);
-  color: aliceblue;
-  text-align: center;
-  line-height: 40px;
-  margin: 10px 5px 10px 0;
-  font-weight: bold;
-}
-span+span{
-  background-color: white;
-  border:2px solid rgb(42, 52, 63);
-  color: rgb(42, 52, 63);
-}
-  </style>
 </head>
-
 <body>
-  <!-- Swiper -->
-
-  <div class="gallery">
-  <div class="swiper mySwiper1">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="img/Frame 4.png" alt="">
-        <span>현재전시</span>   
-        <span>공주</span>
-        <h2>상상의 동물사전 용龍</h2>
-        <p>2024-09-10~2025-02-09</p>
-      </div>
-      <div class="swiper-slide">
-         <img src="img/spclExht_202201201157369820.jpg" alt="">
-        <span>현재전시</span>   
-        <span>나주</span>
-        <h2>문화재를 지키는 박물관 사람들</h2>
-        <p>2021-12-21~2024-12-31</p></div>
-      <div class="swiper-slide">
-        <img src="img/6FC32698-1E14-909B-3F8A-8C2E90C587CE_thumb.jpg" alt="">
-        <span>현재전시</span>   
-        <span>광주</span>
-        <h2>도자기, 풍류를 품다</h2>
-        <p>2024-06-21~2024-09-22</p>
-      </div>
-      <div class="swiper-slide">
-        <img src="img/D68C280F-1E41-6175-A4A2-8BDBFAFACA13_thumb.jpg" alt="">
-            <span>현재전시</span>   
-            <span>테마전</span>
-            <h2>제79주년 광복절 기념 심화전 <br>
-              독립을 향한 꺼지지 않는 불꽃<br>나석주 의사 편지 특별공개-
-            </h2>
-            <p>2024-07-26~2024-10-09</p>
-      </div>
-      <div class="swiper-slide">
-        <img src="/0910-1/img/1489673C-AD59-EC07-0995-96AA68C645BD_thumb.jpg" alt="">
-            <span>현재전시</span>   
-            <span>청주</span>
-            <h2>기록, Map of you</h2>
-            <p>2024-06-25~2024-11-03</p>
-      </div>
-      <div class="swiper-slide">
-        <img src="/0910-1/img/image (1).png" alt="">
-            <span>현재전시</span>   
-            <span>경주</span>
-            <h2>광주어린이박물관학교 70주년, 함께 지킨<br>
-            오랜 약속</h2>
-            <p>2024-09-10~2025-09-22</p>
-      </div>
-
+  <div class="wrap">
+    <div class="slider">
+      <ul class="swiper_slider">
+        <li><img src="/이미지/Frame1.png" alt=""></li>
+        <li><img src="/이미지/Frame2.png" alt=""></li>
+        <li><img src="/이미지/Frame3.png" alt=""></li>
+        <li><img src="/이미지/Frame4.png" alt=""></li>
+        <li><img src="/이미지/Frame5.png" alt=""></li>
+      </ul>
+    </div>
+    <div class="arrow">
+      <a href="" class="prev"><i class="fas fa-solid fa-chevron-left"></i></a>
+      <a href="" class="next"><i class="fas fa-solid fa-chevron-right"></i></a>
+    </div>
   </div>
-</div>
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <!-- Initialize Swiper -->
   <script>
-    var swiper = new Swiper(".mySwiper1", {
-      watchSlidesProgress: true,
-      slidesPerView: 4.7, 
-        delay: 1200,
-        disableOnInteraction: false,
-      
-    });
-    
+    window.onload = function() {
+      const wrap = document.querySelector('.wrap')
+      const slider = wrap.querySelector('.slider')
+      const sliderli = slider.querySelectorAll('li')
+      const movebtn = wrap.querySelector('.arrow')
+    }
+    const liWidth = sliderli[0].clientWidth;
+    const sldierWidth = liWidth * sliderli.length;
+    slider.style.width = `${sliderWidth}px`;
+
+    let currentIdx = 0;
+    let translate = 0;
+    movebtn.addEventListener('click', moveSlider)
+
+    function moveSlider(event){
+      event.preventDefault();
+      if(event.target.className === 'next'){
+        if(currentIdx !== sliderli.length-1){
+          translate -= liWidth;
+          slider.style.transform = `translateX(${translate}px)`;
+          currentIdx += 1;
+        }
+        else if(event.target.className === 'prev'){
+          if(currentIdx !== 0){
+            translate += liWidth;
+            slider.style.transform = `translateX(${translate}px)`;
+            currentIdx -= 1;
+          }
+        }
+      }
+    }
   </script>
 </body>
-
 </html>
