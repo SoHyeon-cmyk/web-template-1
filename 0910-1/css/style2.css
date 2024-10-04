@@ -1,55 +1,54 @@
-*{
-  margin: 0 ;
-  padding: 0;
-  box-sizing: border-box;
-}
-body{
-  position: relative;
-  min-width: 1200px;
-  padding: 0 5vw;
-}
-ul,li{
-  list-style: none;
-}
-a{
-  text-decoration: none;
-  color: inherit;
-}
+/* 노말라이즈 */
+
+*{margin: 0 ;padding: 0;box-sizing: border-box;}
+body{position: relative;}
+ul,li{list-style: none;}
+a{text-decoration: none; color: inherit;}
+
+
+
+/* 헤더 */
 header{
   background-color: rgb(42, 52, 63);
-  height: 100%;
   width: 100%;
+  height:80px;
+  min-width:1400px;
   color: aliceblue;
   box-sizing: border-box;
-  padding: 10px 2vw;
   align-items: center;
   margin-bottom: 50px;
 }
 header ul{
   display: flex;
-  margin-top: 5px;
+  margin: 0 20px;
 }
 header li{
-  padding: 20px 30px;
-}
-.gnb{
-  font-size: 23px;
-  z-index: 50;
+  height:80px;
+  line-height:80px;
+  padding: 0 30px;
 }
 .menu{
+  width:1400px;
+  margin:0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.menu>a{
-  margin-top: 8px;
+.gnb{
+  font-size: 1.2rem;
+  z-index: 50;
+}
+
+.menu > a img{
+  margin-top: 4px;
+  margin-left: 10px;
 }
 .sub{
   display: none;
   position: absolute;
+  top:80px;
   color:rgb(42, 52, 63) ;
-  margin-top: 27px;
   background-color: rgb(252, 252, 253);
   border-radius: 5px;
   line-height: 30px;
@@ -70,178 +69,8 @@ header li{
     transform: translateY(0);
   }
 }
-.outer{
-  margin: 30px 0;
-}
-.inner-list{
-  text-align: center;
-}
-.inner>img{
-  width: 1700px;
-}
-.guide-bar{
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 5vw;
-}
-.notice{
-  display: flex;
-  align-items: center;
-}
-.notice>h2{
-  font-size: 30px;
-}
-.notice p{
-  margin:0 30px;
-  line-height: 30px;
-  font-size: 20px;
-} 
-.reservation>button{
-  color: rgb(42, 52, 63) ;
-  background-color: white;
-  padding: 10px 20px;
-  font-size: 25px;
-  font-weight: bold;
-  border-radius: 10px;
-  border: 2px solid rgb(42, 52, 63);
-  margin-left: 20px;
-  margin-top: 15px;
-  cursor: pointer;
-}
-.reservation>button:hover{
-  background-color:rgb(42, 52, 63);
-  transition: all 0.2s ;
-  color: aliceblue;
-}
-.showcase{
-  margin: 10px 4vw 50px;
-}
-.gallery{
-  display: flex;
-}
-.gallery .swiper{
-  width: 90vw !important;
-  height: auto !important;
-}
-.gallery>.box{
-  margin: 0 20px;
-}
-.box>img{
-  display: block;
-}
-span{
-  width: 100px;
-  height: 40px;
-  display: inline-block;
-  background-color: rgb(42, 52, 63);
-  color: aliceblue;
-  text-align: center;
-  line-height: 40px;
-  margin: 10px 5px 10px 0;
-  font-weight: bold;
-}
-span+span{
-  background-color: white;
-  border:2px solid rgb(42, 52, 63);
-  color: rgb(42, 52, 63);
-}
-.showcase>h1{
-  margin-top: 30px;
-  margin-bottom: 50px;
-  font-size: 2.5rem;
-}
-.box>img{
-  width: 400px;
-  height: 604px;
-  margin-bottom: 10px;
-}
-.box>h2{
-margin-bottom: 10px;
-}
-hr{
-  margin: 0 50px;
-}
-td{
-  text-indent: 15px;
-}
-.notice-bottom{
-  margin: 0px 1vw ;
-  padding-top: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-.notice-bottom>.container{
-  height: 432px;
-}
-.img-notice{
-  padding-top: 20px;
-}
-.notice-bottom button{
-  background-color: transparent;
-  font-size: 30px;
-  padding: 10px 15px;
-  font-weight: 700;
-  border: 0;
-  cursor: pointer;
-  margin-bottom:5px;
-  margin-top: 10px;
-  color: rgb(42, 52, 63);
-}
-.notice-bottom button:nth-of-type(5){
-  margin-left: 150px;
-  border: 2px solid rgb(42, 52, 63);
-  padding:2px 10px;
-  color: rgb(42, 52, 63);
-}
-td{
-  color: rgb(42, 52, 63);
-  line-height: 55px;
-  cursor: pointer;
-}
-tr>td:first-child{
-  font-weight: bold;
-  font-size: 20px;
-}
-tr:last-child>td{
-  border-bottom: 1px solid rgb(42, 52, 63);
-  border-collapse: collapse;
-}
 
-table{
-  border-top: 3px solid rgb(42, 52, 63);
-}
-.notice-bottom>.container i{
-  margin-right: 15px;
-  color: rgb(42, 52, 63);
-  margin-top: 15px;
-}
-.notice-bottom>h1{
-  text-indent: 5px;
-  font-size: 35px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-
-body, ul, li {
-  margin: 0;
-  padding: 0;
-  list-style: none;   
-}
-
-a {
-  color: inherit;   
-  text-decoration: none;   
-}
-
-.side-bar > ul ul {
-  display: none;
-}
-
-
+/* 사이드바 */
 :root {
   --side-bar-width: 270px;
   --side-bar-height: 70vh;
@@ -399,12 +228,226 @@ a {
   background-color: aliceblue;
   color: rgb(24, 31, 39);
 }
+.side-bar > ul ul {
+  display: none;
+}
+
+
+/* 메인배너 */
+.swiper {
+  width: 1400px;
+  height: auto;
+  position: absolute;
+}
+
+.swiper-slide {
+
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-next::after,.swiper-button-prev::after{
+  color: #444;
+}
+
+.swiper-pagiantion-bullet:hover{
+  background-color: #444;
+  border: 0;
+}
+:root {
+  --swiper-theme-color: #00ccff !important;
+}
+
+/* 메인배너 하단 공지사항 */
+
+.guide-bar{
+  display: flex;
+  justify-content: space-between;
+  width: 1400px;
+  margin: 20px auto;
+}
+.notice{
+  display: flex;
+  align-items: center;
+}
+.notice>h2{
+  font-size: 1.8rem;
+}
+.notice p{
+  margin:0 30px;
+  line-height: 30px;
+  font-size: 1rem;
+} 
+.reservation>button{
+  color: rgb(42, 52, 63) ;
+  background-color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 2px solid rgb(42, 52, 63);
+  margin: 10px 0px 15px 10px;
+  cursor: pointer;
+}
+.reservation>button:hover{
+  background-color:rgb(42, 52, 63);
+  transition: all 0.2s ;
+  color: aliceblue;
+}
+
+
+/* 하단배너 */
+
+.showcase{
+  width: 1400px;
+  margin: 20px auto;
+}
+.showcase>h1{
+  margin-top: 30px;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+}
+.gallery{
+  display: flex;
+}
+.gallery .swiper{
+  width: 100% !important;
+  height: auto !important;
+}
+.gallery>.box{
+  margin: 0 20px;
+}
+.gallery .swiper-slide {
+  width: 400px !important;
+  height: auto;
+  margin: 0 20px;
+  background-size: cover;
+}
+.gallery .swiper-slide img{
+  width: 400px;
+  height: 600px;
+  margin: 0 auto;
+  display: block;
+
+}
+.inner-list{
+  text-align: center;
+}
+
+.box>img{
+  display: block;
+}
+span{
+  width: 100px;
+  height: 40px;
+  display: inline-block;
+  background-color: rgb(42, 52, 63);
+  color: aliceblue;
+  text-align: center;
+  line-height: 40px;
+  margin: 10px 5px 10px 0;
+  font-weight: bold;
+}
+span+span{
+  background-color: white;
+  border:2px solid rgb(42, 52, 63);
+  color: rgb(42, 52, 63);
+}
+
+.box>img{
+  width: 400px;
+  height: 604px;
+  margin-bottom: 10px;
+}
+.box>h2{
+margin-bottom: 10px;
+}
+hr{
+ width: 1400px;
+ margin: 0 auto;
+}
+
+/* 하단 공지 */
+.notice-bottom{
+
+  margin: 20px 0;
+  padding-top: 50px;
+  position: relative;
+  display: flex;
+}
+table{
+  border-top: 3px solid rgb(42, 52, 63);
+  width: 700px;
+}
+
+td{
+  text-indent: 15px;
+  color: rgb(42, 52, 63);
+  line-height: 55px;
+  cursor: pointer;
+  
+}
+.notice-bottom>.container{
+  height: 432px;
+  margin-right: 20px;
+}
+.notice-bottom i{
+  margin-right: 15px;
+  color: rgb(42, 52, 63);
+  margin-top: 15px;
+}
+.notice-bottom>h1{
+  text-indent: 5px;
+  font-size: 35px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.notice-bottom button{
+  background-color: transparent;
+  font-size: 1.8rem;
+  padding: 10px 15px;
+  font-weight: 700;
+  border: 0;
+  cursor: pointer;
+  margin-bottom:5px;
+  margin-top: 10px;
+  color: rgb(42, 52, 63);
+}
+.notice-bottom button:nth-of-type(5){
+  margin-left: 140px;
+  border: 2px solid rgb(42, 52, 63);
+  padding:2px 10px;
+  color: rgb(42, 52, 63);
+}
+tr>td:first-child{
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+tr:last-child>td{
+  border-collapse: collapse;
+  border-bottom: 2px solid rgb(42, 52, 63);
+}
+.img-notice{
+  width: 500px;
+  margin-left: 50px;
+}
+
+/* 하단이벤트바 */
+
 .lower{
   display: flex;
-  margin: 20px 1vw 30px;
-}
-.event{
-  padding: 10px 5vw;
+  margin: 10px auto;
 }
 .event-bar{
   display: flex;
@@ -447,30 +490,35 @@ figure>img{
 figure>h1{
   margin-top: 10px;
 }
+
+/* 하단메뉴바 */
+
 .bottom-nav .gnb{
+  width: 1400px;
   display: flex;
-  justify-content: space-evenly;
-  margin: 40px 0;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 0 20px;
 }
 .footer-gnb{
   display: flex;
-  justify-content: space-evenly;
-  margin-top: 30px;
-  padding: 0 5vw;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 .bottom-nav .gnb>li:hover a{
   text-decoration: underline;
 }
 .tit{
-  font-size: 23px;
+  font-size: 1.5rem;
 }
 .footer-sub li{
   font-size: 16px;
   margin:15px 0;
 }
+
+/* footer */
 footer{
   display: flex;
-  padding: 30px 1vw;
   justify-content: space-around;
   font-size: 18px;
 }
@@ -491,60 +539,7 @@ footer li{
 
 
 
-.swiper {
-  width: 90vw;
-  height: auto;
-  position: absolute;
-}
 
-.swiper-slide {
-
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.swiper-button-next::after,.swiper-button-prev::after{
-  color: #444;
-}
-
-.swiper-pagiantion-bullet:hover{
-  background-color: #444;
-  border: 0;
-}
-:root {
-  --swiper-theme-color: #00ccff !important;
-}
-
-html,
-body {
-  position: relative;
-  height: 100%;
-}
-
-
-.gallery .swiper-slide {
-  width: 400px !important;
-  height: auto;
-  margin: 0 20px;
-  background-size: cover;
-}
-.gallery .swiper-slide img{
-  width: 400px;
-  height: 600px;
-  margin: 0 auto;
-  display: block;
-
-}
 span{
 width: 100px;
 height: 40px;
