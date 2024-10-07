@@ -439,15 +439,17 @@ tr:last-child>td{
   border-bottom: 2px solid rgb(42, 52, 63);
 }
 .img-notice{
-  width: 500px;
-  margin-left: 50px;
+  width:350px;
+  margin-left: 20px;
 }
 
 /* 하단이벤트바 */
 
 .lower{
+  width: 1400px;
   display: flex;
   margin: 10px auto;
+  box-sizing: border-box;
 }
 .event-bar{
   display: flex;
@@ -462,21 +464,19 @@ tr:last-child>td{
 }
 .event h1{
   margin: 20px 0;
-  padding-right: 670px;
   
 }
 .slide img{
-  width: 350px;
-  height: 520px;
+  width: 320px;
   background-size: cover;
   margin-bottom: 15px;
 }
 .slide{
   display: flex;
-  transform: translate3d(0, 0, 0);
+
 }
 .slide .box{
-  margin-right: 50px;
+  margin-right: 40px;
   margin-bottom: 40px;
 }
 figure{
@@ -484,7 +484,7 @@ figure{
   height: 500px;
 }
 figure>img{
-  width: 700px;
+  width: 680px;
   height: auto;
 }
 figure>h1{

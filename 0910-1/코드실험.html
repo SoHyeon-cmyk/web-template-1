@@ -3,95 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/632d3e2496.js" crossorigin="anonymous"></script>
   <title>Document</title>
-<style>
-  *{margin: 0; padding: 0;}
-  ul,li{list-style: none;}
-  a{text-decoration: none; color: inherit;}
-
-  .wrap{
-    border: 2px solid black;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-  }
-  .slider{
-    overflow: hidden;
-  }
-  .swiper_slider{
-    position: relative;
-    transition: 0.5s;
-  }
-  .swiper_slider li{
-    float: left;
-  }
-  .swiper_slider img{
-    vertical-align: top;
-  }
-  .prev{
-    position: absolute;
-    left: -50px;
-    top: 100px;
-  }
-  .next{
-    position: absolute;
-    right: -50px;
-    top: 100px;
-  }
-</style>
-
+  <script src="https://kit.fontawesome.com/632d3e2496.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin:0; 
+      padding:0;
+    }
+    li {
+      list-style: none;
+      
+    }
+    a{
+      text-decoration: none;
+    }
+    .kind_wrap {
+      border:2px solid black; 
+      width:100%; 
+      max-width:160px;
+      height: 160px; 
+      margin:0 auto; 
+      position: relative;
+    }
+    .kind_wrap > .kind_slider {
+      overflow: hidden;
+    }
+    .kind_wrap > .kind_slider .slider { 
+      position: relative; 
+      transition: 0.5s;
+    }
+    .kind_wrap > .kind_slider .slider li {
+      float:left;
+    }
+    .kind_wrap > .kind_slider img {
+      vertical-align: top;
+    }
+    .kind_wrap .arrow > a.prev {
+      position: absolute; 
+      left:-50px; 
+      top:100px;
+    }
+    .kind_wrap .arrow > a.next {
+      position: absolute; 
+      right:-50px; 
+      top:100px;
+    }
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="slider">
-      <ul class="swiper_slider">
-        <li><img src="/이미지/Frame1.png" alt=""></li>
-        <li><img src="/이미지/Frame2.png" alt=""></li>
-        <li><img src="/이미지/Frame3.png" alt=""></li>
+  <div class="kind_wrap">
+    <div class="kind_slider">
+      <ul class="slider">
         <li><img src="/이미지/Frame4.png" alt=""></li>
-        <li><img src="/이미지/Frame5.png" alt=""></li>
+          <li><img src="/이미지/Frame1.png" alt=""></li>
+          <li><img src="/이미지/Frame2.png" alt=""></li>
+          <li><img src="/이미지/Frame4.png" alt=""></li>
+          <li><img src="/이미지/Frame1.png" alt=""></li>
+          <li><img src="/이미지/Frame2.png" alt=""></li>
       </ul>
     </div>
     <div class="arrow">
-      <a href="" class="prev"><i class="fas fa-solid fa-chevron-left"></i></a>
-      <a href="" class="next"><i class="fas fa-solid fa-chevron-right"></i></a>
+        <a href="" class="prev">&lt;</a>
+        <a href="" class="next"> &gt;</a>
     </div>
   </div>
 
   <script>
     window.onload = function() {
-      const wrap = document.querySelector('.wrap')
-      const slider = wrap.querySelector('.slider')
-      const sliderli = slider.querySelectorAll('li')
-      const movebtn = wrap.querySelector('.arrow')
-    }
-    const liWidth = sliderli[0].clientWidth;
-    const sldierWidth = liWidth * sliderli.length;
-    slider.style.width = `${sliderWidth}px`;
+      const kindWrap =  document.querySelector('.kind_wrap');
+      const slider = kindWrap.querySelector('.slider');
+      const slideLis = slider.querySelectorAll('li')
+      const moveButton = kindWrap.querySelector('.arrow');
+  
+ 
+      const clone1 = slideLis[0].cloneNode(true);
+      const cloneLast = slideLis[slideLis.length - 1].cloneNode(true);
+      slider.insertBefore(cloneLast, slideLis[0]);
+      slider.appendChild(clone1);
+  
 
-    let currentIdx = 0;
-    let translate = 0;
-    movebtn.addEventListener('click', moveSlider)
+      let currentIdx = 0;
+      let translate = 0;
+      const speedTime = 500;
+  
 
-    function moveSlider(event){
-      event.preventDefault();
-      if(event.target.className === 'next'){
-        if(currentIdx !== sliderli.length-1){
-          translate -= liWidth;
-          slider.style.transform = `translateX(${translate}px)`;
-          currentIdx += 1;
-        }
-        else if(event.target.className === 'prev'){
-          if(currentIdx !== 0){
-            translate += liWidth;
-            slider.style.transform = `translateX(${translate}px)`;
-            currentIdx -= 1;
-          }
-        }
+      const sliderCloneLis = slider.querySelectorAll('li');
+      const liWidth = slideLis[0].clientWidth;
+      const sliderWidth = liWidth * sliderCloneLis.length;
+      slider.style.width = `${sliderWidth}px`;
+      currentIdx = 1;
+      translate = -liWidth;
+      slider.style.transform = `translateX(${translate}px)`
+  
+
+      moveButton.addEventListener('click', moveSlide);
+  
+ 
+      function move(D) {
+        currentIdx += (-1 * D);
+        translate += liWidth * D;
+        slider.style.transform = `translateX(${translate}px)`;
+        slider.style.transition = `all ${speedTime}ms ease`
       }
+  
+
+      function moveSlide(event) {
+        event.preventDefault();
+        if (event.target.className === 'next') {
+          move(-1);
+          if (currentIdx === sliderCloneLis.length -1)
+            setTimeout(() => {
+              slider.style.transition = 'none';
+              currentIdx = 1;
+              translate = -liWidth;
+              slider.style.transform = `translateX(${translate}px)`;
+            }, speedTime);
+        } else {
+            move(1);
+            if (currentIdx === 0) {
+              setTimeout(() => {
+                slider.style.transition = 'none';
+                currentIdx = sliderCloneLis.length -2;
+                translate = -(liWidth * currentIdx);
+                slider.style.transform = `translateX(${translate}px)`;
+              }, speedTime);
+            }
+          }
+      }
+      function sliding() {
+    move(-1);
+    if (currentIdx === sliderCloneLis.length -1)
+        setTimeout(() => {
+          slider.style.transition = 'none';
+          currentIdx = 1;
+          translate = -liWidth;
+          slider.style.transform = `translateX(${translate}px)`;
+        }, speedTime);
+  }
+
+  function showSliding() {
+    setInterval(sliding, 3000);
+  }
+
+  showSliding();
     }
+
   </script>
 </body>
 </html>
