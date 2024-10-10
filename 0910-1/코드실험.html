@@ -36,6 +36,7 @@
       float:left;
     }
     .kind_wrap > .kind_slider img {
+      user-select: none;
       vertical-align: top;
     }
     .kind_wrap .arrow > a.prev {
@@ -48,6 +49,7 @@
       right:-50px; 
       top:100px;
     }
+
     </style>
 </head>
 <body>
@@ -68,6 +70,8 @@
     </div>
   </div>
 
+
+
   <script>
     window.onload = function() {
       const kindWrap =  document.querySelector('.kind_wrap');
@@ -75,6 +79,8 @@
       const slideLis = slider.querySelectorAll('li')
       const moveButton = kindWrap.querySelector('.arrow');
   
+      let startPoint = 0;
+      let endPoint = 0;
  
       const clone1 = slideLis[0].cloneNode(true);
       const cloneLast = slideLis[slideLis.length - 1].cloneNode(true);
@@ -148,6 +154,42 @@
   showSliding();
     }
 
+    slider.addEventListener("mousedown", e => {
+  pressed = true
+  startx = e.offsetX - innerSlider.offsetLeft
+  slider.style.cursor = "grabbing"
+})
+
+slider.addEventListener("mouseenter", () => {
+  slider.style.cursor = "grab"
+})
+
+slider.addEventListener("mouseup", () => {
+  slider.style.cursor = "grab"
+})
+
+window.addEventListener("mouseup", () => {
+  pressed = false
+})
+
+function checkboundary() {
+  let outer = slider.getBoundingClientRect()
+  let inner = innerSlider.getBoundingClientRect()
+
+  if (parseInt(innerSlider.style.left) > 0) {
+    innerSlider.style.left = "0px"
+  } else if (inner.right < outer.right) {
+    innerSlider.style.left = `-${inner.width - outer.width}px`
+  }
+}
+slider.addEventListener("mousemove", e => {
+  if (!pressed) return
+  e.preventDefault()
+  x = e.offsetX
+
+  innerSlider.style.left = `${x - startx}px`
+  checkboundary()
+})
   </script>
 </body>
 </html>
