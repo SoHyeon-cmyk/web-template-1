@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>탭 연습</title>
+
+
+  <style>
+    section, .tab-button{
+      transition: all .3s;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>탭 메뉴 연습하기</h1>
+    <nav id="tab-button-nav">
+      <button class="tab-button" data-tab-section="tab-section-1">탭 1</button>
+      <button class="tab-button" data-tab-section="tab-section-2">탭 2</button>
+      <button class="tab-button" data-tab-section="tab-section-3">탭 3</button>
+    </nav>
+  </header>
+  <main>
+    <br>
+    <section id="tab-section-1" class="tab-section">
+      <div><img src="/이미지/Frame1.png" alt=""></div>
+      <h1>headline1</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> 
+        Error iure nulla odio suscipit voluptatibus dolorum volup</p>
+    </section>
+    <section id="tab-section-2" class="tab-section" hidden>
+      <div><img src="/이미지/Frame2.png" alt=""></div>
+      <h1>headline2</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+         Error iure nulla odio suscipit voluptatibus dolorum volup</p>
+    </section>
+    <section id="tab-section-3" class="tab-section" hidden>
+      <div><img src="/이미지/Frame3.png" alt=""></div>
+      <h1>headline3</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> 
+        Error iure nulla odio suscipit voluptatibus dolorum volup</p>
+    </section>
+  </main>
+  <script>
+    const $nav = document.querySelector('#tab-button-nav')
+    const $sections = document.querySelectorAll('.tab-section');
+
+    $nav.addEventListener('click', (e) => {
+      if (!e.target.classList.contains('tab-button')) {
+        return;
+      }
+      
+      const focusedTabId = e.target.dataset.tabSection;
+
+      $sections.forEach(($section) => {
+        if ($section.id === focusedTabId) {
+          $section.removeAttribute('hidden');
+        } else {
+          $section.setAttribute('hidden', true);
+        }
+      });
+    });
+  </script>
+</body>
