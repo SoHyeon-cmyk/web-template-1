@@ -53,16 +53,17 @@ header{
 .sub>li:hover a{ 
   color: rgba(118, 21, 74, 1);
 }
-.info{
+.info-icon{
   display: flex;
   gap: 15px;
 }
-.icon{
-  width: 10px;
+.icon>img{
+  width: 11px;
 }
 .swiper {
   width: 1200px;
   height: 600px;
+  margin-bottom: 70px;
 }
 
 .swiper-slide {
@@ -85,4 +86,63 @@ header{
 }
 .swiper-pagination-bullet{
   background-color: rgba(118, 21, 74, 1)!important;
+}
+
+.tab_nav{
+  margin: 0 auto;
+  width: 1200px;
+}
+.tab-button{
+  background-color: rgba(118, 21, 74, 1);;
+  color: aliceblue;
+  width: 170px;
+  height: 40px;
+  border: none;
+ float: right;
+ margin-right: 20px;
+ -webkit-transform: skew(-20deg);
+ -moz-transform: skew(-20deg);
+ -o-transform: skew(-20deg);
+ border-radius: 10px;
+ font-family: 'Californian FB';
+ flex-wrap: wrap-reverse;
+}
+.cart{
+  float: right;
+  background-color: rgba(118, 21, 74, 1);;
+  color: aliceblue;
+  width: 170px;
+  height: 40px;
+  border: none;
+ margin-right: 20px;
+}
+main{
+  width: 1200px;
+  margin: 0 auto;
+}
+.info{
+  display: flex;
+  gap: 70px;
+  margin-top: 50px;
+}
+
+.info>div>img{
+  border-radius: 50%;
+  width: 300px;
+}
+.info2{
+  margin-top: 90px;
+  font-family: 'Californian FB';
+}
+.info h2{
+  font-size: 2.7rem;
+}
+.info2 p{
+  font-size: 1.5rem;
+  line-height: 1.8;
+  margin-top: 15px;
+}
+.tab_nav section{
+  width: 1200px;
+  margin: 0 auto;
 }

@@ -1,121 +1,106 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>탭 연습</title>
-  
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
   <style>
-    .tab_nav{
-      margin: 0 auto;
-      width: 1200px;
+
+
+    h1 {
+      font-size: 15px;
     }
-    section, .tab-button{
-      transition: all .3s;
+
+    p {
+      font-size: 12px;
     }
-    .tab-button{
-      background-color: rgba(118, 21, 74, 1);;
-      color: aliceblue;
-      width: 170px;
-      height: 40px;
-      border: none;
-     float: right;
-     margin-right: 20px;
-     -webkit-transform: skew(-20deg);
-     -moz-transform: skew(-20deg);
-     -o-transform: skew(-20deg);
-     border-radius: 10px;
-    }
-    main{
-      width: 1200px;
-      margin: 0 auto;
-    }
-    .info{
+
+    .gallery1,
+    .gallery2 {
+      margin-top: 50px;
       display: flex;
-      gap: 80px;
+      width: 300px;
+      height: 200px;
+    }
+
+    .best-seller {
+      position: relative;
+      width: 800px;
+      margin: auto;
+    }
+    .card2,
+    .card4 {
       margin-top: 50px;
     }
-    .info img{
-      border-radius: 50%;
-      width: 300px;
+
+    .nav-button-up::after {
+      content: '';
+      border: solid #5a6a72;
+      border-width: 2px 2px 0 0;
+      transform: translateY(-50%) rotate(315deg);
+      display: block;
+      width: 7px;
+      height: 7px;
+      right: 0;
     }
-    .info2{
-      margin-top: 70px;
+    .nav-button-down::after {
+      content: '';
+      border: solid #5a6a72;
+      border-width: 2px 2px 0 0;
+      transform: translateY(-50%) rotate(135deg);
+      display: block;
+      width: 7px;
+      height: 7px;
+      right: 0;
     }
-    .info h2{
-      font-size: 2.7rem;
+    .nav-button-down,.nav-button-up {
+      float: right;
+      margin-right: 50px;
     }
-    .info2 p{
-      font-size: 1.5rem;
-      line-height: 1.8;
-    }
-    .tab_nav section{
-      width: 1200px;
-      margin: 0 auto;
-    }
+
   </style>
 </head>
+
 <body>
-  <div class="tab_nav">
-    <h1>탭 메뉴 연습하기</h1>
-    <nav id="tab-button-nav">
-      <button class="tab-button" data-tab-section="tab-section-3">탭 3</button>
-      <button class="tab-button" data-tab-section="tab-section-2">탭 2</button>
-      <button class="tab-button" data-tab-section="tab-section-1">탭 1</button>
-    </nav>
-  </div>
-  <main>
-    <br>
-    <section id="tab-section-3" class="tab-section">
-      <div class="info">
-      <div><img src="/이미지/Frame3.png" alt=""></div>
-      <article class="info2">
-        <h2>example</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Ipsam est inventore eos laboriosam eius et! Placeat dolores aut
-          <br> aspernatur! Voluptas voluptatem sapiente qui, <br>at similique sit assumenda hic minima saepe?</p>
-        </article>
+
+  <div class="best-seller">
+
+    <h1> Best-seller</h1>
+
+    <div class="nav-button-up"></div>
+    <div class="nav-button-down"></div>
+
+    <div class="gallery1">
+      <div class="card1">
+        <img src="/이미지/Untitled (1)/Frame 1.png" alt="">
+        <h1>example</h1>
+        <p>Lorem ipsum dolor <br>sit amet consectetur adipisicin.
+        </p>
       </div>
-    </section>
-    <section id="tab-section-2" class="tab-section" hidden>
-      <div class="info">
-        <div><img src="/이미지/Frame2.png" alt=""></div>
-        <article class="info2">
-          <h2>example</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Ipsam est inventore eos laboriosam eius et! Placeat dolores aut
-            <br> aspernatur! Voluptas voluptatem sapiente qui, <br>at similique sit assumenda hic minima saepe?</p>
-          </article>
-        </div>
-    </section>
-    <section id="tab-section-1" class="tab-section" hidden>
-      <div class="info">
-        <div><img src="/이미지/Frame1.png" alt=""></div>
-        <article class="info2">
-          <h2>example</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Ipsam est inventore eos laboriosam eius et! Placeat dolores aut
-            <br> aspernatur! Voluptas voluptatem sapiente qui, <br>at similique sit assumenda hic minima saepe?</p>
-          </article>
-        </div>
-    </section>
-  </main>
+      <div class="card2">
+        <img src="/이미지/Untitled (1)/Frame 2.png" alt="">
+        <h1>example</h1>
+        <p>Lorem ipsum dolor <br>sit amet consectetur adipisicin.
+        </p>
+      </div>
+    </div>
+    <div class="gallery2">
+      <div class="card3">
+        <img src="/이미지/Untitled (1)/Frame 3.png" alt="">
+        <h1>example</h1>
+        <p>Lorem ipsum dolor <br>sit amet consectetur adipisicin.
+        </p>
+      </div>
+      <div class="card4">
+        <img src="/이미지/Untitled (1)/Frame 4.png" alt="">
+        <h1>example</h1>
+        <p>Lorem ipsum dolor <br>sit amet consectetur adipisicin.
+        </p>
+      </div>
+    </div>
+  </div>
 
-
-  <script>
-    const $nav = document.querySelector('#tab-button-nav')
-    const $sections = document.querySelectorAll('.tab-section');
-
-    $nav.addEventListener('click', (e) => {
-      if (!e.target.classList.contains('tab-button')) {
-        return;
-      }
-      
-      const focusedTabId = e.target.dataset.tabSection;
-
-      $sections.forEach(($section) => {
-        if ($section.id === focusedTabId) {
-          $section.removeAttribute('hidden');
-        } else {
-          $section.setAttribute('hidden', true);
-        }
-      });
-    });
-  </script>
 </body>
+
+</html>

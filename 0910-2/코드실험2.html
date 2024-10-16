@@ -6,6 +6,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
   <script src="https://kit.fontawesome.com/632d3e2496.js" crossorigin="anonymous"></script>
 </head>
 </head>
@@ -54,14 +55,15 @@
       <li>
         <a href="#">Pre-Order</a>
       </li>
-      <ul class="info">
-        <li class="icon"><img src="img/magnifying-glass-solid.svg" alt=""></li>
-        <li class="icon"><img src="img/user-solid.svg" alt=""></li>
-        <li class="icon"><img src="img/cart-shopping-solid.svg" alt=""></li>
+      <ul class="info-icon">
+        <li class="icon"><img src="img/magnifying-glass-solid 1.png" alt=""></li>
+        <li class="icon"><img src="img/user-solid 1.png" alt=""></li>
+        <li class="icon"><img src="img/cart-shopping-solid 1.png" alt=""></li>
         </ul>
     </ul>
   </div>
 </header>
+
 <!-- 집가서 문제 해결해오기 -->
 <div class="swiper mySwiper">
   <div class="swiper-wrapper">
@@ -82,37 +84,53 @@
 
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
-<div class="info">
   
-<div><img src="" alt=""></div>
-<h2></h2>
-<p></p>
 
+
+
+
+<div class="tab_nav">
+  <h1></h1>
+  <nav id="tab-button-nav">
+    <button class="tab-button" data-tab-section="tab-section-3">New 3</button>
+    <button class="tab-button" data-tab-section="tab-section-2">New 2</button>
+    <button class="tab-button" data-tab-section="tab-section-1">New 1</button>
+  </nav>
 </div>
-
-<!-- Swiper JS -->
-
-<!-- Initialize Swiper -->
-<script>
-  var swiper = new Swiper(".mySwiper", {
-    spaceBetween: 30,
-    centeredSlides: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-</script>
+<main>
+  <br>
+  <section id="tab-section-3" class="tab-section">
+    <div class="info">
+      <div><img src="/이미지/Frame3.png" alt=""></div>
+      <article class="info2">
+        <h2>example</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Ipsam est inventore eos laboriosam eius et! Placeat dolores aut
+          <br> aspernatur! Voluptas voluptatem sapiente qui, <br>at similique sit assumenda hic minima saepe?</p>
+        </article>
+      </div>
+    </section>
+    <section id="tab-section-2" class="tab-section" hidden>
+      <div class="info">
+        <div><img src="/이미지/Frame2.png" alt=""></div>
+        <article class="info2">
+          <h2>example</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Ipsam est inventore eos laboriosam eius et! Placeat dolores aut
+            <br> aspernatur! Voluptas voluptatem sapiente qui, <br>at similique sit assumenda hic minima saepe?</p>
+          </article>
+        </div>
+      </section>
+      <section id="tab-section-1" class="tab-section" hidden>
+        <div class="info">
+          <div><img src="/이미지/Frame1.png" alt=""></div>
+          <article class="info2">
+            <h2>example</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Ipsam est inventore eos laboriosam eius et! Placeat dolores aut
+              <br> aspernatur! Voluptas voluptatem sapiente qui, <br>at similique sit assumenda hic minima saepe?</p>
+            </article>
+          </div>
+        </section>
+        <button class="cart">장바구니 담기</button>
+</main>
 
 </body>
 </html>
