@@ -60,6 +60,9 @@ header{
 .icon>img{
   width: 11px;
 }
+.icon:last-child>img{
+  width: 13px;
+}
 .swiper {
   width: 1200px;
   height: 600px;
@@ -101,8 +104,6 @@ header{
  float: right;
  margin-right: 20px;
  -webkit-transform: skew(-20deg);
- -moz-transform: skew(-20deg);
- -o-transform: skew(-20deg);
  border-radius: 10px;
  font-family: 'Californian FB';
  flex-wrap: wrap-reverse;

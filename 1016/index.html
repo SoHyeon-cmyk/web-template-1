@@ -21,31 +21,40 @@
     <link rel="icon" href="images/favicon.svg">
 </head>
 <body>
-  <!-- 로딩화면 -->
+  <!--로딩 화면 추가-->
   <div id="loading">
-    <p>loading...</p>
+    <p>Loading...</p>
     <div id="loading-screen"></div>
   </div>
 
-<!-- 네이게이션추가 -->
+  <!-- 모달창 -->
+  <section id="modal">
+    <div id="modal-content">
+      <h1>경력</h1>
+      <p>캐나다 밴쿠버에 있는 웹 제작 학교를 졸업했습니다. 캐나다와 호주, 영국 기업에서 웹 디자이너로 일했습니다.        
+      </p>
+      <button id="close">닫기</button>
+    </div>
+   </section>
 
+  <!--내비게이션 메뉴 추가-->
   <nav>
-    <div id="menu-panel">
-    <button id="메뉴열기" class="btn-menu">
+    <!--여닫기 버튼 구현-->
+    <button id="menu-open" class="btn-menu">
       <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <title>메뉴 열기</title>
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 7a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1zm0 5a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1zm1 4a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2H3z" /></svg>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 7a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1zm0 5a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1zm1 4a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2H3z"/>
+      </svg>
     </button>
-
-
-
-
+    <div id="menu-panel">
       <button id="menu-close" class="btn-menu">
         <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <title>메뉴 닫기</title>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M19.207 6.207a1 1 0 0 0-1.414-1.414L12 10.586 6.207 4.793a1 1 0 0 0-1.414 1.414L10.586 12l-5.793 5.793a1 1 0 1 0 1.414 1.414L12 13.414l5.793 5.793a1 1 0 0 0 1.414-1.414L13.414 12l5.793-5.793z"/></svg>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M19.207 6.207a1 1 0 0 0-1.414-1.414L12 10.586 6.207 4.793a1 1 0 0 0-1.414 1.414L10.586 12l-5.793 5.793a1 1 0 1 0 1.414 1.414L12 13.414l5.793 5.793a1 1 0 0 0 1.414-1.414L13.414 12l5.793-5.793z"/>
+        </svg>
       </button>
 
+      <!--메뉴 리스트-->
       <ul class="menu-list">
         <li><a href="#">Online Shop</a></li>
         <li><a href="#">Twitter</a></li>
@@ -106,7 +115,7 @@
           <h3>롯폰기점</h3>
           <p>
               도쿄도 미나토구 롯폰기2-4-5<br>
-              영업일：금・토・일・휴일<br>
+              영업일:금・토・일・휴일<br>
               영업시간:11:00〜18:00
           </p>
       </div>
