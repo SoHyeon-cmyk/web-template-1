@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,102 +11,113 @@
   <script src="https://kit.fontawesome.com/632d3e2496.js" crossorigin="anonymous"></script>
 </head>
 </head>
+
 <body>
+
+  <!-- 팝업창 띄우기 -->
+
+
+
+
+
 
 
   <header>
     <div class="menu">
-    <a href="#"><img src="img/logo.jpg" alt="" class="logo"></a>
-    <ul class="gnb">
-      <li>
-        <a href="#">New</a>
-      </li>
-      <li>
-        <a href="#">All Products</a>
-        <ul class="sub">
-          <li><a href="#">All Wines</a></li>
-          <li><a href="#">Red</a></li>
-          <li><a href="#">White</a></li>
-          <li><a href="#">Sparkling</a></li>
-          <li><a href="#">Rosé</a></li>
-          <li><a href="#">Glass</a></li>
-          <li><a href="#">Others</a></li>
+      <a href="#"><img src="img/logo.jpg" alt="" class="logo"></a>
+      <ul class="gnb">
+        <li>
+          <a href="#">New</a>
+        </li>
+        <li>
+          <a href="#">All Products</a>
+          <ul class="sub">
+            <li><a href="#">All Wines</a></li>
+            <li><a href="#">Red</a></li>
+            <li><a href="#">White</a></li>
+            <li><a href="#">Sparkling</a></li>
+            <li><a href="#">Rosé</a></li>
+            <li><a href="#">Glass</a></li>
+            <li><a href="#">Others</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Countries&Regions</a>
+          <ul class="sub">
+            <li><a href="#">France</a></li>
+            <li><a href="#">Germany</a></li>
+            <li><a href="#">Italy</a></li>
+            <li><a href="#">Spain</a></li>
+            <li><a href="#">United States</a></li>
+            <li><a href="#">Australia</a></li>
+            <li><a href="#">Other Countries</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Weekly Special</a>
+          <ul class="sub">
+            <li><a href="#">Domaine Jamet</a></li>
+            <li><a href="#">Etienne Sauzet</a></li>
+            <li><a href="#">Domaine pujac blanc</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Pre-Order</a>
+        </li>
+        <ul class="info-icon">
+          <input type="text" id="search-bar">
+          <li class="icon icon3"><img src="img/magnifying-glass-solid 1.png" alt=""></li>
+          <li class="icon"><img src="img/user-solid 1.png" alt=""></li>
+          <li class="icon"><img src="img/cart-shopping-solid 1.png" alt=""></li>
         </ul>
-      </li>
-      <li>
-        <a href="#">Countries&Regions</a>
-        <ul class="sub">
-          <li><a href="#">France</a></li>
-          <li><a href="#">Germany</a></li>
-          <li><a href="#">Italy</a></li>
-          <li><a href="#">Spain</a></li>
-          <li><a href="#">United States</a></li>
-          <li><a href="#">Australia</a></li>
-          <li><a href="#">Other Countries</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">Weekly Special</a>
-        <ul class="sub">
-          <li><a href="#">Domaine Jamet</a></li>
-          <li><a href="#">Etienne Sauzet</a></li>
-          <li><a href="#">Domaine pujac blanc</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">Pre-Order</a>
-      </li>
-      <ul class="info-icon">
-        <li class="icon"><img src="img/magnifying-glass-solid 1.png" alt=""></li>
-        <li class="icon"><img src="img/user-solid 1.png" alt=""></li>
-        <li class="icon"><img src="img/cart-shopping-solid 1.png" alt=""></li>
-        </ul>
-    </ul>
+      </ul>
+    </div>
+  </header>
+
+  <!-- 집가서 문제 해결해오기  해결완-->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
   </div>
-</header>
 
-<!-- 집가서 문제 해결해오기 -->
-<div class="swiper mySwiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
-    <div class="swiper-slide">Slide 4</div>
-    <div class="swiper-slide">Slide 5</div>
-    <div class="swiper-slide">Slide 6</div>
-    <div class="swiper-slide">Slide 7</div>
-    <div class="swiper-slide">Slide 8</div>
-    <div class="swiper-slide">Slide 9</div>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+
+
+  <div class="tab_nav">
+    <h1></h1>
+    <nav id="tab-button-nav">
+      <button class="tab-button" data-tab-section="tab-section-3">New 3</button>
+      <button class="tab-button" data-tab-section="tab-section-2">New 2</button>
+      <button class="tab-button" data-tab-section="tab-section-1">New 1</button>
+    </nav>
   </div>
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-pagination"></div>
-</div>
-
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  
-
-
-
-
-<div class="tab_nav">
-  <h1></h1>
-  <nav id="tab-button-nav">
-    <button class="tab-button" data-tab-section="tab-section-3">New 3</button>
-    <button class="tab-button" data-tab-section="tab-section-2">New 2</button>
-    <button class="tab-button" data-tab-section="tab-section-1">New 1</button>
-  </nav>
-</div>
-<main>
-  <br>
-  <section id="tab-section-3" class="tab-section">
-    <div class="info">
-      <div><img src="/이미지/Frame3.png" alt=""></div>
-      <article class="info2">
-        <h2>example</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Ipsam est inventore eos laboriosam eius et! Placeat dolores aut
-          <br> aspernatur! Voluptas voluptatem sapiente qui, <br>at similique sit assumenda hic minima saepe?</p>
+  <main>
+    <br>
+    <section id="tab-section-3" class="tab-section">
+      <div class="info">
+        <div><img src="/이미지/Frame3.png" alt=""></div>
+        <article class="info2">
+          <h2>example</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Ipsam est inventore eos laboriosam eius et!
+            Placeat dolores aut
+            <br> aspernatur! Voluptas voluptatem sapiente qui, <br>at similique sit assumenda hic minima saepe?
+          </p>
         </article>
       </div>
     </section>
@@ -114,27 +126,70 @@
         <div><img src="/이미지/Frame2.png" alt=""></div>
         <article class="info2">
           <h2>example</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Ipsam est inventore eos laboriosam eius et! Placeat dolores aut
-            <br> aspernatur! Voluptas voluptatem sapiente qui, <br>at similique sit assumenda hic minima saepe?</p>
-          </article>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Ipsam est inventore eos laboriosam eius et!
+            Placeat dolores aut
+            <br> aspernatur! Voluptas voluptatem sapiente qui, <br>at similique sit assumenda hic minima saepe?
+          </p>
+        </article>
+      </div>
+    </section>
+    <section id="tab-section-1" class="tab-section" hidden>
+      <div class="info">
+        <div><img src="/이미지/Frame1.png" alt=""></div>
+        <article class="info2">
+          <h2>example</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Ipsam est inventore eos laboriosam eius et!
+            Placeat dolores aut
+            <br> aspernatur! Voluptas voluptatem sapiente qui, <br>at similique sit assumenda hic minima saepe?
+          </p>
+        </article>
+      </div>
+    </section>
+    <button class="cart">장바구니 담기</button>
+
+
+    <div class="best-seller">
+
+      <h1> Best-seller</h1>
+
+      <!-- <div class="nav-button-up"></div>
+    <div class="nav-button-down"></div> -->
+
+      <!-- 얘는 정렬 마저 해오기 -->
+      <div class="gallery1">
+        <img src="/이미지/Untitled (1)/Frame 1.png" alt="">
+        <div class="BS-card">
+          <h1>example</h1>
+          <h2>example2</h2>
+          <p>Lorem ipsum dolor <br>sit amet consectetur adipisicin.
+          </p>
         </div>
-      </section>
-      <section id="tab-section-1" class="tab-section" hidden>
-        <div class="info">
-          <div><img src="/이미지/Frame1.png" alt=""></div>
-          <article class="info2">
-            <h2>example</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Ipsam est inventore eos laboriosam eius et! Placeat dolores aut
-              <br> aspernatur! Voluptas voluptatem sapiente qui, <br>at similique sit assumenda hic minima saepe?</p>
-            </article>
-          </div>
-        </section>
-        <button class="cart">장바구니 담기</button>
-</main>
+        <img src="/이미지/Untitled (1)/Frame 2.png" alt="">
+        <div class="BS-card">
+          <h1>example</h1>
+          <h2>example2</h2>
+          <p>Lorem ipsum dolor <br>sit amet consectetur adipisicin.
+          </p>
+        </div>
+      </div>
+      <div class="gallery2">
+        <img src="/이미지/Untitled (1)/Frame 3.png" alt="">
+        <div class="BS-card">
+          <h1>example</h1>
+          <h2>example2</h2>
+          <p>Lorem ipsum dolor <br>sit amet consectetur adipisicin.
+          </p>
+        </div>
+        <img src="/이미지/Untitled (1)/Frame 4.png" alt="">
+        <div class="BS-card">
+          <h1>example</h1>
+          <h2>example2</h2>
+          <p>Lorem ipsum dolor <br>sit amet consectetur adipisicin.
+          </p>
+        </div>
+      </div>
+    </div>
 
 </body>
+
 </html>
-
-
-
-

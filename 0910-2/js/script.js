@@ -37,4 +37,14 @@ const $nav = document.querySelector('#tab-button-nav')
         $section.setAttribute('hidden', true);
       }
     });
+
   });
+  const search = document.querySelector('.icon3')
+const Schbar = document.querySelector('#search-bar')
+
+search.addEventListener('click', function(){
+  Schbar.translate ['0 50px',0]
+Schbar.classList.toggle('on')
+})
+
+window.popup()
