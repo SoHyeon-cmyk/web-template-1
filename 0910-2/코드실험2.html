@@ -10,21 +10,33 @@
   <script src="js/script.js" defer></script>
   <script src="https://kit.fontawesome.com/632d3e2496.js" crossorigin="anonymous"></script>
 </head>
-</head>
 
-<body>
+<!-- <body onLoad="window.open('popup.html','_blank','width=200')"> -->
+  <body>
 
   <!-- 팝업창 띄우기 -->
 
 
-
+  <div id="popup_layer">
+    <div class="popup_box">
+      <div class="popup_cont">
+        <h1>Title</h1>
+        <p>content text</p>
+      </div>
+      <div class="popup_btn">
+        <a href="javascript:closeToday()" id="chk_today" class="close_day">
+          하루 동안 안보기</a>
+          <a href="javascript:closePop()">닫기</a>
+      </div>
+    </div>
+  </div>
 
 
 
 
   <header>
     <div class="menu">
-      <a href="#"><img src="img/logo.jpg" alt="" class="logo"></a>
+      <a href="#"><img src="img/Group 5.png" alt="" class="logo"></a>
       <ul class="gnb">
         <li>
           <a href="#">New</a>
@@ -66,10 +78,11 @@
         </li>
         <ul class="info-icon">
           <input type="text" id="search-bar">
-          <li class="icon icon3"><img src="img/magnifying-glass-solid 1.png" alt=""></li>
+          <li class="icon"><img src="img/magnifying-glass-solid 1.png" alt=""></li>
           <li class="icon"><img src="img/user-solid 1.png" alt=""></li>
           <li class="icon"><img src="img/cart-shopping-solid 1.png" alt=""></li>
         </ul>
+        <div id="result">0</div>
       </ul>
     </div>
   </header>
@@ -77,15 +90,8 @@
   <!-- 집가서 문제 해결해오기  해결완-->
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
-      <div class="swiper-slide">Slide 7</div>
-      <div class="swiper-slide">Slide 8</div>
-      <div class="swiper-slide">Slide 9</div>
+      <div class="swiper-slide"><img src="img/banner.png" alt=""></div>
+      <div class="swiper-slide"><img src="img/banner2.jpg" alt=""></div>
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
@@ -100,7 +106,8 @@
 
 
   <div class="tab_nav">
-    <h1></h1>
+    <h1>New</h1>
+    <h3>Be the first to experience</h3>
     <nav id="tab-button-nav">
       <button class="tab-button" data-tab-section="tab-section-3">New 3</button>
       <button class="tab-button" data-tab-section="tab-section-2">New 2</button>
@@ -111,7 +118,7 @@
     <br>
     <section id="tab-section-3" class="tab-section">
       <div class="info">
-        <div><img src="/이미지/Frame3.png" alt=""></div>
+        <div><img src="img/new1.png" alt=""></div>
         <article class="info2">
           <h2>example</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Ipsam est inventore eos laboriosam eius et!
@@ -123,7 +130,7 @@
     </section>
     <section id="tab-section-2" class="tab-section" hidden>
       <div class="info">
-        <div><img src="/이미지/Frame2.png" alt=""></div>
+        <div><img src="img/new5.png" alt=""></div>
         <article class="info2">
           <h2>example</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Ipsam est inventore eos laboriosam eius et!
@@ -135,7 +142,7 @@
     </section>
     <section id="tab-section-1" class="tab-section" hidden>
       <div class="info">
-        <div><img src="/이미지/Frame1.png" alt=""></div>
+        <div><img src="img/new6.png" alt=""></div>
         <article class="info2">
           <h2>example</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Ipsam est inventore eos laboriosam eius et!
@@ -145,7 +152,8 @@
         </article>
       </div>
     </section>
-    <button class="cart">장바구니 담기</button>
+    <input type="button" onclick='count("plus")' value="장바구니 담기"></input>
+    </main>
 
 
     <div class="best-seller">
@@ -157,39 +165,244 @@
 
       <!-- 얘는 정렬 마저 해오기 -->
       <div class="gallery1">
-        <img src="/이미지/Untitled (1)/Frame 1.png" alt="">
+        <img src="img/bestseller1.png" alt="">
         <div class="BS-card">
           <h1>example</h1>
           <h2>example2</h2>
           <p>Lorem ipsum dolor <br>sit amet consectetur adipisicin.
           </p>
+          <button><a href="">About</a></button>
         </div>
-        <img src="/이미지/Untitled (1)/Frame 2.png" alt="">
+        <img src="img/bestseller2.png" alt="">
         <div class="BS-card">
           <h1>example</h1>
           <h2>example2</h2>
           <p>Lorem ipsum dolor <br>sit amet consectetur adipisicin.
           </p>
+          <button><a href="">About</a></button>
         </div>
       </div>
       <div class="gallery2">
-        <img src="/이미지/Untitled (1)/Frame 3.png" alt="">
+        <img src="img/bestseller3.png" alt="">
         <div class="BS-card">
           <h1>example</h1>
           <h2>example2</h2>
           <p>Lorem ipsum dolor <br>sit amet consectetur adipisicin.
           </p>
+          <button><a href="">About</a></button>
         </div>
-        <img src="/이미지/Untitled (1)/Frame 4.png" alt="">
+        <img src="img/bestseller4.png" alt="">
         <div class="BS-card">
           <h1>example</h1>
           <h2>example2</h2>
           <p>Lorem ipsum dolor <br>sit amet consectetur adipisicin.
           </p>
+          <button><a href="">About</a></button>
         </div>
       </div>
     </div>
 
+
+    <div class="scroll1">
+
+
+      <div class="swiper mySwiper2">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="ACinfo">
+              <img class="mainimg" src="img/bestseller4.png" alt="">
+              <div class="SL-card">
+                <h1>Fattoria Poggio di
+                  Sotto Brunello di <br>
+                  Montalcino DOCG
+                  2018</h1>
+                <p>190,000원</p>
+                <div class="SLinfo">
+                  <span class="span1">
+                    <img src="img/france.png" alt="" class="country">
+                    <p class="CTinfo">France</p>
+                  </span>
+                  <span class="span2">
+                    <img src="img/Group 1.png" alt="" class="iconimg">
+                    <p>Redwine</p>
+                  </span>
+                  <p class="proof">16.00%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="ACinfo">
+              <img class="mainimg" src="img/bestseller4.png" alt="">
+              <div class="SL-card">
+                <h1>Fattoria Poggio di
+                  Sotto Brunello di <br>
+                  Montalcino DOCG
+                  2018</h1>
+                <p>190,000원</p>
+                <div class="SLinfo">
+                  <span class="span1">
+                    <img src="img/france.png" alt="" class="country">
+                    <p class="CTinfo">France</p>
+                  </span>
+                  <span class="span2">
+                    <img src="img/Group 1.png" alt="" class="iconimg">
+                    <p>Redwine</p>
+                  </span>
+                  <p class="proof">16.00%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="ACinfo">
+              <img class="mainimg" src="img/bestseller4.png" alt="">
+              <div class="SL-card">
+                <h1>Fattoria Poggio di
+                  Sotto Brunello di <br>
+                  Montalcino DOCG
+                  2018</h1>
+                <p>190,000원</p>
+                <div class="SLinfo">
+                  <span class="span1">
+                    <img src="img/france.png" alt="" class="country">
+                    <p class="CTinfo">France</p>
+                  </span>
+                  <span class="span2">
+                    <img src="img/Group 1.png" alt="" class="iconimg">
+                    <p>Redwine</p>
+                  </span>
+                  <p class="proof">16.00%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="ACinfo">
+              <img class="mainimg" src="img/bestseller4.png" alt="">
+              <div class="SL-card">
+                <h1>Fattoria Poggio di
+                  Sotto Brunello di <br>
+                  Montalcino DOCG
+                  2018</h1>
+                <p>190,000원</p>
+                <div class="SLinfo">
+                  <span class="span1">
+                    <img src="img/france.png" alt="" class="country">
+                    <p class="CTinfo">France</p>
+                  </span>
+                  <span class="span2">
+                    <img src="img/Group 1.png" alt="" class="iconimg">
+                    <p>Redwine</p>
+                  </span>
+                  <p class="proof">16.00%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="ACinfo">
+              <img class="mainimg" src="img/bestseller4.png" alt="">
+              <div class="SL-card">
+                <h1>Fattoria Poggio di
+                  Sotto Brunello di <br>
+                  Montalcino DOCG
+                  2018</h1>
+                <p>190,000원</p>
+                <div class="SLinfo">
+                  <span class="span1">
+                    <img src="img/france.png" alt="" class="country">
+                    <p class="CTinfo">France</p>
+                  </span>
+                  <span class="span2">
+                    <img src="img/Group 1.png" alt="" class="iconimg">
+                    <p>Redwine</p>
+                  </span>
+                  <p class="proof">16.00%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="ACinfo">
+              <img class="mainimg" src="img/bestseller4.png" alt="">
+              <div class="SL-card">
+                <h1>Fattoria Poggio di
+                  Sotto Brunello di <br>
+                  Montalcino DOCG
+                  2018</h1>
+                <p>190,000원</p>
+                <div class="SLinfo">
+                  <span class="span1">
+                    <img src="img/france.png" alt="" class="country">
+                    <p class="CTinfo">France</p>
+                  </span>
+                  <span class="span2">
+                    <img src="img/Group 1.png" alt="" class="iconimg">
+                    <p>Redwine</p>
+                  </span>
+                  <p class="proof">16.00%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="ACinfo">
+              <img class="mainimg" src="img/bestseller4.png" alt="">
+              <div class="SL-card">
+                <h1>Fattoria Poggio di
+                  Sotto Brunello di <br>
+                  Montalcino DOCG
+                  2018</h1>
+                <p>190,000원</p>
+                <div class="SLinfo">
+                  <span class="span1">
+                    <img src="img/france.png" alt="" class="country">
+                    <p class="CTinfo">France</p>
+                  </span>
+                  <span class="span2">
+                    <img src="img/Group 1.png" alt="" class="iconimg">
+                    <p>Redwine</p>
+                  </span>
+                  <p class="proof">16.00%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="ACinfo">
+              <img class="mainimg" src="img/bestseller4.png" alt="">
+              <div class="SL-card">
+                <h1>Fattoria Poggio di
+                  Sotto Brunello di <br>
+                  Montalcino DOCG
+                  2018</h1>
+                <p>190,000원</p>
+                <div class="SLinfo">
+                  <span class="span1">
+                    <img src="img/france.png" alt="" class="country">
+                    <p class="CTinfo">France</p>
+                  </span>
+                  <span class="span2">
+                    <img src="img/Group 1.png" alt="" class="iconimg">
+                    <p>Redwine</p>
+                  </span>
+                  <p class="proof">16.00%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    
+
+
+
+    
 </body>
 
 </html>

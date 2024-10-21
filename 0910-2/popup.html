@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>popup</title>
+  <style>
+    #popup {
+      margin: auto;
+      width: 400px;
+      height: 290px;
+      border: 1px solid black;
+    }
+
+    h1,h3,p {
+      font-weight: normal;
+      text-align: center;
+    }
+    h3{
+      font-size: 15px;
+    }
+    p{
+      font-size: 11px;
+      opacity: 0.4;
+      margin-bottom: 30px;
+    }
+    .btn{
+      display: flex;
+      justify-content: space-evenly;
+    }
+  button{
+  border: 0;
+  background-color: transparent;
+  border-radius: 20px;
+  width: 170px;
+  height: 40px;
+  margin-bottom:10px;
+  cursor: pointer;
+}
+  button:first-child{
+    background-color: #dddddd;
+  }
+  button:last-child{
+    background-color: #888;
+  }
+  input{
+    margin-left: 20px;
+
+  }
+
+#popup_overlay{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+</style>
+</head>
+<body>
+
+ <button class="btn" onclick="window.open('pop.html','_blank','width=100')">팝업</button> 
+
+
+
+
+  <div id="popup" class="pop-wrap">
+    <div class="pop-info">
+      <h1>연령 확인</h1>
+      <h3>청소년보호법 제 28조에 따라, <br>
+        Weeklywine을 방문하거나 상품을 구매하기 위해선,<br>
+        법적 성인(만 19세이상)이어야 합니다.</h3>
+      <p>*마케팅 및 자료제공을 위한 Cookie 사용에 동의합니다.</p>
+      <div class="btn">
+        <button type="button">19세 미만</button>
+        <button type="button" class="close" onclick="CloseEvent">동의 및 19세 이상 입장</button>
+      </div>
+      <!-- <div id="check"><input type="checkbox" name="CHbox" value="checkbox" id="CHbox"> -->
+      <!-- <label for="CHbox">오늘 하루동안 보지 않기</label></div> -->
+    </div>
+  </div>
+
+  <script>
+
+const Pop = document.querySelector("#popup")
+const Close = document.querySelector(".close")
+ Close.addEventListener('click', ()=>{
+  Pop.style.display = 'none'
+ })
+
+// const POPBTN = document.querySelector(".btn")
+
+//     function POPBTN(){
+//       window.open("pop.html", "pop", "width=400,height=500,history=no,resizable=no,status=no,scrollbars=yes,menubar=no")
+//     }
+
+
+
+
+
+
+
+
+
+
+
+
+    // 쿠키 생성
+// function setCookie( name, value, expiredays ) {  // 쿠키저장
+// 	var todayDate = new Date();  //date객체 생성 후 변수에 저장
+// 	todayDate.setDate( todayDate.getDate() + expiredays ); 
+//    	 // 시간지정(현재시간 + 지정시간)
+// 	document.cookie = name + "=" + value + "; path=/; expires=" + todayDate.toUTCString() + ";"
+// 	//위 정보를 쿠키에 굽는다
+// } 
+// $(function(){
+// 	$(".pop-info").draggable({containment:'parent', scroll:false}); // 레이어 팝업 창 드래그 가능
+// 	//{containment:'parent', scroll:false} 화면 영역 밖으로 드래그 안됌.
+                
+// 	if(document.cookie.indexOf("popToday=close") < 0 ){      // 쿠키 저장여부 체크
+// 		document.getElementById(".pop-wrap").style.display = "block";
+// 		}else {
+// 		document.getElementById(".pop-wrap").style.display = "none"; 
+// 		}
+// 	});
+          
+
+// //오늘하루만보기 닫기버튼 스크립트
+// function closeToday() { 
+// 	setCookie( ".popToday", "close" , 1  ); 
+// 	$(".pop-info").css("display", "none");
+// 	document.getElementById(".pop-wrap").style.display = "none";
+// }
+// //그냥 닫기버튼 스크립트
+// function CHbox() { 
+// 	document.getElementById(".pop-wrap").style.display = "none";
+// }
+
+
+  </script>
+</body>
+
+</html>
