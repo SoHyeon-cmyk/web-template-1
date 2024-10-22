@@ -1,116 +1,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Italianno&display=swap');
+
     
-*{margin: 0; padding: 0; color: #333; }
+*{margin: 0; padding: 0;}
 html,
-body {
-  position: relative;
-  height: 100%;
-}
+body {position: relative;font-family: "Darker Grotesque";}
 ul,li{list-style: none; }
 a{text-decoration: none; color: #555;}
-body{
-  font-family: "Darker Grotesque";
-}
 
 h1,h2,h3,p{
   pointer-events: none;
 }
 
-#popup_layer{
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 1000;
+h4{
+  font-family: "Italianno";
+  font-size: 40px;
+  color: #555;
+}
+
+/* 팝업창 */
+
+form{
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.popup_box{
-  position: relative;
-  top: 50%; left: 50%;
-  width: 550px;
-  transform: translate((-50%, -50%));
-  z-index: 1002;
-  box-sizing: border-box;
-  background-color: white;
-}
-.popup_box .popup_cont{
-  padding: 50px;
-  line-height: 1.4rem;
-  font-size: 14px;
-  word-break: break-word;
-}
-.popup_box .popup_cont h1{
-  padding: 15px 0;
-  color: #333;
-  margin: 0;
-}
-.popup_box .popup_cont p{
-  border-top: 1px solid #666;
-  padding-top: 30px;
-}
-
-
-.popup_box .popup_btn{
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-  height: 70px;
-  background-color: lightcoral;
-  word-break: break-word;
-}
-.popup_box .popup_btn a{
-  position: relative;
-  display: table-cell;
-  height: 300px;
-  color: #333;
-  font-size: 17px;
-  text-align: center;
-  vertical-align: middle;
-  background-color: aliceblue;
-}
-
-.popup_box .popup_btn a::before{
-  content: '';
-  display: block;
-  position: absolute;
-  top: 25px;
-  right: 29px;
-  width: 1px;
-  height: 21x;
-  background-color: antiquewhite;
-  -moz-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-}
-.popup_box .popup_btn a::after{
-  content: '';
-  display: block;
-  position: absolute;
-  top: 26px;
-  right: 29px;
-  width: 1px;
-  height: 21px;
-  background-color: antiquewhite;
-  -moz-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-}
-
-.popup_box .popup_btn a.closeday{
-  background-color: rgb(19, 33, 94);
-}
-.popup_box .popup_btn a.closeday::before, .popup_box .popup_btn a.closeday::after{
-  display: none;
-}
-
-
-.popup_overlay{
+.divpop {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   position: fixed;
-  top: 0px; right: 0; left: 0; bottom: 0;
-  z-index: 1001;
-  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  width: 430px;
+  height: 230px;
+  border: 1px solid black;
+  background-color:white;
+  display: none;
+  padding: 10px;
+  border-radius: 10px;
 }
+
+.title_area {
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+.title_area h1{
+  margin: 10px 0;
+  font-size: 25px;
+}
+.title_area h3{
+  font-size: 15px;
+}
+.title_area p{
+  font-weight: 300;
+  font-size: 11px;
+  color: #666;
+}
+.button_area{
+  position: relative;
+}
+form .button_area a{
+  color: aliceblue !important;
+  background-color:rgba(118, 21, 74, 1);
+  padding: 10px 50px;
+  border-radius: 50px;
+  position: fixed;
+  bottom: 8px ;
+  right: 10px;
+}
+
+
 
 
 /* header 네비 */
@@ -200,7 +162,7 @@ input:focus {outline:none;}
   pointer-events:auto ;
   cursor: pointer;
 } */
-.icon>img{
+.icon img{
   width: 16px;
   cursor: pointer;
 }
@@ -252,7 +214,38 @@ input:focus {outline:none;}
 }
 .swiper-pagination-bullet{
   background-color: rgba(118, 21, 74, 1)!important;
-  border: 2.5px solid snow;
+}
+
+.about{
+  margin: auto;
+  text-align: center;
+  animation: about .3s ease-in-out;
+}
+
+.about img{
+  width: 1200px;;
+  height: 500px;
+  animation: about2 .5s ease-in-out;
+}
+
+
+@keyframes about {
+  0% {
+    transform: translateY(1%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes about2 {
+  0% {
+    transform: translateY(10%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 
@@ -304,7 +297,7 @@ main>input[type=button]:hover,.tab-button:hover{
 .info{
   display: flex;
   gap: 70px;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 .info>div{
@@ -347,6 +340,7 @@ main>input[type=button]:hover,.tab-button:hover{
   width: 1200px;
   margin: auto;
   margin-top: 70px;
+  margin-bottom: 40px;
 }
 
 .best-seller>h1{
@@ -364,7 +358,7 @@ main>input[type=button]:hover,.tab-button:hover{
 .gallery1 img,
 .gallery2 img{
   width: 200px;
-  margin-left: 70px;
+  margin-left: px;
   background-color: rgb(247, 244, 241);
   border-radius: 50%;
 }
@@ -384,42 +378,36 @@ position: relative;
   bottom: -25px;
 }
 .BS-card h1{
- height: 35px;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 .BS-card h2{
-  margin-bottom: 10px;
   font-size: 23px;
+  font-family: "Italianno";
+  color: #555;
+}
+.BS-card p{
+  font-size: 15px;
 }
 .BS-card a{
   color: aliceblue;
 }
-/* .nav-button-up::after {
-  content: '';
-  border: solid #5a6a72;
-  border-width: 1px 2px 0 0;
-  transform: translateY(-50%) rotate(315deg);
-  display: block;
-  width: 15px;
-  height: 15px;
-  right: 0;
+
+/* Riesling */
+
+.scroll1{
+width: 1200px;
+margin: 50px auto 0;
 }
-.nav-button-down::after {
-  content: '';
-  border: solid #5a6a72;
-  border-width: 1px 2px 0 0;
-  transform: translateY(-50%) rotate(135deg);
-  display: block;
-  width: 15px;
-  height: 15px;
-  right: 0;
+
+.scroll1>.tit{
+  font-family:"Allura";
+  font-size: 40px;
 }
-.nav-button-down,.nav-button-up {
-  float: right;
-  margin-right: px;
-} */
 
 .scroll1 .swiper {
-  margin-top: 100px;
+  margin-top: 70px;
   width: 1200px;
   height: 380px;
 }
@@ -576,4 +564,58 @@ position: relative;
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+body > div.scroll1 > div > div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal{
+--swiper-navigation-size: 44px;
+font-family: "Darker Grotesque";
+list-style: none;
+margin: 0;
+padding: 0;
+color: #333;
+position: absolute;
+text-align: center;
+transition: .3s opacity;
+transform: translate3d(0,0,0);
+z-index: 10;
+bottom:0;
+top: var(--swiper-pagination-top,auto);
+left: 0;
+width: 100%;
+}
+
+.magazine h1, .magazine p{
+  text-align: center;
+}
+.magazine h1{
+  font-size: 50px;
+  font-family: "Allura";
+}
+.magazine>.card{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.card1 img, .card2 img, .card3 img{
+  width: 338px;
+  height: 522px;
+  background-size: cover;
+  margin-top: 15px;
+}
+.card1 h3,.card2 h3, .card3 h3{
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.card2{
+  margin-top: 150px;
+}
+.card3{
+  margin-top: 30px;
+}
+
+.line{
+  width: 1px;
+  height: 500px;
+  background-color: #EFD8B8;
 }

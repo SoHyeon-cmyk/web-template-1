@@ -105,35 +105,74 @@ prevEl: ".swiper-button-prev",
 },
 });
 
-// 쿠키생성
+// // 쿠키생성
 
-function setCookie(name, value, expiredays){
-  var todayDate = new Date();
-  todayDate.setDate(todayDate.getDate() + expiredays);
-  document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString()+";"
-}
+// function setCookie(name, value, expiredays){
+//   var todayDate = new Date();
+//   todayDate.setDate(todayDate.getDate() + expiredays);
+//   document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString()+";"
+// }
 
-// 쿠키저장
+// // 쿠키저장
 
-$(function(){
-  document.querySelector(".popup_box").draggable({containment:'parent', scroll:false});
+// $(function(){
+//   document.querySelector(".popup_box").draggable({containment:'parent', scroll:false});
 
-  if(document.cookie.indexOf("popToday=close")< 0){
-    document.getElementById("popup_layer").style.display = "block"
-  }else{
-    document.getElementById("popup_layer").style.display = "none"
-  }
-});
+//   if(document.cookie.indexOf("popToday=close")< 0){
+//     $("popup_layer").style.display = "block"
+//   }else{
+//     document.getElementById("popup_layer").style.display = "none"
+//   }
+// });
 
-// 버튼작동
+// // 버튼작동
 
-  function closeToday(){
-    setCookie("popToday", "close" , 1);
-    document.getElementById("popup_layer").css("display", "none");
-    document.getElementById("popup_layer").style.display = "none"
-  }
+//   function closeToday(){
+//     setCookie("popToday", "close" , 1);
+//     $("popup_layer").css("display", "none");
+//     document.getElementById("popup_layer").style.display = "none"
+//   }
 
 
-  function closePop(){
-    document.getElementById("popup_layer").style.display = "none"
-  }
+//   function closePop(){
+//     document.getElementById("popup_layer").style.display = "none"
+//   }
+
+    //쿠키설정    
+    function setCookie(name, value, expiredays) {
+      var todayDate = new Date();
+      todayDate.setDate(todayDate.getDate() + expiredays);
+      document.cookie = name + '=' + escape(value) + '; path=/; expires=' + todayDate.toGMTString() + ';'
+    }
+
+    //쿠키 불러오기
+    function getCookie(name) {
+      var obj = name + "=";
+      var x = 0;
+      while (x <= document.cookie.length) {
+        var y = (x + obj.length);
+        if (document.cookie.substring(x, y) == obj) {
+          if ((endOfCookie = document.cookie.indexOf(";", y)) == -1)
+            endOfCookie = document.cookie.length;
+          return unescape(document.cookie.substring(y, endOfCookie));
+        }
+        x = document.cookie.indexOf(" ", x) + 1;
+
+        if (x == 0) break;
+      }
+      return "";
+    }
+
+    //닫기 버튼 클릭시
+    function closeWin(key) {
+      if ($("#todaycloseyn").prop("checked")) {
+        setCookie('divpop' + key, 'Y', 1);
+      }
+      $("#divpop" + key + "").hide();
+    }
+
+    $(function () {
+      if (getCookie("divpop1") != "Y") {
+        $("#divpop1").show();
+      }
+    });
