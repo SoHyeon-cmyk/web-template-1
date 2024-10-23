@@ -194,6 +194,8 @@ input:focus {outline:none;}
   display: flex;
   justify-content: space-around;
   margin: 40px 0;
+  border-top:1px solid rgba(118, 21, 74, 0.6) ;
+  padding-top: 20px;
 }
 .delivery>div{
   width: 230px;
@@ -207,7 +209,11 @@ input:focus {outline:none;}
   line-height: 35px;
   border-radius: 20px;
 }
-
+.pagenation{
+  font-size: 20px;
+  font-weight: bold;
+  
+}
 .tab-section{
   width: 1200px;
   margin-bottom: 300px;

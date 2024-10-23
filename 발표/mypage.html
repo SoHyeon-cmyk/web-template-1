@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style2.css">
+  <title>마이페이지</title>
+  <style>
+    button,
+    input {
+      background: transparent;
+      border: none;
+    }
+  </style>
+</head>
+
+<!-- 상단 내비 -->
+
+<body>
+  <header>
+    <div class="menu">
+      <a href="main2.html"><img src="img/Group 5.png" alt="" class="logo"></a>
+      <ul class="gnb">
+        <li>
+          <a href="#">New</a>
+        </li>
+        <li>
+          <a href="#">All Products</a>
+          <ul class="sub">
+            <li><a href="#">All Wines</a></li>
+            <li><a href="#">Red</a></li>
+            <li><a href="#">White</a></li>
+            <li><a href="#">Sparkling</a></li>
+            <li><a href="#">Rosé</a></li>
+            <li><a href="#">Glass</a></li>
+            <li><a href="#">Others</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Countries&Regions</a>
+          <ul class="sub">
+            <li><a href="#">France</a></li>
+            <li><a href="#">Germany</a></li>
+            <li><a href="#">Italy</a></li>
+            <li><a href="#">Spain</a></li>
+            <li><a href="#">United States</a></li>
+            <li><a href="#">Australia</a></li>
+            <li><a href="#">Other Countries</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Weekly Special</a>
+          <ul class="sub">
+            <li><a href="#">Domaine Jamet</a></li>
+            <li><a href="#">Etienne Sauzet</a></li>
+            <li><a href="#">Domaine pujac blanc</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Pre-Order</a>
+        </li>
+        <ul class="info-icon">
+          <input type="text" id="search-bar">
+          <li class="icon"><img src="img/magnifying-glass-solid 1.png" alt=""></li>
+          <li class="icon"><img src="img/user-solid 1.png" alt=""></li>
+          <li class="icon"><img src="img/cart-shopping-solid 1.png" alt=""></li>
+        </ul>
+        <div id="result">0</div>
+      </ul>
+    </div>
+  </header>
+
+
+
+  <div class="mypage">
+
+    <h1>My page</h1>
+
+    <div class="header_info">
+
+      <div class="profile">
+        <img src="img/img08.jpg" alt="" class="prof">
+        <h3>Name</h3>
+        <p>등급 혜택 보기</p>
+      </div>
+
+      <div class="user_info">
+        <div><a href="">총 적릭급 0원</a></div>
+        <div><a href="">쿠폰 1개</a></div>
+      </div>
+    </div>
+
+    <div class="delivery">
+      <div>입금전</div>
+      <div>배송준비중</div>
+      <div>배송중</div>
+      <div>배송완료</div>
+      <div>
+        <ul>
+          <li>취소: </li>
+          <li>교환: </li>
+          <li>반품: </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ad">주소를 복사하여 친구를 쇼핑몰에 초대해보세요. <button></button></div>
+
+    <div class="tab_nav">
+      <h1>마이메뉴</h1>
+      <nav id="tab-button-nav">
+        <button class="tab-button" data-tab-section="tab-section-1">최근 본 상품</button>
+        <button class="tab-button" data-tab-section="tab-section-2">주문내역</button>
+        <button class="tab-button" data-tab-section="tab-section-3">관심 상품</button>
+        <button class="tab-button" data-tab-section="tab-section-4">리뷰 관리</button>
+        <button class="tab-button" data-tab-section="tab-section-5">1:1 문의</button>
+        <button class="tab-button" data-tab-section="tab-section-6">배송 주소지 관리</button>
+        <button class="tab-button" data-tab-section="tab-section-7">회원 정보 수정</button>
+        <button class="tab-button" data-tab-section="tab-section-8">로그아웃</button>
+      </nav>
+    </div>
+    <main>
+      <br>
+      <section id="tab-section-1" class="tab-section">
+        <div class="tab">
+        <div class="tab-card">
+          <img src="img/bestseller6.png" alt="">
+          <div class="recent">
+            <h3>Schloss
+              Johannisberg
+              Gelblack Riesling
+              Trocken 2022</h3>
+            <h4>용량 ml</h4>
+            <select name="" id="ml">
+              <option>350ml</option>
+              <option>550ml</option>
+              <option>750ml</option>
+            </select>
+          </div>
+        </div>
+        <p>35,000원</p>
+        <button>장바구니</button>
+        <button>주문하기</button>
+      </div>
+      <div class="pagenation"> << 1 >></div>
+
+      
+      </section>
+      <section id="tab-section-2" class="tab-section" hidden>
+        <div class="order_place">
+        <div id="order">
+          <button>주문내역조회</button>
+          <button>취소/반품/교환 내역</button>
+          <button>과거주문내역</button>
+        </div>
+        <div class="order_form">
+          <select name="" id="status">
+            <option>입금전</option>
+            <option>배송준비중</option>
+            <option>배송중</option>
+            <option>배송완료</option>
+            <option>취소</option>
+            <option>환불</option>
+            <option>반품</option>
+          </select>
+          <button>오늘</button>
+          <button>1개월</button>
+          <button>3개월</button>
+          <button>6개월</button>
+          <button>12개월</button>
+          <button>24개월</button>
+        </div>
+          <label for="date">날짜를 선택하세요:</label>
+          <input type="date" id="date" max="2024-10-23" min="2020-01-01">
+          <input type="date" id="date" max="2024-10-23" min="2020-01-01">
+      </div>
+      </section>
+      <section id="tab-section-3" class="tab-section" hidden>
+        <img src="" alt="">
+      </section>
+      <section id="tab-section-4" class="tab-section" hidden>
+        <img src="" alt="">
+      </section>
+      <section id="tab-section-5" class="tab-section" hidden>
+        <img src="" alt="">
+        <button></button>
+      </section>
+      <section id="tab-section-6" class="tab-section" hidden>
+        <h3></h3>
+        <input type="text" value="아이디">
+        <input type="text" value="비밀번호">
+        <input type="text" value="이름">
+        <input type="text" value="주소">
+        <input type="text" value="">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+      </section>
+      <section id="tab-section-7" class="tab-section" hidden>
+      </section>
+    </main>
+  </div>
+
+
+
+  <footer>
+    <div>ⓒWeeklywine EUROPE GmbH All rights reserved.
+      Site by FAVE®</div>
+  </footer>
+
+  <script src="js/script2.js"></script>
+
+  <script>
+    const $nav = document.querySelector('#tab-button-nav')
+    const $sections = document.querySelectorAll('.tab-section');
+
+    $nav.addEventListener('click', (e) => {
+      if (!e.target.classList.contains('tab-button')) {
+        return;
+      }
+
+      const focusedTabId = e.target.dataset.tabSection;
+
+      $sections.forEach(($section) => {
+        if ($section.id === focusedTabId) {
+          $section.removeAttribute('hidden');
+        } else {
+          $section.setAttribute('hidden', true);
+        }
+      });
+
+    });
+  </script>
+</body>
+
+</html>

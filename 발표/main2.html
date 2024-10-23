@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메인페이지</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+  <script src="https://kit.fontawesome.com/632d3e2496.js" crossorigin="anonymous"></script>
+</head>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<!-- <body onLoad="window.open('popup.html','_blank','width=200')"> -->
+
+<body>
+
+  <!-- 팝업창 띄우기 -->
+
+
+ <form name="notice_form">
+    <div id="divpop1" class="divpop">
+      <div class="title_area">
+        <h1>연령 확인</h1>
+        <h3>청소년보호법 제 28조에 따라, <br>
+          Weeklywine을 방문하거나 상품을 구매하기 위해선,<br>
+          법적 성인(만 19세이상)이어야 합니다.</h3>
+        <p>*마케팅 및 자료제공을 위한 Cookie 사용에 동의합니다.</p>
+      </div>
+      <div class="button_area">
+        <input type='checkbox' name='chkbox' id='todaycloseyn' value='Y'> 오늘 하루 이 창을 열지 않음
+        <a href='#' onclick="javascript:closeWin(1);"><B>닫기</B></a>
+      </div>
+    </div>
+  </form>
+
+
+
+  <!-- 상단네비 -->
+
+  <header>
+    <div class="menu">
+      <a href="#"><img src="img/Group 5.png" alt="" class="logo"></a>
+      <ul class="gnb">
+        <li>
+          <a href="#">New</a>
+        </li>
+        <li>
+          <a href="#">All Products</a>
+          <ul class="sub">
+            <li><a href="#">All Wines</a></li>
+            <li><a href="#">Red</a></li>
+            <li><a href="#">White</a></li>
+            <li><a href="#">Sparkling</a></li>
+            <li><a href="#">Rosé</a></li>
+            <li><a href="#">Glass</a></li>
+            <li><a href="#">Others</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Countries&Regions</a>
+          <ul class="sub">
+            <li><a href="#">France</a></li>
+            <li><a href="#">Germany</a></li>
+            <li><a href="#">Italy</a></li>
+            <li><a href="#">Spain</a></li>
+            <li><a href="#">United States</a></li>
+            <li><a href="#">Australia</a></li>
+            <li><a href="#">Other Countries</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Weekly Special</a>
+          <ul class="sub">
+            <li><a href="#">Domaine Jamet</a></li>
+            <li><a href="#">Etienne Sauzet</a></li>
+            <li><a href="#">Domaine pujac blanc</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Pre-Order</a>
+        </li>
+        <ul class="info-icon">
+          <input type="text" id="search-bar">
+          <li class="icon"><img src="img/magnifying-glass-solid 1.png" alt=""></li>
+          <li class="icon"><a href="mypage.html"><img src="img/user-solid 1.png" alt=""></a></li>
+          <li class="icon"><img src="img/cart-shopping-solid 1.png" alt=""></li>
+        </ul>
+        <div id="result">0</div>
+      </ul>
+    </div>
+  </header>
+
+
+<!-- 배너 -->
+
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="img/banner.png" alt=""></div>
+      <div class="swiper-slide"><img src="img/banner2.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="img/banner3.jpg" alt=""></div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <div class="tab_nav">
+    <h1>New</h1>
+    <h3>Be the first to experience</h3>
+    <nav id="tab-button-nav">
+      <button class="tab-button" data-tab-section="tab-section-3">New 3</button>
+      <button class="tab-button" data-tab-section="tab-section-2">New 2</button>
+      <button class="tab-button" data-tab-section="tab-section-1">New 1</button>
+    </nav>
+  </div>
+  <main>
+    <br>
+    <section id="tab-section-3" class="tab-section">
+      <div class="info">
+        <div><img src="img/new1.png" alt=""></div>
+        <article class="info2">
+          <h4>Thorle</h4>
+          <h2>Pertois-Moriset PM05
+            Blanc de Blancs
+            Grand Cru Extra Brut</h2>
+          <p>등급: 샹파뉴 AOC
+
+            지역: Cote des Blancs
+
+            밭: Le Mesnil-sur-Oger, Oger, Cramant, Chouilly(lieux-dits)
+
+           <br> 품종: 100% 샤르도네
+
+            양조: 프렌치 오크 배럴에서 발효
+
+            리저브 와인: 15%
+
+            숙성: 36개월 이상 2차 숙성
+
+            도사주: 2g/L
+          </p>
+        </article>
+      </div>
+    </section>
+    <section id="tab-section-2" class="tab-section" hidden>
+      <div class="info">
+        <div><img src="img/new5.png" alt=""></div>
+        <article class="info2">
+          <h4>Champagne Pertois Moriset
+            Champagne Pertois</h4>
+          <h2>Tenuta San Guido
+            Guidalberto Toscana
+            IGT 2021</h2>
+          <p>Guidalberto는 토스카나 지역의 포도 품종인 산지오베제를 사용하여 만들어지는데,
+            산지오베제는 Bolgheri 지역에서 와인 생산에 가장 적합한 포도 품종 중 하나로 알려져 있습니다.
+
+            Tenuta San Guido의 Guidalberto 와인은 와이너리의 숙련된 와인 제작자들에 의해 섬세하게 만들어집니다.
+          </p>
+        </article>
+      </div>
+    </section>
+    <section id="tab-section-1" class="tab-section" hidden>
+      <div class="info">
+        <div><img src="img/new6.png" alt=""></div>
+        <article class="info2">
+          <h4>Tenuta San Guido
+            Tenuta San Guido</h4>
+          <h2>Thorle Chardonnay
+            2023</h2>
+          <p>이는 와이너리가 지속적으로 품질과 혁신을 추구하며 와인의 훌륭함을 유지하는 데에
+            힘쓰고 있기 때문입니다. Tenuta San Guido의 Guidalberto 와인은 가격 대비 뛰어난 가치를 제공하며, 와인
+            애호가들에게 매우 인기 있는 와인으로 알려져 있습니다.
+          </p>
+        </article>
+      </div>
+    </section>
+    <input type="button" onclick='count("plus")' value="장바구니 담기"></input>
+  </main>
+
+
+  <!-- <div class="best-seller">
+
+    <h1> Best-seller</h1>
+
+     <div class="nav-button-up"></div>
+    <div class="nav-button-down"></div> -->
+
+    <!-- 얘는 정렬 마저 해오기
+    <div class="gallery1">
+      <img src="img/bestseller1.png" alt="">
+      <div class="BS-card">
+        <h2>Schloss Johannisberg</h2>
+        <h1>Schloss
+          Johannisberg
+          Gelblack Riesling
+          Trocken 2022</h1>
+        <button><a href="">About</a></button>
+      </div>
+      <img src="img/bestseller2.png" alt="">
+      <div class="BS-card">
+        <h2>Alta Vina</h2>
+        <h1>La Rioja Alta Vina
+          Ardanza Reserva
+          2016</h1>
+        <button><a href="">About</a></button>
+      </div>
+    </div>
+    <div class="gallery2">
+      <img src="img/bestseller3.png" alt="">
+      <div class="BS-card">
+        <h2>Fattoria Poggio di Sotto</h2>
+        <h1>Fattoria Poggio
+          di <br> Sotto Rosso di
+          Montalcino 2020</h1>
+        <button><a href="">About</a></button>
+      </div>
+      <img src="img/bestseller4.png" alt="">
+      <div class="BS-card">
+        <h2>Fattoria Poggio di Sotto</h2>
+        <h1>Fattoria Poggio
+          di Sotto Brunello <br>
+          di Montalcino
+          DOCG 2018</h1>
+        <button><a href="">About</a></button>
+      </div>
+    </div>
+  </div> -->
+
+<!-- best-seller -->
+
+  <div class="scroll1">
+
+    <h1 class="tit">Best-seller</h1>
+    <div class="line2"></div>
+
+    <div class="swiper mySwiper2">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="ACinfo">
+            <img class="mainimg" src="img/bestseller1.png" alt="">
+            <div class="SL-card">
+              <h1>Schloss
+                Johannisberg
+                Gelblack Riesling
+                Trocken 2022</h1>
+              <p>190,000원</p>
+              <div class="SLinfo">
+                <span class="span1">
+                  <img src="img/france.png" alt="" class="country">
+                  <p class="CTinfo">France</p>
+                </span>
+                <span class="span2">
+                  <img src="img/Group 1.png" alt="" class="iconimg">
+                  <p>Redwine</p>
+                </span>
+                <p class="proof">16.00%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="ACinfo">
+            <img class="mainimg" src="img/bestseller2.png" alt="">
+            <div class="SL-card">
+              <h1>Van Volxem
+                Bockstein
+                Riesling Grosses
+                Gewachs 2021</h1>
+              <p>190,000원</p>
+              <div class="SLinfo">
+                <span class="span1">
+                  <img src="img/france.png" alt="" class="country">
+                  <p class="CTinfo">France</p>
+                </span>
+                <span class="span2">
+                  <img src="img/Group 3.png" alt="" class="iconimg">
+                  <p>Redwine</p>
+                </span>
+                <p class="proof">16.00%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="ACinfo">
+            <img class="mainimg" src="img/bestseller3.png" alt="">
+            <div class="SL-card">
+              <h1>Markus Molitor
+                Haus Klosterberg
+                Riesling Auslese
+                2019</h1>
+              <p>190,000원</p>
+              <div class="SLinfo">
+                <span class="span1">
+                  <img src="img/france.png" alt="" class="country">
+                  <p class="CTinfo">France</p>
+                </span>
+                <span class="span2">
+                  <img src="img/Group 2.png" alt="" class="iconimg">
+                  <p>Redwine</p>
+                </span>
+                <p class="proof">16.00%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="ACinfo">
+            <img class="mainimg" src="img/bestseller4.png" alt="">
+            <div class="SL-card">
+              <h1>Il Poggione
+                Brunello di
+                Montalcino
+                DOCG 2011o
+                DOCG 2011</h1>
+              <p>190,000원</p>
+              <div class="SLinfo">
+                <span class="span1">
+                  <img src="img/france.png" alt="" class="country">
+                  <p class="CTinfo">France</p>
+                </span>
+                <span class="span2">
+                  <img src="img/Group 1.png" alt="" class="iconimg">
+                  <p>Redwine</p>
+                </span>
+                <p class="proof">16.00%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="ACinfo">
+            <img class="mainimg" src="img/bestseller5.png" alt="">
+            <div class="SL-card">
+              <h1>Fattoria Poggio di
+                Sotto Brunello di <br>
+                Montalcino DOCG
+                2018</h1>
+              <p>190,000원</p>
+              <div class="SLinfo">
+                <span class="span1">
+                  <img src="img/france.png" alt="" class="country">
+                  <p class="CTinfo">France</p>
+                </span>
+                <span class="span2">
+                  <img src="img/Group 1.png" alt="" class="iconimg">
+                  <p>Redwine</p>
+                </span>
+                <p class="proof">16.00%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="ACinfo">
+            <img class="mainimg" src="img/bestseller6.png" alt="">
+            <div class="SL-card">
+              <h1>Fattoria Poggio di
+                Sotto Brunello di <br>
+                Montalcino DOCG
+                2018</h1>
+              <p>190,000원</p>
+              <div class="SLinfo">
+                <span class="span1">
+                  <img src="img/france.png" alt="" class="country">
+                  <p class="CTinfo">France</p>
+                </span>
+                <span class="span2">
+                  <img src="img/Group 1.png" alt="" class="iconimg">
+                  <p>Redwine</p>
+                </span>
+                <p class="proof">16.00%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="ACinfo">
+            <img class="mainimg" src="img/bestseller1.png" alt="">
+            <div class="SL-card">
+              <h1>Fattoria Poggio di
+                Sotto Brunello di <br>
+                Montalcino DOCG
+                2018</h1>
+              <p>190,000원</p>
+              <div class="SLinfo">
+                <span class="span1">
+                  <img src="img/france.png" alt="" class="country">
+                  <p class="CTinfo">France</p>
+                </span>
+                <span class="span2">
+                  <img src="img/Group 1.png" alt="" class="iconimg">
+                  <p>Redwine</p>
+                </span>
+                <p class="proof">16.00%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="ACinfo">
+            <img class="mainimg" src="img/bestseller2.png" alt="">
+            <div class="SL-card">
+              <h1>Fattoria Poggio di
+                Sotto Brunello di <br>
+                Montalcino DOCGo
+                DOCG 2011
+                2018</h1>
+              <p>190,000원</p>
+              <div class="SLinfo">
+                <span class="span1">
+                  <img src="img/france.png" alt="" class="country">
+                  <p class="CTinfo">France</p>
+                </span>
+                <span class="span2">
+                  <img src="img/Group 1.png" alt="" class="iconimg">
+                  <p>Redwine</p>
+                </span>
+                <p class="proof">16.00%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+  
+<!-- Riesling -->
+
+  <div class="scroll1">
+
+    <h1 class="tit">Riesling</h1>
+    <div class="line2"></div>
+
+    <div class="swiper mySwiper2">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="ACinfo">
+            <img class="mainimg" src="img/resting.png" alt="">
+            <div class="SL-card">
+              <h1>Fattoria Poggio di
+                Sotto Brunello di <br>
+                Montalcino DOCG
+                2018</h1>
+              <p>190,000원</p>
+              <div class="SLinfo">
+                <span class="span1">
+                  <img src="img/germany.png" alt="" class="country">
+                  <p class="CTinfo">France</p>
+                </span>
+                <span class="span2">
+                  <img src="img/Group 2.png" alt="" class="iconimg">
+                  <p>Redwine</p>
+                </span>
+                <p class="proof">16.00%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="ACinfo">
+            <img class="mainimg" src="img/resting2.png" alt="">
+            <div class="SL-card">
+              <h1>Schloss
+                Johannisberg
+                Gelblack Riesling <br>
+                Trocken 2022</h1>
+              <p>190,000원</p>
+              <div class="SLinfo">
+                <span class="span1">
+                  <img src="img/Italy.svg" alt="" class="country">
+                  <p class="CTinfo">France</p>
+                </span>
+                <span class="span2">
+                  <img src="img/Group 4.png" alt="" class="iconimg">
+                  <p>Redwine</p>
+                </span>
+                <p class="proof">16.00%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="ACinfo">
+            <img class="mainimg" src="img/resting3.png" alt="">
+            <div class="SL-card">
+              <h1>Farnese Edizione
+                Cinque Autoctoni
+                2019 / 2020
+                2018</h1>
+              <p>190,000원</p>
+              <div class="SLinfo">
+                <span class="span1">
+                  <img src="img/france.png" alt="" class="country">
+                  <p class="CTinfo">France</p>
+                </span>
+                <span class="span2">
+                  <img src="img/Group 3.png" alt="" class="iconimg">
+                  <p>Redwine</p>
+                </span>
+                <p class="proof">16.00%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="ACinfo">
+            <img class="mainimg" src="img/resting4.png" alt="">
+            <div class="SL-card">
+              <h1>Bodegas Juan Gil
+                18 Meses Blue
+                Label Monastrell
+                2021 / 2020
+                </h1>
+              <p>190,000원</p>
+              <div class="SLinfo">
+                <span class="span1">
+                  <img src="img/france.png" alt="" class="country">
+                  <p class="CTinfo">France</p>
+                </span>
+                <span class="span2">
+                  <img src="img/Group 2.png" alt="" class="iconimg">
+                  <p>Redwine</p>
+                </span>
+                <p class="proof">16.00%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="ACinfo">
+            <img class="mainimg" src="img/resting5.png" alt="">
+            <div class="SL-card">
+              <h1>Schloss
+                Johannisberg
+                Gelblack Riesling
+                Trocken 2022
+                2018</h1>
+              <p>190,000원</p>
+              <div class="SLinfo">
+                <span class="span1">
+                  <img src="img/france.png" alt="" class="country">
+                  <p class="CTinfo">France</p>
+                </span>
+                <span class="span2">
+                  <img src="img/Group 2.png" alt="" class="iconimg">
+                  <p>Redwine</p>
+                </span>
+                <p class="proof">16.00%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="ACinfo">
+            <img class="mainimg" src="img/resting6.png" alt="">
+            <div class="SL-card">
+              <h1>Fattoria Poggio di
+                Sotto Brunello di <br>
+                Montalcino DOCG
+                2018</h1>
+              <p>190,000원</p>
+              <div class="SLinfo">
+                <span class="span1">
+                  <img src="img/france.png" alt="" class="country">
+                  <p class="CTinfo">France</p>
+                </span>
+                <span class="span2">
+                  <img src="img/Group 1.png" alt="" class="iconimg">
+                  <p>Redwine</p>
+                </span>
+                <p class="proof">16.00%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="ACinfo">
+            <img class="mainimg" src="img/resting7.png" alt="">
+            <div class="SL-card">
+              <h1>Schloss
+                Johannisberg
+                Gelblack Riesling
+                Trocken 2022
+                2018</h1>
+              <p>190,000원</p>
+              <div class="SLinfo">
+                <span class="span1">
+                  <img src="img/france.png" alt="" class="country">
+                  <p class="CTinfo">France</p>
+                </span>
+                <span class="span2">
+                  <img src="img/Group 4.png" alt="" class="iconimg">
+                  <p>Redwine</p>
+                </span>
+                <p class="proof">16.00%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="ACinfo">
+            <img class="mainimg" src="img/resting.png" alt="">
+            <div class="SL-card">
+              <h1>Fattoria Poggio di
+                Sottoo
+                DOCG 2011 
+                2018</h1>
+              <p>190,000원</p>
+              <div class="SLinfo">
+                <span class="span1">
+                  <img src="img/france.png" alt="" class="country">
+                  <p class="CTinfo">France</p>
+                </span>
+                <span class="span2">
+                  <img src="img/Group 2.png" alt="" class="iconimg">
+                  <p>Redwine</p>
+                </span>
+                <p class="proof">16.00%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+
+
+<!-- special -->
+
+<div class="special">
+
+
+  <h1>Special</h1>
+  <p>Experience the essence of our exquisite wines, <br> each one a masterpiece of nature and craftsmanship, carefully aged to perfection.</p>
+  <img class="bg" src="img/special_img3 (2).jpg" alt="">
+  <div></div>
+  <img class="wine" src="img/special_img1.jpg" alt="">
+</div>
+
+
+
+
+  <!-- magazine -->
+
+
+  <div class="magazine">
+
+    <h1>Magazine</h1>
+
+    <p>At Weeklywine, we believe that every glass of wine tells a story, a tale of the <br>
+      land, the grape, and the people who made it possible.</p>
+
+
+    <div class="card">
+      <div class="card1">
+        <h3>Magazin 06. - Old Vintage <br> Tasting Part.3</h3>
+        <img src="img/magazine.png" alt="">
+      </div>
+      <div class="line"></div>
+      <div class="card2">
+        <h3>Video - Burgundy, France</h3>
+        <img src="img/magazine2.png" alt="">
+      </div>
+      <div class="line"></div>
+      <div class="card3">
+        <h3>Video - Bordeaux, France</h3>
+        <img src="img/magazine3.png" alt="">
+      </div>
+    </div>
+
+  </div>
+
+
+<h1 class="footer_logo">Weekly</h1>
+
+
+
+<footer>
+  <div>ⓒWeeklywine EUROPE GmbH All rights reserved.
+    Site by FAVE®</div>
+</footer>
+
+</body>
+
+</html>
