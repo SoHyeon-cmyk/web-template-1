@@ -1,18 +1,31 @@
-*{margin: 0; padding: 0;
-color:#333;}
-ul,li{list-style: none;}
-a{text-decoration: none; color: inherit;}
-
-
-
-
-
-
-header{
-  width: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  color: #333;
 }
 
-header nav{
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+
+/* 헤더영역 */
+
+header {
+  width: 1200px;
+  /* position: relative; */
+  margin: auto;
+}
+
+header nav {
   color: rgb(49, 50, 59);
   width: 1200px;
   display: flex;
@@ -21,63 +34,172 @@ header nav{
   margin: auto;
   padding: 10px 20px;
 }
-header ul{
+
+header ul {
   display: flex;
   gap: 20px;
   border: 1px solid rgb(49, 50, 59);
   padding: 10px 30px;
   border-radius: 50px;
-}
-.banner >img{
-  width: 100%;
-  height: 700px;
+
+  
 }
 
-.profile{
+/* 배너영역 */
+
+
+.banner {
+  background-image: url(../img/blurred-abstract-background.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 500px;
+  position: relative;
+  pointer-events: none;
+
+}
+
+.banner img {
+  position: absolute;
+  width: 260px;
+  left: 48%;
+  bottom: 32%;
+  animation: up .8s ease-in-out;
+}
+
+.banner h2 {
+  font-size: 100px;
+  text-align: center;
+  line-height: 480px;
+  position: absolute;
+  left: calc(50% - 220px);
+  color: aliceblue;
+  animation: down .6s ease-in-out;
+}
+.banner h4{
+  position: absolute;
+  color: aliceblue;
+  left:33.2%;
+  line-height: 600px;
+  font-weight: 500;
+  animation: down .8s ease-in-out 0.1s;
+}
+
+@keyframes down {
+  0% {
+    transform: translateY(2%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes up {
+  0% {
+    transform: translateY(4%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* 프로필영역 */
+
+
+.profile {
   width: 1200px;
-  padding: 20px 100px;
+  padding: 20px 0px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   position: relative;
+  margin: 100px auto 0;
 }
-.profile h1{
+
+.profile h1 {
   position: absolute;
+  top: -50px;
+  font-size: 40px;
+  left: 0;
 }
 
-.profile_left{
-margin-top: 50px;
+.profile_left {
+  margin-top: 50px;
 }
 
-.profile_left img{
+.profile_left img {
   background-color: antiquewhite;
   width: 220px;
   height: 220px;
   border-radius: 50%;
   margin-bottom: 30px;
 }
-.profile_left h3, ul{
-}
-.profile_left li{
+
+.profile_left li {
   margin: 30px 0;
   letter-spacing: 1px;
 }
 
-.card1{
-  margin-top: 100px;
-}
-.card2{
- margin-top: 150px; 
-}
-.skill_card img{
-  width: 100px;
-  height: 100px;
+.card{
+  width: 350px;
 }
 
-.skill_card:nth-of-type(4) img{
+.card1 {
+  margin-top: 100px;
+}
+
+.card2 {
+  margin-top: 150px;
+}
+
+
+
+/* 스킬영역 */
+
+.skill img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 10px;
+}
+.skill_card:nth-of-type(4) img {
   border-radius: 20px;
 }
-.tool_card img{
-  width: 100px;
-  height: 100px;
+
+.skill{
+  width: 1200px;
+  height: 600px;
+  margin: auto;
+}
+.skill h1{
+  margin-top: 10px;
+  font-size: 40px;
+}
+
+.lagauage{
+  display: flex;
+  gap: 50px;
+  margin-top: 120px;
+  justify-content: center;
+}
+.tools{
+  display: flex;
+  margin-top: 120px;
+  gap: 50px;
+  justify-content: center;
+}
+.Figma{
+  background-color: #333;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.skill_card, .tool_card{
+  width: 220px;
+  height: 150px;
+  background-color: aliceblue;
+  padding: 10px;
+  box-sizing: border-box;
 }
