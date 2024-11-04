@@ -13,6 +13,10 @@ a {
   text-decoration: none;
   color: inherit;
 }
+body{
+  position: relative;
+  background-color: rgb(247, 245, 243);
+}
 
 
 
@@ -68,7 +72,7 @@ header ul {
 .banner img {
   position: absolute;
   width: 260px;
-  left: 50%;
+  left: 49.2%;
   bottom: 32%;
   animation: up .8s ease-in-out;
 }
@@ -79,12 +83,12 @@ header ul {
   line-height: 480px;
   position: absolute;
   left: calc(50% - 220px);
-  color: aliceblue;
+  color: white;
   animation: down .6s ease-in-out;
 }
 .banner h4{
   position: absolute;
-  color: aliceblue;
+  color: white;
   left:33.2%;
   line-height: 600px;
   font-weight: 500;
@@ -114,25 +118,32 @@ header ul {
 /* 프로필영역 */
 
 
-.profile {
+.profile_form {
   width: 1200px;
-  padding: 20px 0px;
+  padding: 40px;
   box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
+  border: 1px solid white;
+  border-radius: 20px;
   position: relative;
-  margin: 100px auto 0;
+  margin: 100px auto 160px;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(3px);
+  
 }
 
-.profile h1 {
-  position: absolute;
-  top: -50px;
-  font-size: 40px;
-  left: 0;
+.profile{
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile_form h1 {
+position: absolute;
+font-size: 50px;
 }
 
 .profile_left {
-  margin-top: 50px;
+  margin-top: 100px;
+  margin-left: 30px;
 }
 
 .profile_left img {
@@ -148,6 +159,11 @@ header ul {
   letter-spacing: 1px;
 }
 
+
+.profile_right{
+  margin-top: 50px;
+  margin-right: 50px;
+}
 .card{
   width: 350px;
 }
@@ -164,9 +180,30 @@ header ul {
 
 /* 스킬영역 */
 
+.pie-chart{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+}
+
+.graph-wrap{
+    display:flex;
+    gap: 50px;
+}
+.circle-graph {
+    position:relative;
+}
+.circle-graph > strong {
+    position:absolute; 
+    top:50%; 
+    left:50%; 
+    transform:translate(-50%, -50%);
+    font-size:2rem;
+}
 .skill img {
-  width: 70px;
-  height: 70px;
+  width: 55px;
+  height: 55px;
   margin-bottom: 10px;
 }
 .skill_card:nth-of-type(4) img {
@@ -175,27 +212,29 @@ header ul {
 
 .skill{
   width: 1200px;
-  height: 800px;
+  height: 900px;
   margin: auto;
   box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid white;
+  backdrop-filter: blur(3px);
+  border-radius: 20px;
+  padding: 20px;
 }
 .skill h1{
   margin-bottom: 100px;
-  margin-top: 10px;
-  font-size: 60px;
-}
-.skill h2{
-  margin-bottom: 50px;
+  font-size: 50px;
 }
 .lagauage{
   display: flex;
-  gap: 50px;
+  gap: 30px;
   justify-content: center;
   margin-bottom: 50px;
 }
 .tools{
   display: flex;
-  gap: 50px;
+  gap: 10px;
+
   
   justify-content: center;
 }
@@ -206,12 +245,26 @@ header ul {
   border-radius: 15px;
 }
 
+
+/* 카드별로 색상 변경해오기 */
 .skill_card, .tool_card{
-  width: 250px;
-  height: 160px;
-  border: 1px solid black;
-  padding: 10px;
+  width: 300px;
+  height: 200px;
+  background:linear-gradient(150deg,rgba(255,255,154,0.2),rgba(230,235,255,0.2),rgba(255,169,194,0.2),rgba(254,89,87,0.2));
+ background-color: 0.1;
+  border: 1px solid white;
+  backdrop-filter: blur(3px);
+  border-radius: 20px;
+  padding: 15px;
   box-sizing: border-box;
+  position: relative;
+  
+}
+.skill_card img, .tool_card img{
+}
+
+.tool_card p, .tool_card h1, .tool_card h4{
+  margin: 7px 0;
 }
 
 
@@ -219,19 +272,130 @@ header ul {
 
 /* 아카이브 안내영역*/
 .archive{
-  margin: auto;
   width: 1200px;
-  display: flex;
-  justify-content: space-around;
+  border: 1px solid white;
+  padding: 20px 20px 50px;
+  border-radius: 20px;
+  justify-content: space-between;
+  position: relative;
+  margin: 100px auto 160px;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(3px);
 }
 
+.archive h1{
+  margin-bottom: 70px;
+  font-size: 50px;
+}
 
+.arc{
+  display: flex;
+  justify-content: space-around;
+  
+}
 .archive img{
   width: 100px;
   height: 100px;
+  margin-top: 50px;
+  border-radius: 20px;
 }
 
-.git_hub, .behance{
+.git_hub, .behance, .notion{
   text-align: center;
-  
+  width: 300px;
+  height: 500px;
+  background:linear-gradient(to bottom,rgba(255,255,255,0.7), transparent);
+  border: 2px solid white;
+  backdrop-filter: blur(3px);
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
 }
+
+
+
+
+/* 뒷배경 */
+
+
+
+.wave-forms{
+  width: 100%;
+  height: 800px;
+  position: fixed;
+  bottom: 100px;
+  z-index: -600;
+}
+
+.waves {
+  position:absolute;
+  width: 100%;
+  height:15vh;
+  min-height:100px;
+  max-height:150px;
+  bottom: 0;
+}
+
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  .content {
+    height:30vh;
+  }
+  h1 {
+    font-size:24px;
+  }
+}
+
+.bottom{
+  width: 100%;
+  height: 100px;
+  background-color: rgb(249, 145, 155);
+  position: fixed;
+  bottom: 0;
+}
+
+button[type=button]{
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  outline: none;
+}
+
+

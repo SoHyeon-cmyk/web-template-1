@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+
+.pie-chart{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+}
+
+.graph-wrap{
+    display:flex;
+    gap: 50px;
+}
+.circle-graph {
+    position:relative;
+}
+.circle-graph > strong {
+    position:absolute; 
+    top:50%; 
+    left:50%; 
+    transform:translate(-50%, -50%);
+    font-size:2rem;
+}
+.skill img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 10px;
+}
+.skill_card:nth-of-type(4) img {
+  border-radius: 20px;
+}
+
+.skill{
+  width: 1200px;
+  height: 900px;
+  margin: auto;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid white;
+  backdrop-filter: blur(3px);
+  border-radius: 20px;
+  padding: 20px;
+}
+.skill h1{
+  margin-bottom: 100px;
+  font-size: 50px;
+}
+.lagauage{
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.tools{
+  display: flex;
+  gap: 30px;
+
+  
+  justify-content: center;
+}
+.Figma{
+  background-color: #333;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.skill_card, .tool_card{
+  width: px;
+  height: 200px;
+  border: 1px solid black;
+  padding: 15px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.tool_card img{
+  width: 50px;
+  margin-top: 5px;
+}
+.tool_card p, .tool_card h1, .tool_card h4{
+  margin: 10px 0;
+}
+</style>
+<body>
+  <div class="tool_card">
+    <img src="img/photoshop_5968520.png" alt="">
+    <h4>포토샵</h4>
+    <h4>Photoshop</h4>
+    <p>사진 편집 및, 누끼/합성</p>
+
+    <div class="pie-chart">
+    <div class="graph-wrap active-on-visible" data-active-on-visible-callback-func-name="CircleRun">
+        <div class="circle-graph" circleProgress='87'>
+            <strong class="circle-percent"></strong>
+          </div>
+        </div>
+        <h4>숙련도</h4>
+      </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+  
+아휴 하기 싫어
+
+
+<script>
+  let circleGraph = $('.circle-graph');
+let perNum = circleGraph.attr('circleProgress');
+  
+circleGraph.circleProgress({
+  size: 100, // 그래프 크기
+  value: perNum / 100, // 그래프에 표시될 값
+  startAngle: 300, // 시작지점
+  thickness: 5, // 그래프 두께
+  fill: { // 그래프 선 색
+    gradient: ["#e5ecff","#ffadc7", "#ffadc7","#ff5756"],
+    gradientAngle: Math.PI / 4
+  },
+  animation: {
+    duration: 2200,
+    easing: "swing"
+  },
+  lineCap: "butt", // 그래프 선 모양
+  reverse: false // 그래프가 진행되는 방향
+}).on('circle-animation-progress', function (event, progress) {
+  // 그래프 애니메이션이 진행되는 동안
+  // progress - 현재 진행 상태 0.0 ~ 1.0
+  $(this).find('.circle-percent').html(Math.round(perNum * progress) + '<i>%</i>');
+});
+</script>
+</body>
+</html>
