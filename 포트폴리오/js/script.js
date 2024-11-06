@@ -45,3 +45,6 @@ circleGraph.circleProgress({
   $(this).find('.circle-percent').html(Math.round(perNum * progress) + '<i>%</i>');
 });
 
+
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .bluesky{
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to right, #111, #0e0f19);
+      overflow: hidden;
+    }
+
+    .sky{
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: movestar 204s infinite;
+    }
+
+    .sky .star{
+      fill: white;
+      stroke: none;
+      stroke-width: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="backsky">
+    <svg class="sky"></svg>
+  </div>
+</body>
+</html>

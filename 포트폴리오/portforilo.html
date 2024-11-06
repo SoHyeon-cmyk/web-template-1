@@ -19,10 +19,10 @@
     display:flex;
     gap: 50px;
 }
-.circle-graph1,.circle-graph2 {
+.circle-graph {
     position:relative;
 }
-.circle-graph1> strong,.circle-graph2> strong {
+.circle-graph> strong{
     position:absolute; 
     top:50%; 
     left:50%; 
@@ -99,8 +99,8 @@
 
     <div class="pie-chart">
     <div class="graph-wrap active-on-visible" data-active-on-visible-callback-func-name="CircleRun">
-        <div class="circle-graph1" id="PS" circleProgress1='87'>
-            <strong class="circle-percent1"></strong>
+        <div class="circle-graph" id="PS" circleProgress='87'>
+            <strong class="circle-percent"></strong>
           </div>
         </div>
         <h4>숙련도</h4>
@@ -132,18 +132,34 @@
 
 
 <script>
-  let circleGraph = $('.circle-graph2');
+  let circleGraph = $('.circle-graph');
   let ps = $('#PS');
   let ps2 = $('#PS2');
   var num = 0
 
-  // let perNum = circleGraph.attr('circleProgress');
-let perNum = circleGraph.attr(`circleProgress${num+2}`);
+  let perNum = circleGraph.attr('circleProgress');
+// let perNum = circleGraph.attr(`circleProgress${num+1}`);
 
-$.each(function(perNum){
-  
-})
 
+
+
+// circleGraph.circleProgress({
+//   size: 100, // 그래프 크기
+//   value: perNum / 100, // 그래프에 표시될 값
+//   startAngle: 300, // 시작지점
+//   thickness: 5, // 그래프 두께
+//   lineCap: "butt", // 그래프 선 모양
+//   reverse: false, // 그래프가 진행되는 방향
+//   gradientAngle: Math.PI / 4,
+//   animation: {
+//     duration: 2200,
+//     easing: "swing"
+//   },
+// })  .on('circle-animation-progress', function (event, progress) {
+//   // 그래프 애니메이션이 진행되는 동안
+//   // progress - 현재 진행 상태 0.0 ~ 1.0
+//   $(this).find('circle-percent').html(Math.round(perNum * progress) + '<i>%</i>');
+// });
 
 
 
@@ -151,16 +167,22 @@ circleGraph.circleProgress({
   size: 100, // 그래프 크기
   value: perNum / 100, // 그래프에 표시될 값
   startAngle: 300, // 시작지점
-  thickness: 5, // 그래프 두께
-
+  thickness: 6, // 그래프 두께
+  fill: { // 그래프 선 색
+    gradient: ["#e5ecff","#ffadc7", "#ffadc7","#ff5756"],
+    gradientAngle: Math.PI / 4
+  },
   animation: {
     duration: 2200,
     easing: "swing"
   },
+  lineCap: "butt", // 그래프 선 모양
+  reverse: false // 그래프가 진행되는 방향
+}).on('circle-animation-progress', function (event, progress) {
+  // 그래프 애니메이션이 진행되는 동안
+  // progress - 현재 진행 상태 0.0 ~ 1.0
+  $(this).find('.circle-percent').html(Math.round(perNum * progress) + '<i>%</i>');
 });
-
-
-
 
 
 
@@ -169,27 +191,14 @@ circleGraph.circleProgress({
 ps.circleProgress({
   fill: { // 그래프 선 색
     gradient: ["#e5ecff","#ffadc7", "#ffadc7","#ff5756"],
-    gradientAngle: Math.PI / 4
-  },  lineCap: "butt", // 그래프 선 모양
-  reverse: false // 그래프가 진행되는 방향
+  }
 })
-  .on('circle-animation-progress', function (event, progress) {
-  // 그래프 애니메이션이 진행되는 동안
-  // progress - 현재 진행 상태 0.0 ~ 1.0
-  $(this).find(`.circle-percent${num+2}`).html(Math.round(perNum * progress) + '<i>%</i>');
-});
+
 ps2.circleProgress({
   fill: { // 그래프 선 색
     gradient: ["#e5ecff","#ffadc7"],
-    gradientAngle: Math.PI / 4
-  },  lineCap: "butt", // 그래프 선 모양
-  reverse: false // 그래프가 진행되는 방향
+  },
 })
-  .on('circle-animation-progress', function (event, progress) {
-  // 그래프 애니메이션이 진행되는 동안
-  // progress - 현재 진행 상태 0.0 ~ 1.0
-  $(this).find(`.circle-percent${num+2}`).html(Math.round(perNum * progress) + '<i>%</i>');
-});
 
 
 </script>
