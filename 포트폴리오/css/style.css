@@ -20,6 +20,199 @@ body{
 
 
 
+/* 뒷배경 */
+
+
+
+#wave-forms{
+  width: 100%;
+  height: 800px;
+  position: fixed;
+  bottom: 100px;
+  z-index: -600;
+  /* display: none; */
+}
+
+.waves {
+  position:absolute;
+  width: 100%;
+  height:15vh;
+  min-height:100px;
+  max-height:150px;
+  bottom: 0;
+}
+
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  .content {
+    height:30vh;
+  }
+  h1 {
+    font-size:24px;
+  }
+}
+
+.bottom{
+  width: 100%;
+  height: 100px;
+  background-color: rgb(249, 145, 155);
+  position: fixed;
+  bottom: 0;
+}
+
+button[type=button]{
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+}
+
+
+
+#backSky {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: none;
+}
+
+.notie{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: -webkit-linear-gradient(top, rgb(0, 0, 0) 50%, rgb(20, 30, 60)90%, rgb(27, 43, 77));
+}
+
+/* 별 */
+.notie .star {
+  fill: #fff;
+  stroke: none;
+  stroke-width: 0;
+  animation: moveStar 600s linear infinite;
+}
+
+
+/* 별 이동효과 */
+@keyframes moveStar {
+  from {
+    transform: translate(-50%, -50%) rotate(0)
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg)
+  }
+
+}
+
+
+
+.meteoro {
+  position: absolute;
+  background-color: #fff;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  transform: rotate(-35deg);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  z-index: 100;
+}
+
+.meteoro:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 0;
+  height: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 85px solid white;
+  position: absolute;
+  left: 2px;
+  top: 0;
+  z-index: 100;
+}
+
+.meteoro.style1 { animation-name: meteoroStyle1; }
+.meteoro.style2 { animation-name: meteoroStyle2; }
+.meteoro.style3 { animation-name: meteoroStyle3; }
+.meteoro.style4 { animation-name: meteoroStyle4; }
+
+
+@keyframes meteoroStyle1 {
+  0% { opacity: 0; right: 300px; top: 100px; }
+  30% { opacity: .3; }
+  60% { opacity: .3; }
+  100% { opacity: 0; right: 1000px; top: 600px; }
+}
+
+@keyframes meteoroStyle2 {
+  0% { opacity: 0; right: 700px; top: 100px; }
+  30% { opacity: 1; }
+  60% { opacity: 1; }
+  100% { opacity: 0; right: 1400px; top: 600px; }
+}
+
+@keyframes meteoroStyle3 {
+  0% { opacity: 0; right: 300px; top: 300px; }
+  30% { opacity: 1; }
+  60% { opacity: 1; }
+  100% { opacity: 0; right: 1000px; top: 800px; }
+}
+
+@keyframes meteoroStyle4 {
+  0% { opacity: 0; right: 700px; top: 300px; }
+  30% { opacity: 1; }
+  60% { opacity: 1; }
+  100% { opacity: 0; right: 1400px; top: 800px; }
+}
+
+
+
+
+
 
 /* 헤더영역 */
 
@@ -126,7 +319,7 @@ header ul {
   border-radius: 20px;
   position: relative;
   margin: 100px auto 160px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background:linear-gradient(to bottom,rgba(255,255,255,0.6), rgba(255,255,255,0.2));
   backdrop-filter: blur(3px);
   
 }
@@ -215,7 +408,7 @@ font-size: 50px;
   height: 900px;
   margin: auto;
   box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.6);
+  background:linear-gradient(to bottom,rgba(255,255,255,0.6), rgba(255,255,255,0.2));
   border: 1px solid white;
   backdrop-filter: blur(3px);
   border-radius: 20px;
@@ -279,7 +472,7 @@ font-size: 50px;
   justify-content: space-between;
   position: relative;
   margin: 100px auto 160px;
-  background-color: rgba(255, 255, 255, 0.3);
+ background:linear-gradient(to bottom,rgba(255,255,255,0.6), rgba(255,255,255,0.2));
   backdrop-filter: blur(3px);
 }
 
@@ -304,7 +497,7 @@ font-size: 50px;
   text-align: center;
   width: 300px;
   height: 500px;
-  background:linear-gradient(to bottom,rgba(255,255,255,0.7), transparent);
+  background:linear-gradient(to bottom,rgba(255,255,255,0.5), transparent);
   border: 2px solid white;
   backdrop-filter: blur(3px);
   border-radius: 20px;
@@ -315,97 +508,8 @@ font-size: 50px;
 
 
 
-/* 뒷배경 */
 
 
 
-.wave-forms{
-  width: 100%;
-  height: 800px;
-  position: fixed;
-  bottom: 100px;
-  z-index: -600;
-}
-
-.waves {
-  position:absolute;
-  width: 100%;
-  height:15vh;
-  min-height:100px;
-  max-height:150px;
-  bottom: 0;
-}
 
 
-/* Animation */
-
-.parallax > use {
-  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
-}
-.parallax > use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 7s;
-}
-.parallax > use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 10s;
-}
-.parallax > use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 13s;
-}
-.parallax > use:nth-child(4) {
-  animation-delay: -5s;
-  animation-duration: 20s;
-}
-@keyframes move-forever {
-  0% {
-   transform: translate3d(-90px,0,0);
-  }
-  100% { 
-    transform: translate3d(85px,0,0);
-  }
-}
-/*Shrinking for mobile*/
-@media (max-width: 768px) {
-  .waves {
-    height:40px;
-    min-height:40px;
-  }
-  .content {
-    height:30vh;
-  }
-  h1 {
-    font-size:24px;
-  }
-}
-
-.bottom{
-  width: 100%;
-  height: 100px;
-  background-color: rgb(249, 145, 155);
-  position: fixed;
-  bottom: 0;
-}
-
-button[type=button]{
-  position: fixed;
-  bottom: 5vh;
-  right: 5vw;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  
-}
-
-
-@media (prefers-color-scheme: light) {
-  :root{
-    --color:white;
-    
-  }
-}

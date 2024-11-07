@@ -1,264 +1,164 @@
-<!-- <div class="tab_nav">
-  <h1>마이메뉴</h1>
-  <nav id="tab-button-nav">
-    <button class="tab-button" data-tab-section="tab-section-1">Type</button>
-    <button class="tab-button" data-tab-section="tab-section-2">숙련도</button>
-  </nav>
-</div>
-<main>
-  <br>
-  <section id="tab-section-1" class="tab-section">
-    
-  </section>
-  <section id="tab-section-2" class="tab-section" hidden>
-    sdfsdfsdf
-  </section>
-</main>
-</div>
-<script>
-  const $nav = document.querySelector('#tab-button-nav')
-  const $sections = document.querySelectorAll('.tab-section');
-
-  $nav.addEventListener('click', (e) => {
-    if (!e.target.classList.contains('tab-button')) {
-      return;
-    }
-    
-    const focusedTabId = e.target.dataset.tabSection;
-
-    $sections.forEach(($section) => {
-      if ($section.id === focusedTabId) {
-        $section.removeAttribute('hidden');
-      } else {
-        $section.setAttribute('hidden', true);
-      }
-    });
-
-  });
-</script> -->
-<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-</head>
-<body>
-  <div class="section__container">
-    <div class="work__categories">
-      <button class="category__btn active" data-filter="*">All<span class="category__count active">5</span></button>
-      <button class="category__btn" data-filter="js">Javascript<span class="category__count">3</span></button>
-      <button class="category__btn" data-filter="react">React<span class="category__count">2</span></button>
-    </div>
-    <div class="work__projects">
-      <a href="#" class="project" target="blank" data-filter="js">
-      ...
-    </section>
 
-    <script>
-      const workCategories = document.querySelector('.work__categories');
-      const workProjects = document.querySelector('.work__projects');
-      const project = document.querySelector('.project');
-
-      workCategories.addEventListener('click', (event) =>{
-        const filter = event.target.dataset.filter ||
-        event.target.parentNode.dataset.filter
-        console.log(filter)
-      })
-    </script>
-</body>
-</html> -->
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <title>Swiper demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-  <!-- Demo styles -->
   <style>
-    html,
-    body {
-      position: relative;
-      height: 100%;
-    }
 
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
+* {
+  box-sizing: content-box;
+}
 
-    .swiper {
-      width: 100%;
-      height: 100%;
-    }
-
-    .swiper-slide {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .swiper-slide img {
-      display: block;
-    }
-
-    @media only screen and (min-width: 769px) {
-      .swiper-slide:first-child {
-        transition: transform 100ms;
-      }
-
-      .swiper-slide:first-child img {
-        transition: box-shadow 500ms;
-      }
-
-      .swiper-slide.swiper-slide-active:first-child {
-        transform: translateX(50%);
-        z-index: 2;
-      }
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
 
 
-      .swiper-slide:nth-child(2) {
-        transition: transform 100ms;
-      }
+.noite {
+  background: -webkit-linear-gradient(top, rgb(0, 0, 0) 50%, rgb(20, 30, 60)90%, rgb(27, 43, 77));
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
 
-      .swiper-slide.swiper-slide-next:nth-child(2) {
-        transform: translateX(55%);
-        z-index: 1;
-      }
 
-      .swiper[dir="rtl"] .swiper-slide.swiper-slide-active:first-child {
-        transform: translateX(-50%);
-      }
+.meteoro {
+  position: absolute;
+  background-color: #fff;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  transform: rotate(-35deg);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
 
-      .swiper[dir="rtl"] .swiper-slide.swiper-slide-next:nth-child(2) {
-        transform: translateX(-55%);
-      }
-    }
-    .tool{
-      display: flex;
-      gap: 20px;
-    }
-    .tool_icon{
-      width: 50px;
-    }
+.meteoro:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 0;
+  height: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 85px solid white;
+  position: absolute;
+  left: 2px;
+  top: 0;
+}
+
+.meteoro.style1 { animation-name: meteoroStyle1; }
+.meteoro.style2 { animation-name: meteoroStyle2; }
+.meteoro.style3 { animation-name: meteoroStyle3; }
+.meteoro.style4 { animation-name: meteoroStyle4; }
+
+
+@keyframes meteoroStyle1 {
+  0% { opacity: 0; right: 300px; top: 100px; }
+  30% { opacity: .3; }
+  60% { opacity: .3; }
+  100% { opacity: 0; right: 1000px; top: 600px; }
+}
+
+@keyframes meteoroStyle2 {
+  0% { opacity: 0; right: 700px; top: 100px; }
+  30% { opacity: 1; }
+  60% { opacity: 1; }
+  100% { opacity: 0; right: 1400px; top: 600px; }
+}
+
+@keyframes meteoroStyle3 {
+  0% { opacity: 0; right: 300px; top: 300px; }
+  30% { opacity: 1; }
+  60% { opacity: 1; }
+  100% { opacity: 0; right: 1000px; top: 800px; }
+}
+
+@keyframes meteoroStyle4 {
+  0% { opacity: 0; right: 700px; top: 300px; }
+  30% { opacity: 1; }
+  60% { opacity: 1; }
+  100% { opacity: 0; right: 1400px; top: 800px; }
+}
+.dark_mode{
+  /* display: none; */
+}
+
   </style>
 </head>
-
-
 <body>
-  <!-- Swiper -->
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="PORT-card">
-          <img src="" alt="">
-          <h2>Project name</h2>
-          <p>explain</p>
-          <div class="tool">
-          <img src="img/illustrator_5968472.png" alt="" class="tool_icon">
-          <img src="img/photoshop_5968520.png" alt="" class="tool_icon">
-        </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="PORT-card">
-          <img src="" alt="">
-          <h2>Project name</h2>
-          <p>explain</p>
-          <div class="tool">
-          <img src="img/illustrator_5968472.png" alt="" class="tool_icon">
-          <img src="img/photoshop_5968520.png" alt="" class="tool_icon">
-        </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="PORT-card">
-          <img src="" alt="">
-          <h2>Project name</h2>
-          <p>explain</p>
-          <div class="tool">
-          <img src="img/illustrator_5968472.png" alt="" class="tool_icon">
-          <img src="img/photoshop_5968520.png" alt="" class="tool_icon">
-        </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="PORT-card">
-          <img src="" alt="">
-          <h2>Project name</h2>
-          <p>explain</p>
-          <div class="tool">
-          <img src="img/illustrator_5968472.png" alt="" class="tool_icon">
-          <img src="img/photoshop_5968520.png" alt="" class="tool_icon">
-        </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
+  
+<!-- create by adriano.interaminense@gmail.com
+full screen for better viewing -->
+<div class="dark_mode">
+<div class="noite"></div>
+  <div class="constelacao"></div>
+  <div class="chuvaMeteoro"></div>
+</div>
 
-      </div>
-      <div class="swiper-slide">
+<script>
 
-      </div>
-      <div class="swiper-slide">
 
-      </div>
-      <div class="swiper-slide">
+function init(){
 
-      </div>
-      <div class="swiper-slide">
+//estrelas
 
-      </div>
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-scrollbar"></div>
-    <div class="swiper-pagination"></div>
-  </div>
+var style = ["style1", "style2", "style3", "style4"];
+var tam = ["tam1", "tam1", "tam1", "tam2", "tam3"];
+var opacity = ["opacity1", "opacity1", "opacity1", "opacity2", "opacity2", "opacity3"];
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+function getRandomArbitrary(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      centeredSlides: false,
-      slidesPerGroupSkip: 1,
-      grabCursor: true,
-      keyboard: {
-        enabled: true,
-      },
-      breakpoints: {
-        769: {
-          slidesPerView: 2,
-          slidesPerGroup: 2,
-        },
-      },
-      scrollbar: {
-        el: ".swiper-scrollbar",
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  </script>
+var estrela = "";
+var qtdeEstrelas = 250;
+var noite = document.querySelector(".constelacao");
+var widthWindow = window.innerWidth;
+var heightWindow = window.innerHeight;
+
+for (var i = 0; i < qtdeEstrelas; i++) {
+  estrela += "<span class='estrela " + style[getRandomArbitrary(0, 4)] + " " + opacity[getRandomArbitrary(0, 6)] + " "
+  + tam[getRandomArbitrary(0, 5)] + "' style='animation-delay: ." +getRandomArbitrary(0, 9)+ "s; left: "
+  + getRandomArbitrary(0, widthWindow) + "px; top: " + getRandomArbitrary(0, heightWindow) + "px;'></span>";
+}
+
+noite.innerHTML = estrela;
+
+//meteoros
+
+var numeroAleatorio = 5000;
+
+setTimeout(function(){
+  carregarMeteoro();
+}, numeroAleatorio);
+
+function carregarMeteoro(){
+  setTimeout(carregarMeteoro, numeroAleatorio);
+  numeroAleatorio = getRandomArbitrary(5000, 10000);
+  var meteoro = "<div class='meteoro "+ style[getRandomArbitrary(0, 4)] +"'></div>";
+  document.getElementsByClassName('chuvaMeteoro')[0].innerHTML = meteoro;
+  setTimeout(function(){
+    document.getElementsByClassName('chuvaMeteoro')[0].innerHTML = "";
+  }, 1000);
+}
+
+}
+
+window.onload = init;
+</script>
+
+
 </body>
+
 
 </html>
