@@ -18,13 +18,93 @@ html, body {
   position: relative;
 }
 
+#wave-forms{
+  width: 100%;
+  height: 800px;
+  position: fixed;
+  bottom: 100px;
+  z-index: -600;
+  display: block;
+}
+
+.waves {
+  position:absolute;
+  width: 100%;
+  height:15vh;
+  min-height:100px;
+  max-height:150px;
+  bottom: 0;
+}
+
+.bottom{
+  width: 100%;
+  height: 100px;
+  background-color: rgb(249, 145, 155);
+  position: fixed;
+  bottom: 0;
+}
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  .content {
+    height:30vh;
+  }
+  h1 {
+    font-size:24px;
+  }
+}
+
+
+
+
+
+
+
+
 /* 배경 */
-.backSky {
+#backSky {
   width: 100vw;
   height: 100vh;
   background: linear-gradient(to right, #111, #0e0f19);  
   overflow: hidden;
+  display: none;
 
+}
+
+#backSky[data-theme='dark']{
+  display: block;
 }
 
 /* 별을 감싼 부모 */
@@ -120,19 +200,82 @@ html, body {
   60% { opacity: 1; }
   100% { opacity: 0; right: 1400px; top: 800px; }
 }
+button[type=button]{
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
 
 
+/* @media (prefers-color-scheme: dark) {
+  #wave-forms{
+    display: none;
+  }
+    #backsky{
+      display: block;
+    }
+    body{
+      color: aliceblue;
+    }
+}
+@media (prefers-color-scheme:light) {
+  #wave-forms{
+    display: block;
+  }
+    #backsky{
+      display: none;
+    }
+    body{
+      color: #111;
+    }
+} */
   </style>
 </head>
+
 <body>
-  <div class="backSky">
+
+
+  <div id="wave-forms" class="light" >
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 24 100 30" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v50h-352z" />
+    </defs>
+    <g class="parallax">
+      <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(255,255,154,0.7)" />
+    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(230,235,255,0.9)" />
+    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,169,194,0.5)" />
+    <use xlink:href="#gentle-wave" x="48" y="6" fill="rgba(254,89,87,0.5)" />
+    </g>
+    </svg>
+    <div class="bottom"></div>
+    </div>
+
+    <button type="button" id="toggleTheme"></button>
+
+
+
+
+
+  <div id="backSky">
     <svg class="notie"></svg>
     <!--  <div class="sky"></div>  -->
   </div>
   <div class="constelacao"></div>
   <div class="chuvaMeteoro"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+
   <script>
     const $notie = document.querySelector(".notie");
+
+    
 
 // 브라우저 창 크기에 따른 별 생성
 window.onresize = () => {
@@ -189,6 +332,13 @@ function carregarMeteoro(){
     document.getElementsByClassName('chuvaMeteoro')[0].innerHTML = "";
   }, 1000);
 }
+
+
+const Light = document.getElementsByClassName("light")
+const Dark = document.getElementsByClassName("dark")
+
+const ToggleBTN = document.getElementById("toggleTheme")
+
 
 
 
