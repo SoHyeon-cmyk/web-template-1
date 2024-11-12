@@ -90,20 +90,17 @@ html, body {
 
 
 
-
+[data-theme="dark"]{
 
 
 /* 배경 */
-#backSky {
+
+#backSky{
   width: 100vw;
   height: 100vh;
   background: linear-gradient(to right, #111, #0e0f19);  
   overflow: hidden;
   display: none;
-
-}
-
-#backSky[data-theme='dark']{
   display: block;
 }
 
@@ -200,6 +197,12 @@ html, body {
   60% { opacity: 1; }
   100% { opacity: 0; right: 1400px; top: 800px; }
 }
+
+
+
+}
+
+
 button[type=button]{
   position: fixed;
   bottom: 5vh;
@@ -211,29 +214,6 @@ button[type=button]{
   cursor: pointer;
 }
 
-
-/* @media (prefers-color-scheme: dark) {
-  #wave-forms{
-    display: none;
-  }
-    #backsky{
-      display: block;
-    }
-    body{
-      color: aliceblue;
-    }
-}
-@media (prefers-color-scheme:light) {
-  #wave-forms{
-    display: block;
-  }
-    #backsky{
-      display: none;
-    }
-    body{
-      color: #111;
-    }
-} */
   </style>
 </head>
 
@@ -256,7 +236,7 @@ button[type=button]{
     <div class="bottom"></div>
     </div>
 
-    <button type="button" id="toggleTheme"></button>
+    <button type="button" id="toggleTheme" onclick="Dark"></button>
 
 
 
@@ -334,14 +314,27 @@ function carregarMeteoro(){
 }
 
 
-const Light = document.getElementsByClassName("light")
-const Dark = document.getElementsByClassName("dark")
+// const Light = document.getElementsByClassName("light")
+// const Dark = document.getElementsByClassName("dark")
 
-const ToggleBTN = document.getElementById("toggleTheme")
+// const ToggleBTN = document.getElementById("toggleTheme")
 
+function Dark () {
+  var dark = document.getElementById("backsky")
+  dark.addEventListener(ToggleEvent)
+}
 
+document.addEventListener('DOMContentLoaded', function () {
+  const modeSwitch = document.getElementById('toggleTheme');
+  const switchIcon = document.querySelector('.switch-icon i');
+  const userPreference = localStorage.getItem('theme');
+  const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  const initialMode = userPreference || systemPreference;
 
+  document.documentElement.setAttribute('data-theme', initialMode);
+  modeSwitch.checked = (initialMode === 'dark');
 
+})
 </script>
   </script>
 </body>
