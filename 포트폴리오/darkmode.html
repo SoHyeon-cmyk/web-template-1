@@ -312,17 +312,18 @@ function carregarMeteoro(){
 }
 
 
-const Light = document.getElementsByClassName("light")
-const Dark = document.getElementsByClassName("dark")
-
-const ToggleBTN = document.getElementById("toggleTheme")
 
 function toggle(){
+  var Light = document.getElementsByClassName("light")
+  var Dark = document.getElementsByClassName("dark")
+  
+  var ToggleBTN = document.getElementById("toggleTheme")
 
-  ToggleBTN.addEventListener('click', ()=> {
-    Light.style.display = "none"
-    Dark.style.display = "block"
-  })
+if ( Light.style.display == "block"){
+  Dark.style.display = " block"
+}else{
+  Dark.style.display = "none"
+}
 
 }
 
