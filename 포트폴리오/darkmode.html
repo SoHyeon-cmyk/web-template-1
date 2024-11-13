@@ -90,8 +90,6 @@ html, body {
 
 
 
-[data-theme="dark"]{
-
 
 /* 배경 */
 
@@ -101,7 +99,7 @@ html, body {
   background: linear-gradient(to right, #111, #0e0f19);  
   overflow: hidden;
   display: none;
-  display: block;
+  /* display: block; */
 }
 
 /* 별을 감싼 부모 */
@@ -200,10 +198,9 @@ html, body {
 
 
 
-}
 
 
-button[type=button]{
+button{
   position: fixed;
   bottom: 5vh;
   right: 5vw;
@@ -212,6 +209,7 @@ button[type=button]{
   border-radius: 50%;
   border: none;
   cursor: pointer;
+  z-index: 500;
 }
 
   </style>
@@ -220,7 +218,7 @@ button[type=button]{
 <body>
 
 
-  <div id="wave-forms" class="light" >
+  <div id="wave-forms" class="light"  >
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 24 100 30" preserveAspectRatio="none" shape-rendering="auto">
     <defs>
@@ -236,7 +234,7 @@ button[type=button]{
     <div class="bottom"></div>
     </div>
 
-    <button type="button" id="toggleTheme" onclick="Dark"></button>
+    <button type="button" id="toggleTheme" onclick='toggle()'></button>
 
 
 
@@ -314,27 +312,21 @@ function carregarMeteoro(){
 }
 
 
-// const Light = document.getElementsByClassName("light")
-// const Dark = document.getElementsByClassName("dark")
+const Light = document.getElementsByClassName("light")
+const Dark = document.getElementsByClassName("dark")
 
-// const ToggleBTN = document.getElementById("toggleTheme")
+const ToggleBTN = document.getElementById("toggleTheme")
 
-function Dark () {
-  var dark = document.getElementById("backsky")
-  dark.addEventListener(ToggleEvent)
+function toggle(){
+
+  ToggleBTN.addEventListener('click', ()=> {
+    Light.style.display = "none"
+    Dark.style.display = "block"
+  })
+
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const modeSwitch = document.getElementById('toggleTheme');
-  const switchIcon = document.querySelector('.switch-icon i');
-  const userPreference = localStorage.getItem('theme');
-  const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  const initialMode = userPreference || systemPreference;
 
-  document.documentElement.setAttribute('data-theme', initialMode);
-  modeSwitch.checked = (initialMode === 'dark');
-
-})
 </script>
   </script>
 </body>
