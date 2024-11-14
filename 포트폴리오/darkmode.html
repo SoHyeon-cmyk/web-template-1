@@ -218,7 +218,7 @@ button{
 <body>
 
 
-  <div id="wave-forms" class="light"  >
+  <div id="wave-forms" >
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 24 100 30" preserveAspectRatio="none" shape-rendering="auto">
     <defs>
@@ -312,15 +312,16 @@ function carregarMeteoro(){
 }
 
 
+var ToggleBTN = document.getElementById("toggleTheme")
 
 function toggle(){
-  var Light = document.getElementsByClassName("light")
-  var Dark = document.getElementsByClassName("dark")
+  var Light = document.getElementById("wave-form")
+  var Dark = document.getElementsById("backsky")
   
-  var ToggleBTN = document.getElementById("toggleTheme")
 
-if ( Light.style.display == "block"){
+if ( Dark.style.display == "none"){
   Dark.style.display = " block"
+  LIght.style.display = "none"
 }else{
   Dark.style.display = "none"
 }
