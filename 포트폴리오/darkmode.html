@@ -6,25 +6,13 @@
   <title>Document</title>
   <style>
 
-* {
-  margin: 0;
-  padding: 0;
-}
-html, body {
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
 #wave-forms{
   width: 100%;
   height: 800px;
   position: fixed;
   bottom: 100px;
   z-index: -600;
-  display: block;
+  /* display: none; */
 }
 
 .waves {
@@ -36,13 +24,7 @@ html, body {
   bottom: 0;
 }
 
-.bottom{
-  width: 100%;
-  height: 100px;
-  background-color: rgb(249, 145, 155);
-  position: fixed;
-  bottom: 0;
-}
+
 /* Animation */
 
 .parallax > use {
@@ -86,49 +68,66 @@ html, body {
   }
 }
 
-
-
-
-
-
-/* 배경 */
-
-#backSky{
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(to right, #111, #0e0f19);  
-  overflow: hidden;
-  display: none;
-  /* display: block; */
+.bottom{
+  width: 100%;
+  height: 100px;
+  background-color: rgb(249, 145, 155);
+  position: fixed;
+  bottom: 0;
 }
 
-/* 별을 감싼 부모 */
+button[type=button]{
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+}
+
+
+
+
+
+#backSky {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: none;
+}
+
 .notie{
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: -webkit-linear-gradient(top, rgb(0, 0, 0) 50%, rgb(20, 30, 60)90%, rgb(27, 43, 77));
+  z-index: -500;
 }
 
 /* 별 */
 .notie .star {
+  width: 100%;
+  height: 100%;
   fill: #fff;
   stroke: none;
   stroke-width: 0;
+  animation:moveStar 2500s linear infinite;
+  z-index: 100;
 }
 
 
 /* 별 이동효과 */
 @keyframes moveStar {
   from {
-    transform: translate(-50%, -50%) rotate(0)
+    transform: rotate(0)
   }
 
   to {
-    transform: translate(-50%, -50%) rotate(360deg)
+    transform:rotate(360deg)
   }
 
 }
@@ -145,6 +144,8 @@ html, body {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-duration: 1s;
+  z-index: 50;
+  /* display: none; */
 }
 
 .meteoro:before {
@@ -160,6 +161,7 @@ html, body {
   position: absolute;
   left: 2px;
   top: 0;
+  z-index: 50;
 }
 
 .meteoro.style1 { animation-name: meteoroStyle1; }
@@ -218,9 +220,9 @@ button{
 <body>
 
 
-  <div id="wave-forms" >
+  <div id="wave-forms">
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-    viewBox="0 24 100 30" preserveAspectRatio="none" shape-rendering="auto">
+    viewBox="0 24 150 30" preserveAspectRatio="none" shape-rendering="auto">
     <defs>
     <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v50h-352z" />
     </defs>
@@ -234,7 +236,7 @@ button{
     <div class="bottom"></div>
     </div>
 
-    <button type="button" id="toggleTheme" onclick='toggle()'></button>
+    <button type="button" id="toggleButton"></button>
 
 
 
@@ -250,86 +252,7 @@ button{
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
 
-  <script>
-    const $notie = document.querySelector(".notie");
+  <script src="script1.js"></script>
 
-    
-
-// 브라우저 창 크기에 따른 별 생성
-window.onresize = () => {
-  makeStars();
-}
-
-const makeStars = () => {
-
-  const maxSize = Math.max(window.innerWidth, window.innerHeight)
-  const getRandomX = () => Math.random() * maxSize;
-  const getRandomY = () => Math.random() * maxSize;
-  const randomRadius = () =>  Math.random() * 0.7 + 0.6;
-  
-
-  const _size = Math.floor(maxSize / 2);
-  
-  const htmlDummy = new Array(_size).fill().map((_, i) => {
-    return  `<circle class='star'
-        cx=${getRandomX()}
-        cy=${getRandomY()}
-        r=${randomRadius()}
-        className="star" />`
-  }).join('');
-  
-  $notie.innerHTML = htmlDummy;
-}
-
-window.onload = () => {
-  makeStars();
-}
-
-var style = ["style1", "style2", "style3", "style4"];
-var tam = ["tam1", "tam1", "tam1", "tam2", "tam3"];
-var opacity = ["opacity1", "opacity1", "opacity1", "opacity2", "opacity2", "opacity3"];
-
-function getRandomArbitrary(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-
-//meteoros
-
-var numeroAleatorio = 5000;
-
-setTimeout(function(){
-  carregarMeteoro();
-}, numeroAleatorio);
-
-function carregarMeteoro(){
-  setTimeout(carregarMeteoro, numeroAleatorio);
-  numeroAleatorio = getRandomArbitrary(5000, 10000);
-  var meteoro = "<div class='meteoro "+ style[getRandomArbitrary(0, 4)] +"'></div>";
-  document.getElementsByClassName('chuvaMeteoro')[0].innerHTML = meteoro;
-  setTimeout(function(){
-    document.getElementsByClassName('chuvaMeteoro')[0].innerHTML = "";
-  }, 1000);
-}
-
-
-var ToggleBTN = document.getElementById("toggleTheme")
-
-function toggle(){
-  var Light = document.getElementById("wave-form")
-  var Dark = document.getElementsById("backsky")
-  
-
-if ( Dark.style.display == "none"){
-  Dark.style.display = " block"
-  LIght.style.display = "none"
-}else{
-  Dark.style.display = "none"
-}
-
-}
-
-
-</script>
-  </script>
 </body>
 </html>

@@ -4,161 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-
-  <style>
-
-* {
-  box-sizing: content-box;
-}
-
-html, body {
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-
-.noite {
-  background: -webkit-linear-gradient(top, rgb(0, 0, 0) 50%, rgb(20, 30, 60)90%, rgb(27, 43, 77));
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  overflow: hidden;
-}
-
-
-.meteoro {
-  position: absolute;
-  background-color: #fff;
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  transform: rotate(-35deg);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-duration: 1s;
-}
-
-.meteoro:before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
-  width: 0;
-  height: 0;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-left: 85px solid white;
-  position: absolute;
-  left: 2px;
-  top: 0;
-}
-
-.meteoro.style1 { animation-name: meteoroStyle1; }
-.meteoro.style2 { animation-name: meteoroStyle2; }
-.meteoro.style3 { animation-name: meteoroStyle3; }
-.meteoro.style4 { animation-name: meteoroStyle4; }
-
-
-@keyframes meteoroStyle1 {
-  0% { opacity: 0; right: 300px; top: 100px; }
-  30% { opacity: .3; }
-  60% { opacity: .3; }
-  100% { opacity: 0; right: 1000px; top: 600px; }
-}
-
-@keyframes meteoroStyle2 {
-  0% { opacity: 0; right: 700px; top: 100px; }
-  30% { opacity: 1; }
-  60% { opacity: 1; }
-  100% { opacity: 0; right: 1400px; top: 600px; }
-}
-
-@keyframes meteoroStyle3 {
-  0% { opacity: 0; right: 300px; top: 300px; }
-  30% { opacity: 1; }
-  60% { opacity: 1; }
-  100% { opacity: 0; right: 1000px; top: 800px; }
-}
-
-@keyframes meteoroStyle4 {
-  0% { opacity: 0; right: 700px; top: 300px; }
-  30% { opacity: 1; }
-  60% { opacity: 1; }
-  100% { opacity: 0; right: 1400px; top: 800px; }
-}
-.dark_mode{
-  /* display: none; */
-}
-
-  </style>
+<style>
+  @import url(../포트폴리오/css/style.scss);
+</style>
 </head>
 <body>
   
-<!-- create by adriano.interaminense@gmail.com
-full screen for better viewing -->
-<div class="dark_mode">
-<div class="noite"></div>
-  <div class="constelacao"></div>
-  <div class="chuvaMeteoro"></div>
-</div>
+  <div class="main_popup">
+    <div class="layer_cont">
+      <div class="img_wrap">
+        팝업 콘텐츠
+      </div>
+      <div class="btn_wrap">
+        <!-- 오늘 하루 보지 않기 --->
+        <button class="btn_today_close"><span>오늘 하루 보지 않기</span></button>
+        <!-- 그냥 닫기 --->
+        <button class="btn_close">close</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    /* 스토리지 제어 함수 정의 */
+var handleStorage = {
+  // 스토리지에 데이터 쓰기(이름, 만료일)
+  setStorage: function (name, exp) {
+    // 만료 시간 구하기(exp를 ms단위로 변경)
+    var date = new Date();
+    date = date.setTime(date.getTime() + exp * 24 * 60 * 60 * 1000);
 
-<script>
+    // 로컬 스토리지에 저장하기
+        // (값을 따로 저장하지 않고 만료 시간을 저장)
+    localStorage.setItem(name, date)
+  },
+  // 스토리지 읽어오기
+  getStorage: function (name) {
+    var now = new Date();
+    now = now.setTime(now.getTime());
+    // 현재 시각과 스토리지에 저장된 시각을 각각 비교하여
+    // 시간이 남아 있으면 true, 아니면 false 리턴
+    return parseInt(localStorage.getItem(name)) > now
+  }
+};
 
-
-function init(){
-
-//estrelas
-
-var style = ["style1", "style2", "style3", "style4"];
-var tam = ["tam1", "tam1", "tam1", "tam2", "tam3"];
-var opacity = ["opacity1", "opacity1", "opacity1", "opacity2", "opacity2", "opacity3"];
-
-function getRandomArbitrary(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-
-var estrela = "";
-var qtdeEstrelas = 250;
-var noite = document.querySelector(".constelacao");
-var widthWindow = window.innerWidth;
-var heightWindow = window.innerHeight;
-
-for (var i = 0; i < qtdeEstrelas; i++) {
-  estrela += "<span class='estrela " + style[getRandomArbitrary(0, 4)] + " " + opacity[getRandomArbitrary(0, 6)] + " "
-  + tam[getRandomArbitrary(0, 5)] + "' style='animation-delay: ." +getRandomArbitrary(0, 9)+ "s; left: "
-  + getRandomArbitrary(0, widthWindow) + "px; top: " + getRandomArbitrary(0, heightWindow) + "px;'></span>";
-}
-
-noite.innerHTML = estrela;
-
-//meteoros
-
-var numeroAleatorio = 5000;
-
-setTimeout(function(){
-  carregarMeteoro();
-}, numeroAleatorio);
-
-function carregarMeteoro(){
-  setTimeout(carregarMeteoro, numeroAleatorio);
-  numeroAleatorio = getRandomArbitrary(5000, 10000);
-  var meteoro = "<div class='meteoro "+ style[getRandomArbitrary(0, 4)] +"'></div>";
-  document.getElementsByClassName('chuvaMeteoro')[0].innerHTML = meteoro;
-  setTimeout(function(){
-    document.getElementsByClassName('chuvaMeteoro')[0].innerHTML = "";
-  }, 1000);
-}
-
-}
-
-window.onload = init;
-</script>
-
-
+  </script>
 </body>
-
-
 </html>

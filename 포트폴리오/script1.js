@@ -1,5 +1,6 @@
-
 const $notie = document.querySelector(".notie");
+
+    
 
 // 브라우저 창 크기에 따른 별 생성
 window.onresize = () => {
@@ -56,4 +57,23 @@ function carregarMeteoro(){
     document.getElementsByClassName('chuvaMeteoro')[0].innerHTML = "";
   }, 1000);
 }
-  window.onload = init;
+
+
+$(document).ready(function() {
+  $("#toggleButton").click(function() {
+    const backSky = $("#backSky");
+    const waveForms = $("#wave-forms");
+
+    if (backSky.length && waveForms.length) {
+      if (backSky.is(":visible") == false  && waveForms.is(":visible")) {
+        backSky.show();
+        waveForms.hide();
+      } else {
+        backSky.hide();
+        waveForms.show();
+      }
+    } else {
+      console.error("요소 중 일부를 찾을 수 없습니다.");
+    }
+  });
+});
