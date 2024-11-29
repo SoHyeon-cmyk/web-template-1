@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .pie-chart{
+      position: absolute;
+      top:50%; 
+    left:50%; 
+    transform:translate(-50%, -50%);
+  text-align: center;
+
+}
+
+.graph-wrap{
+    display:flex;
+    gap: 50px;
+    
+}
+.circle-graph {
+    position:relative;
+}
+.circle-graph > strong {
+    position:absolute; 
+    top:50%; 
+    left:50%; 
+    transform:translate(-50%, -50%);
+    font-size:2rem;
+}
+  </style>
+</head>
+<body>
+  <div class="pie-chart">
+    <div class="graph-wrap active-on-visible" data-active-on-visible-callback-func-name="CircleRun">
+      <div class="circle-graph" circleProgress="87" data-colors='["#e5ecff","#ffadc7"]'>
+        <strong class="circle-percent"></strong>
+      </div>
+      <div class="circle-graph" circleProgress="62" data-colors='["#ffadc7","#ff5756"]'>
+        <strong class="circle-percent"></strong>
+      </div>
+      <div class="circle-graph" circleProgress="45" data-colors='["#ff5756","#e5ecff"]'>
+        <strong class="circle-percent"></strong>
+      </div>
+    </div>
+  </div>
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+  $('.circle-graph').each(function () {
+    // 각각의 circle-graph 요소를 가져옵니다.
+    const $this = $(this);
+
+    // HTML 속성에서 circleProgress 값과 색상 값을 읽어옵니다.
+    const perNum = parseFloat($this.attr('circleProgress')) || 0;
+    const colors = JSON.parse($this.attr('data-colors')) || ["#e5ecff", "#ffadc7"];
+
+    // circleProgress를 초기화합니다.
+    $this.circleProgress({
+      size: 100, // 그래프 크기
+      value: perNum / 100, // 그래프에 표시될 값
+      startAngle: 300, // 시작지점
+      thickness: 5, // 그래프 두께
+      fill: { // 그래프 선 색상
+        gradient: colors,
+        gradientAngle: Math.PI / 4
+      },
+      animation: {
+        duration: 2200,
+        easing: "swing"
+      },
+      lineCap: "butt", // 그래프 선 모양
+      reverse: false // 그래프가 진행되는 방향
+    }).on('circle-animation-progress', function (event, progress) {
+      // 진행 중인 상태 업데이트
+      $this.find('.circle-percent').html(Math.round(perNum * progress) + '<i>%</i>');
+    });
+  });
+});
+
+  </script>
+</body>
+</html>

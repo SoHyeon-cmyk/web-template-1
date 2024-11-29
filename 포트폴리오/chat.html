@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  margin: 0;
+}
+
+.progress-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.circle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: conic-gradient(#d3d3d3 0%, #d3d3d3 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.percentage {
+  position: absolute;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+  </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circular Progress Bar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiple Circular Progress Bars</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="progress-container">
+    <!-- 여러 원형 그래프 -->
+  <div class="progress-container">
+  <div class="circle" data-target="30" data-color="#ff6347">
+    <div class="percentage">0%</div>
+  </div>
+  <div class="circle" data-target="50" data-color="#1e90ff">
+    <div class="percentage">0%</div>
+  </div>
+  <div class="circle" data-target="70" data-color="#32cd32">
+    <div class="percentage">0%</div>
+  </div>
+  <div class="circle" data-target="90" data-color="#ffa500">
+    <div class="percentage">0%</div>
+  </div>
+</div>
+
+    <button id="startAnimation">Start All Animations</button>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+  <script>
+$(document).ready(function () {
+  const circles = $('.circle');
+
+  function animateProgress(targetPercent, circleElement, color) {
+    let currentPercent = 0;
+    const percentageText = $(circleElement).find('.percentage');
+
+    const interval = setInterval(() => {
+      currentPercent++;
+      percentageText.text(`${currentPercent}%`);
+
+      const angle = (currentPercent / 100) * 360;
+      $(circleElement).css({
+        'background': `conic-gradient(${color} 0% ${angle}deg, #d3d3d3 ${angle}deg 360deg)`
+      });
+
+      if (currentPercent >= targetPercent) {
+        clearInterval(interval);
+      }
+    }, 20);
+  }
+
+  // Intersection Observer 설정
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const circleElement = entry.target;
+          const targetPercent = $(circleElement).data('target');
+          const color = $(circleElement).data('color'); // 각 그래프의 색상 가져오기
+
+          if (!$(circleElement).data('animated')) {
+            $(circleElement).data('animated', true);
+            animateProgress(targetPercent, circleElement, color);
+          }
+        }
+      });
+    },
+    {
+      threshold: 0.5, // 50% 이상 화면에 노출될 때 실행
+    }
+  );
+
+  // 모든 circle 요소를 Observer에 등록
+  circles.each(function () {
+    observer.observe(this);
+  });
+});
+
+  </script>
+</body>
+</html>

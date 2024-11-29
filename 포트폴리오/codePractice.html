@@ -5,47 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 <style>
-  @import url(../포트폴리오/css/style.scss);
+
+  body{
+    margin: 0;
+    padding: 0;
+  }
+
+  .loader{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: #000;
+  }
+
+  .loader .inner{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 80px;
+    text-align: center;
+  }
+
+  .loader h1{
+    height: 160px;
+    margin: 0;
+    padding: 0;
+    font-size: 66px;
+    color: rgba(255, 255, 255, 0.2);
+    background-size: 101% 100%;
+    background-position: left 0px bottom -40px;
+    background-repeat: repeat-x;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 90 240 300' preserveAspectRatio='none'%3E%3Crect x='0' y='0' width='500' height='800' style='stroke: none; fill: rgb(255,0,0);' /%3E%3Cpath d='M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z' style='stroke: none;'%3E%3C/path%3E%3C/svg%3E");
+    animation: wave 3s both linear;
+  }
+
+  @keyframes wave {
+    0%{
+      background-position: left 0px bottom -80px;
+    }
+    100%{
+      background-position: left 1500px bottom 20px;
+    }
+  }
+  
+
 </style>
+
+
+
 </head>
 <body>
-  
-  <div class="main_popup">
-    <div class="layer_cont">
-      <div class="img_wrap">
-        팝업 콘텐츠
-      </div>
-      <div class="btn_wrap">
-        <!-- 오늘 하루 보지 않기 --->
-        <button class="btn_today_close"><span>오늘 하루 보지 않기</span></button>
-        <!-- 그냥 닫기 --->
-        <button class="btn_close">close</button>
-      </div>
-    </div>
-  </div>
-  <script>
-    /* 스토리지 제어 함수 정의 */
-var handleStorage = {
-  // 스토리지에 데이터 쓰기(이름, 만료일)
-  setStorage: function (name, exp) {
-    // 만료 시간 구하기(exp를 ms단위로 변경)
-    var date = new Date();
-    date = date.setTime(date.getTime() + exp * 24 * 60 * 60 * 1000);
+  <div class="loader">
+      <div class="inner">
+         <h1> EXAMPLE </h1>
+     </div>
+ </div>
 
-    // 로컬 스토리지에 저장하기
-        // (값을 따로 저장하지 않고 만료 시간을 저장)
-    localStorage.setItem(name, date)
-  },
-  // 스토리지 읽어오기
-  getStorage: function (name) {
-    var now = new Date();
-    now = now.setTime(now.getTime());
-    // 현재 시각과 스토리지에 저장된 시각을 각각 비교하여
-    // 시간이 남아 있으면 true, 아니면 false 리턴
-    return parseInt(localStorage.getItem(name)) > now
-  }
-};
-
-  </script>
 </body>
 </html>
