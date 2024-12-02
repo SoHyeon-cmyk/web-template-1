@@ -530,14 +530,28 @@ font-size: 50px;
 
 
 
-.footer{
-  position: relative;
-}
 .contact{
+  position: relative;
+  width: 1200px;
+  height: 500px;
+  bottom: 0;
+  margin: auto;
+}
+.Telcard{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+}
+.Telcard h1{
+
+  float: left;
+  top: 20px;
+  left: 50px;
+
+}
+.Telcard h3{
+  
 }
 
 
