@@ -136,7 +136,7 @@ button{
   fill: #fff;
   stroke: none;
   stroke-width: 0;
-  animation:moveStar 1200s linear infinite;
+  animation:moveStar 3500s linear infinite;
   z-index: 100;
 }
 
@@ -327,6 +327,9 @@ header ul {
     transform: translateY(0);
   }
 }
+
+
+
 
 /* 프로필영역 */
 
@@ -561,3 +564,42 @@ font-size: 50px;
 
 
 
+swiper-container {
+  width: 100%;
+  height: 500px;
+  margin-top: 50px;
+}
+
+swiper-slide {
+  font-size: 18px;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 40px 60px;
+}
+
+.parallax-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130%;
+  height: 500px;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+
+swiper-slide .title {
+  font-size: 41px;
+  font-weight: 300;
+}
+
+swiper-slide .subtitle {
+  font-size: 21px;
+}
+
+swiper-slide .text {
+  font-size: 14px;
+  max-width: 400px;
+  line-height: 1.3;
+}

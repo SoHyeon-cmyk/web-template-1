@@ -4,82 +4,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
   <style>
-    .pie-chart{
-      position: absolute;
-      top:50%; 
-    left:50%; 
-    transform:translate(-50%, -50%);
-  text-align: center;
 
+    /* 공통 애니메이션 클래스 */
+.animate {
+  animation: up .8s ease-in-out, down .8s ease-in-out;
 }
 
-.graph-wrap{
-    display:flex;
-    gap: 50px;
-    
+/* 다크모드와 라이트모드 전환 시 색상 변경 */
+body.dark-mode .banner h2,
+body.dark-mode .banner h4 {
+  color: lightgray; /* 다크모드 텍스트 색상 */
 }
-.circle-graph {
-    position:relative;
+
+body.dark-mode {
+  background-color: black;
 }
-.circle-graph > strong {
-    position:absolute; 
-    top:50%; 
-    left:50%; 
-    transform:translate(-50%, -50%);
-    font-size:2rem;
+
+body:not(.dark-mode) .banner h2,
+body:not(.dark-mode) .banner h4 {
+  color: black; /* 라이트모드 텍스트 색상 */
 }
+
+button{
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  z-index: 500;
+}
+
   </style>
 </head>
 <body>
-  <div class="pie-chart">
-    <div class="graph-wrap active-on-visible" data-active-on-visible-callback-func-name="CircleRun">
-      <div class="circle-graph" circleProgress="87" data-colors='["#e5ecff","#ffadc7"]'>
-        <strong class="circle-percent"></strong>
-      </div>
-      <div class="circle-graph" circleProgress="62" data-colors='["#ffadc7","#ff5756"]'>
-        <strong class="circle-percent"></strong>
-      </div>
-      <div class="circle-graph" circleProgress="45" data-colors='["#ff5756","#e5ecff"]'>
-        <strong class="circle-percent"></strong>
-      </div>
+  <div class="form">
+    <div class="banner">
+      <img src="img/타원 2 복사.png" alt="">
+      <h2>Portfolio</h2>
+      <h4>Web Publisher</h4>
     </div>
   </div>
-  
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+  <button type="button" id="toggleTheme"></button>
 
   <script>
-    $(document).ready(function () {
-  $('.circle-graph').each(function () {
-    // 각각의 circle-graph 요소를 가져옵니다.
-    const $this = $(this);
+    document.getElementById('toggleTheme').addEventListener('click', () => {
+  const waveForms = document.getElementById('wave-forms');
+  const backSky = document.getElementById('backSky');
+  const formElement = document.querySelector('.form');
+  const body = document.body;
+  const Ul = document.querySelector('#header');
 
-    // HTML 속성에서 circleProgress 값과 색상 값을 읽어옵니다.
-    const perNum = parseFloat($this.attr('circleProgress')) || 0;
-    const colors = JSON.parse($this.attr('data-colors')) || ["#e5ecff", "#ffadc7"];
+  // 애니메이션 대상 선택
+  const bannerElements = document.querySelectorAll('.banner img, .banner h2, .banner h4');
 
-    // circleProgress를 초기화합니다.
-    $this.circleProgress({
-      size: 100, // 그래프 크기
-      value: perNum / 100, // 그래프에 표시될 값
-      startAngle: 300, // 시작지점
-      thickness: 5, // 그래프 두께
-      fill: { // 그래프 선 색상
-        gradient: colors,
-        gradientAngle: Math.PI / 4
-      },
-      animation: {
-        duration: 2200,
-        easing: "swing"
-      },
-      lineCap: "butt", // 그래프 선 모양
-      reverse: false // 그래프가 진행되는 방향
-    }).on('circle-animation-progress', function (event, progress) {
-      // 진행 중인 상태 업데이트
-      $this.find('.circle-percent').html(Math.round(perNum * progress) + '<i>%</i>');
-    });
+  // 현재 display 상태를 확인하고 토글
+  if (waveForms.style.display === 'block') {
+    waveForms.style.display = 'none';
+    backSky.style.display = 'block';
+    formElement.style.backgroundImage = 'url("img/gradient-blue-abstract-background-smooth-dark-blue-with-black-vignette-studio.jpg")';
+    body.classList.add('dark-mode');
+    Ul.classList.add('dark');
+  } else {
+    waveForms.style.display = 'block';
+    backSky.style.display = 'none';
+    formElement.style.backgroundImage = 'url("img/blurred-abstract-background.jpg")';
+    body.classList.remove('dark-mode');
+    Ul.classList.remove('dark');
+  }
+
+  // 애니메이션 재실행
+  bannerElements.forEach(el => {
+    el.classList.remove('animate'); // 클래스 제거
+    void el.offsetWidth; // 리플로우 강제 적용 (DOM 재계산)
+    el.classList.add('animate'); // 클래스 다시 추가
   });
 });
 
