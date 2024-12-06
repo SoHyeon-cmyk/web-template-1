@@ -77,3 +77,15 @@ $(document).ready(function() {
     }
   });
 });
+
+
+
+
+
+function copyCode(){
+const code = document.querySelector(".join_code")
+
+window.navigator.clipboard.writeText(code.textContent).then(() => {
+alert('복사 완료')
+});
+}

@@ -532,7 +532,9 @@ font-size: 50px;
 }
 
 
-
+.join_code{
+  cursor: pointer;
+}
 .contact{
   position: relative;
   width: 1200px;
@@ -565,8 +567,9 @@ font-size: 50px;
 
 
 swiper-container {
-  width: 100%;
+  width: 1200px;
   height: 500px;
+  margin: auto;
   margin-top: 50px;
 }
 

@@ -136,5 +136,12 @@ document.getElementById('toggleTheme').addEventListener('click', () => {
     el.classList.add('animate'); // 클래스 다시 추가
   });
 
-
+  
+  function copyCode(){
+    const code = document.querySelector(".join_code")
+    
+    window.navigator.clipboard.writeText(code.textContent).then(() => {
+    alert('복사 완료')
+    });
+    }
 
