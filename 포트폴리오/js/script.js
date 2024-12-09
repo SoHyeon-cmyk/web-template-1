@@ -105,6 +105,7 @@ document.getElementById('toggleTheme').addEventListener('click', () => {
   const body = document.body;
   const HD = document.querySelector('.HD')
   const Ul = document.querySelector('#header')
+  let copyModal =document.getElementById('copied')
   // 애니메이션 대상 선택
   const bannerElements = document.querySelectorAll('.banner img, .banner h2, .banner h4');
 
@@ -115,6 +116,8 @@ document.getElementById('toggleTheme').addEventListener('click', () => {
     formElement.style.backgroundImage = 'url("img/gradient-blue-abstract-background-smooth-dark-blue-with-black-vignette-studio.jpg")'
     body.classList.add('dark-mode')
     Ul.classList.add('dark')
+    copyModal.classList.add('dark_mode')
+    
     
     
   } else {
@@ -123,7 +126,7 @@ document.getElementById('toggleTheme').addEventListener('click', () => {
     formElement.style.backgroundImage = 'url("img/blurred-abstract-background.jpg")'
     body.classList.remove('dark-mode');
     Ul.classList.remove('dark')
-
+    copyModal.classList.remove('dark_mode')
   }
 });
 
@@ -140,6 +143,28 @@ document.getElementById('toggleTheme').addEventListener('click', () => {
   function copyCode(){
     const code = document.querySelector(".join_code")
     
+    code.addEventListener('click', () =>{
+      copyModal.style.display = 'block'
+       setTimeout(() => {
+        copyModal(timeId); style.display = 'none'
+       },2000) 
+    })
+    
+
+    // code.addEventListener('click', function(e){
+    //   if(copyModal.style.display === 'none'){
+    //     copyModal.style.display = 'block'
+    //     copyModal.classList.add ('dark_mode')
+    //   }else{
+    //     copyModal.style.display = 'none'
+    //     copyModal.classList.remove ('dark_mode')
+    //   }
+    // })
+
+copyModal(){
+  
+}
+
     window.navigator.clipboard.writeText(code.textContent).then(() => {
     alert('복사 완료')
     });

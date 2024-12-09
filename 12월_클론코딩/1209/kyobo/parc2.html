@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0;padding: 0;}
+
+    .wrap{
+      border: 2px solid black;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+.slider{
+  overflow: hidden;
+}
+
+    .slide{
+      position: relative;
+      transition: .5s;
+    }
+    li{
+      list-style: none;
+      float: left;
+    }
+    img{
+      vertical-align: top;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <div class="wrap">
+    <div class="slider">
+      <div class="slide">
+        <li><img src="" alt=""></li>
+        <li><img src="" alt=""></li>
+        <li><img src="" alt=""></li>
+        <li><img src="" alt=""></li>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="arrow">
+    <a href="#" class="prev"><i class="fas fa-chevron-left"></i></a>
+    <a href="#" class="next"><i class="fas fa-chevron-right"></i></a>
+  </div>
+</body>
+</html>
