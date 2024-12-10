@@ -8,21 +8,83 @@
     .join_code{
       cursor: pointer;
     }
+    
+    #join_alert{
+  display: none;
+  width: 80px;
+  height: 30px;
+  padding: 5x;
+  box-sizing: border-box;
+  background-color: rgb(255, 112, 112);
+  color: #fff;
+  border-radius: 5px;
+  position: relative;
+}
+#join_alert p{
+  color: aliceblue;
+  font-size: 13px;
+  text-align: center;
+  line-height: 30px;
+}
+
+#join_alert::after{
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid rgb(255, 112, 112);
+  border-right: 10px solid transparent;
+}
+
+#join_alert .dark_mode{
+  background-color:rgb(120, 200, 250);
+  color: #222;
+
+}
   </style>
 </head>
 <body>
   <div class="join_code" onclick="copyCode()">thguskim12@gmail.com</div>
-
+  <div id="join_alert">
+    <p>copied!</p>
+  </div>
 
   <script>
-    function copyCode(){
-  const code = document.querySelector(".join_code")
+  function copyCode(){
+    const code = document.querySelector(".join_code")
+    let copyModal = document.getElementById('join_alert')
+    
+    // code.addEventListener('click', (e) =>{
+    //   copyModal.style.display = 'block'
+    //    setTimeout((e) => {
+    //     copyModal(timeId); style.display = 'none'
+    //     return 
+    //    },2000) 
+    // })
+    
 
-  window.navigator.clipboard.writeText(code.textContent).then(() => {
+    code.addEventListener('click', function(){
+      if(copyModal.style.display === 'none'){
+        copyModal.style.display = 'block'
+      }else{
+        copyModal.style.display = 'none'
+      }
+    })
+
+    
+    // setTimeout(function(){
+    //   copyModal.style.display = 'block'
+    // },2000)
+
+    window.navigator.clipboard.writeText(code.textContent).then(() => {
     alert('복사 완료')
-  });
+    });
+    }
 
-};
   </script>
 </body>
 </html>

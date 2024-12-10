@@ -132,24 +132,18 @@ document.getElementById('toggleTheme').addEventListener('click', () => {
 
 
  
-  // 애니메이션 재실행
-  bannerElements.forEach(el => {
-    el.classList.remove('animate'); // 클래스 제거
-    void el.offsetWidth; // 리플로우 강제 적용 (DOM 재계산)
-    el.classList.add('animate'); // 클래스 다시 추가
-  });
+  // // 애니메이션 재실행
+  // bannerElements.forEach(el => {
+  //   el.classList.remove('animate'); // 클래스 제거
+  //   void el.offsetWidth; // 리플로우 강제 적용 (DOM 재계산)
+  //   el.classList.add('animate'); // 클래스 다시 추가
+  // });
 
   
   function copyCode(){
     const code = document.querySelector(".join_code")
     
-    code.addEventListener('click', () =>{
-      copyModal.style.display = 'block'
-       setTimeout(() => {
-        copyModal(timeId); style.display = 'none'
-       },2000) 
-    })
-    
+   
 
     // code.addEventListener('click', function(e){
     //   if(copyModal.style.display === 'none'){
@@ -161,9 +155,10 @@ document.getElementById('toggleTheme').addEventListener('click', () => {
     //   }
     // })
 
-copyModal(){
-  
-}
+    
+    // setTimeout(function(){
+    //   copyModal.style.display = 'block'
+    // },2000)
 
     window.navigator.clipboard.writeText(code.textContent).then(() => {
     alert('복사 완료')
