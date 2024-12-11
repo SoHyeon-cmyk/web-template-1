@@ -10,7 +10,6 @@
     }
     
     #join_alert{
-  display: none;
   width: 80px;
   height: 30px;
   padding: 5x;
@@ -39,52 +38,57 @@
   border-top: 10px solid rgb(255, 112, 112);
   border-right: 10px solid transparent;
 }
-
-#join_alert .dark_mode{
+.dark_mode{
   background-color:rgb(120, 200, 250);
   color: #222;
-
 }
+.hidden{
+  display: none;
+}
+#join_alert::after .hidden{
+  display: none;
+}
+
+
   </style>
 </head>
 <body>
-  <div class="join_code" onclick="copyCode()">thguskim12@gmail.com</div>
-  <div id="join_alert">
+  <div class="join_code">thguskim12@gmail.com</div>
+  <div id="join_alert" class="hidden">
     <p>copied!</p>
   </div>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
-  function copyCode(){
-    const code = document.querySelector(".join_code")
-    let copyModal = document.getElementById('join_alert')
-    
-    // code.addEventListener('click', (e) =>{
-    //   copyModal.style.display = 'block'
-    //    setTimeout((e) => {
-    //     copyModal(timeId); style.display = 'none'
-    //     return 
-    //    },2000) 
-    // })
-    
+    $(document).ready(function () {
+      $('.join_code').click(function () {
+        // 알림 표시
+        $('#join_alert').fadeIn(200).removeClass('hidden');
 
-    code.addEventListener('click', function(){
-      if(copyModal.style.display === 'none'){
-        copyModal.style.display = 'block'
-      }else{
-        copyModal.style.display = 'none'
-      }
-    })
-
-    
-    // setTimeout(function(){
-    //   copyModal.style.display = 'block'
-    // },2000)
-
-    window.navigator.clipboard.writeText(code.textContent).then(() => {
-    alert('복사 완료')
+        // 3초 후에 알림 숨기기
+        setTimeout(function () {
+          $('#join_alert').fadeOut(300, function () {
+            $(this).addClass('hidden');
+          });
+        }, 3000);
+      });
     });
-    }
-
+  // const code = document.querySelector(".join_code")
+  // let copyModal = document.getElementById('join_alert')
+// function copyCode(){
+  
+  // code.addEventListener('click', function(){
+    //   if(copyModal.style.display === 'none'){
+      //     copyModal.style.display = 'block'
+      //   }else{
+        //     copyModal.style.display = 'none'
+        //   }
+        // })
+  
+        // window.navigator.clipboard.writeText(code.textContent).then(() => {
+          // alert('복사 완료')
+          // });
+  // }
   </script>
 </body>
 </html>
