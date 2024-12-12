@@ -5,20 +5,19 @@ import ("https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/cir
 
 $(document).ready(function () {
   $('.circle-graph').each(function () {
-    // 각각의 circle-graph 요소를 가져옵니다.
     const $this = $(this);
 
-    // HTML 속성에서 circleProgress 값과 색상 값을 읽어옵니다.
+    
     const perNum = parseFloat($this.attr('circleProgress')) || 0;
     const colors = JSON.parse($this.attr('data-colors')) || ["#e5ecff", "#ffadc7"];
 
-    // circleProgress를 초기화합니다.
+
     $this.circleProgress({
-      size: 100, // 그래프 크기
-      value: perNum / 100, // 그래프에 표시될 값
-      startAngle: 300, // 시작지점
-      thickness: 5, // 그래프 두께
-      fill: { // 그래프 선 색상
+      size: 100, 
+      value: perNum / 100, 
+      startAngle: 300, 
+      thickness: 5, 
+      fill: {
         gradient: colors,
         gradientAngle: Math.PI / 4
       },
@@ -26,10 +25,10 @@ $(document).ready(function () {
         duration: 2200,
         easing: "swing"
       },
-      lineCap: "butt", // 그래프 선 모양
-      reverse: false // 그래프가 진행되는 방향
+      lineCap: "butt", 
+      reverse: false 
     }).on('circle-animation-progress', function (event, progress) {
-      // 진행 중인 상태 업데이트
+
       $this.find('.circle-percent').html(Math.round(perNum * progress) + '<i>%</i>');
     });
   });
@@ -40,7 +39,7 @@ $(document).ready(function () {
 
   const $notie = document.querySelector(".notie");
 
-// 브라우저 창 크기에 따른 별 생성
+
 window.onresize = () => {
   makeStars();
 }
@@ -105,7 +104,8 @@ document.getElementById('toggleTheme').addEventListener('click', () => {
   const body = document.body;
   const HD = document.querySelector('.HD')
   const Ul = document.querySelector('#header')
-  let copyModal =document.getElementById('copied')
+  const jAlert = document.getElementById("join_alert")
+  const star = document.querySelector('.notie')
 
   const bannerElements = document.querySelectorAll('.banner img, .banner h2, .banner h4');
 
@@ -114,54 +114,35 @@ document.getElementById('toggleTheme').addEventListener('click', () => {
     waveForms.style.display = 'none';
     backSky.style.display = 'block';
     formElement.style.backgroundImage = 'url("img/gradient-blue-abstract-background-smooth-dark-blue-with-black-vignette-studio.jpg")'
-    body.classList.add('dark-mode')
-    Ul.classList.add('dark')
-    copyModal.classList.add('dark_mode')
-    
-    
+    body.classList.add('dark-mode');
+    Ul.classList.add('dark');
+    jAlert.classList.add('dark_mode');
+    star.style.display = 'block';
     
   } else {
     waveForms.style.display = 'block';
     backSky.style.display = 'none';
     formElement.style.backgroundImage = 'url("img/blurred-abstract-background.jpg")'
     body.classList.remove('dark-mode');
-    Ul.classList.remove('dark')
-    copyModal.classList.remove('dark_mode')
+    Ul.classList.remove('dark');
+    jAlert.classList.remove('dark_mode');
+    star.style.display = 'none';
+    
   }
 });
 
-
- 
-
-  // bannerElements.forEach(el => {
-  //   el.classList.remove('animate');
-  //   void el.offsetWidth; 
-  //   el.classList.add('animate'); 
-  // });
+  
+  $(document).ready(function () {
+    $('.join_code').click(function () {
+      $('#join_alert').fadeIn(200).removeClass('hidden');
 
   
-  function copyCode(){
-    const code = document.querySelector(".join_code")
-    
-   
-
-    // code.addEventListener('click', function(e){
-    //   if(copyModal.style.display === 'none'){
-    //     copyModal.style.display = 'block'
-    //     copyModal.classList.add ('dark_mode')
-    //   }else{
-    //     copyModal.style.display = 'none'
-    //     copyModal.classList.remove ('dark_mode')
-    //   }
-    // })
-
-    
-    // setTimeout(function(){
-    //   copyModal.style.display = 'block'
-    // },2000)
-
-    window.navigator.clipboard.writeText(code.textContent).then(() => {
-    alert('복사 완료')
+      setTimeout(function () {
+        $('#join_alert').fadeOut(300, function () {
+          $(this).addClass('hidden');
+        });
+      }, 3000);
     });
-    }
+  });
 
+  const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches

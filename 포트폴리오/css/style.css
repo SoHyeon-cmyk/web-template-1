@@ -46,7 +46,7 @@ body.dark-mode{
 }
 
 
-/* Animation */
+
 
 .parallax > use {
   animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
@@ -75,7 +75,7 @@ body.dark-mode{
     transform: translate3d(85px,0,0);
   }
 }
-/*Shrinking for mobile*/
+
 @media (max-width: 768px) {
   .waves {
     height:40px;
@@ -109,7 +109,16 @@ button{
   z-index: 500;
 }
 
+button .dkmode{
 
+}
+
+
+
+
+/* .dark_mode */
+
+@media (prefers-color-scheme: dark) {
 
 #backSky {
   width: 100%;
@@ -119,6 +128,7 @@ button{
 }
 
 .notie{
+  display: none;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -131,6 +141,7 @@ button{
 
 /* 별 */
 .notie .star {
+  display: none;
   width: 100%;
   height: 100%;
   fill: #fff;
@@ -219,8 +230,18 @@ button{
   100% { opacity: 0; right: 1400px; top: 800px; }
 }
 
+#header.dark{
+  border: 2px solid aliceblue
+}
+.dark_mode{
+  background-color:rgb(120, 200, 250);
+  color: #222;
+}
 
-
+#join_alert .dark_mode{
+  border-top: 10px solid rgb(120, 200, 250);
+  }
+}
 
 
 /* 헤더영역 */
@@ -247,11 +268,7 @@ header ul {
   padding: 10px 30px;
   border-radius: 50px;
 }
-#header.dark{
-  border: 2px solid aliceblue
-}
 
-/* 배너영역 */
 
 .form{
   background-image: url(../img/blurred-abstract-background.jpg);
@@ -433,7 +450,6 @@ font-size: 50px;
   height: 900px;
   margin: auto;
   box-sizing: border-box;
-  /* background:linear-gradient(to bottom,rgba(255,255,255,0.6), rgba(255,255,255,0.2)); */
   background-color: rgba(255,255,255,0.3);
   border: 1px solid white;
   backdrop-filter: blur(3px);
@@ -465,12 +481,10 @@ font-size: 50px;
 }
 
 
-/* 카드별로 색상 변경해오기 */
+
 .skill_card, .tool_card{
   width: 300px;
   height: 200px;
-  /* background:linear-gradient(150deg,rgba(255,255,154,0.2),rgba(230,235,255,0.2),rgba(255,169,194,0.2),rgba(254,89,87,0.2)); */
- /* background-color: 0.1; */
   border: 1px solid white;
   backdrop-filter: blur(3px);
   border-radius: 20px;
@@ -486,7 +500,7 @@ font-size: 50px;
 
 
 
-/* 아카이브 안내영역*/
+
 .archive{
   width: 1200px;
   border: 1px solid white;
@@ -527,9 +541,6 @@ font-size: 50px;
   padding: 20px;
   box-sizing: border-box;
 }
-.git_hub>img{
-  
-}
 
 
 .join_code{
@@ -555,14 +566,6 @@ font-size: 50px;
   left: 50px;
 
 }
-.Telcard h3{
-  
-}
-
-
-
-
-
 
 
 
@@ -606,24 +609,45 @@ swiper-slide .text {
   max-width: 400px;
   line-height: 1.3;
 }
+.join_code{
+  cursor: pointer;
+}
 
 #join_alert{
-  display: none;
-  width: 20px;
-  height: 10px;
-  padding: 5x;
-  box-sizing: border-box;
-  background-color: rgb(255, 112, 112);
-  color: #fff;
+width: 80px;
+height: 30px;
+padding: 5x;
+box-sizing: border-box;
+background-color: rgb(255, 112, 112);
+color: #fff;
+border-radius: 5px;
+position: relative;
+}
+#join_alert p{
+color: aliceblue;
+font-size: 13px;
+text-align: center;
+line-height: 30px;
 }
 
 #join_alert::after{
-  content: "";
-  
+content: "";
+position: absolute;
+bottom: -15px;
+right: 15px;
+width: 0;
+height: 0;
+border-left: 10px solid transparent;
+border-bottom: 10px solid transparent;
+border-top: 10px solid rgb(255, 112, 112);
+border-right: 10px solid transparent;
 }
 
-.dark_mode{
-  background-color:rgb(120, 200, 250);
-  color: #222;
 
+
+.hidden{
+display: none;
+}
+#join_alert::after .hidden{
+display: none;
 }
