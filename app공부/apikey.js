@@ -15,7 +15,7 @@ function callJsonApi(url, saveFilePath) {  // Text API 호출 함수
 }
 
 const serviceKey ="znrJLEHdRlS6ySxB3VZUqQ";
-let numOfRows = "12"; // 1시간당 기상 정보가 최저기온,최고기온을 제외하면 12개이므로 12개가 편하다
+let numOfRows = "12"; //
 let pageNo = "1"; // 페이지 번호
 let dataType = "JSON"; // 요청자료형식
 let base_date = "20220810"; // 발표일자
