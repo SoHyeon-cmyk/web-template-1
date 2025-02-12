@@ -6,59 +6,26 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   const EQData = async () => {
-    try {
+
       setLoading(true);
       const response = await axios.get(
-        `https://apihub.kma.go.kr/api/typ01/url/eqk_now.php?tm=201311231215&disp=0&help=1`,
-        `https://apihub.kma.go.kr/api/typ01/url/eqk_list.php?tm1=201211231215&tm2=201311231215&disp=0&help=1`,
-        `https://apihub.kma.go.kr/api/typ02/openApi/EqkInfoService/getEqkMsgList?pageNo=1&numOfRows=10&dataType=XML&fromTmFc=20171101&toTmFc=20171129`,
-        `https://apihub.kma.go.kr/api/typ02/openApi/EqkInfoService/getEqkMsg?pageNo=1&numOfRows=10&dataType=XML&fromTmFc=20171101&toTmFc=20171129`,
+        `https://apihub.kma.go.kr/api/typ01/url/eqk_now.php?tm=202512251226&disp=0&help=1&authKey=znrJLEHdRlS6ySxB3VZUqQ`,
         {
           
           params: {
-            serviceKey: "znrJLEHdRlS6ySxB3VZUqQ",
             numOfRows: "10",
             pageNo: "1",
-            fromTmFc: "20151001",
-            toTmFc: "20151013",
+            fromTmFc: "20241225",
+            toTmFc: "20241226",
             dataType: "JSON",
           },
         }
       );
-
-      console.log("Response Data:", response.data);
-
-      if (response.data?.response?.body?.items?.item) {
-        setData(response.data.response.body.items.item);
-      } else {
-        console.warn("No data found in response.");
-        setData([]);
-      }
-    } catch (err) {
-      console.error("Error fetching data:", err);
-      setData([]);
-    } finally {
-      setLoading(false);
     }
-  };
+      
+      return (
+        <div>
 
-  useEffect(() => {
-    EQData();
-  }, []);
-
-  return (
-    <div>
-      {loading ? (
-        <p>Loading...</p>
-      ) : data && data.length > 0 ? (
-        data.map((item, id) => (
-          <li key={id}>
-            <span>{item.img}</span>
-          </li>
-        ))
-      ) : (
-        <p>No data available.</p>
-      )}
     </div>
   );
 };

@@ -6,7 +6,7 @@
 html,
 body {position: relative;font-family: "Darker Grotesque";
 background-color: #fff;
-width: 1200px;margin: auto;}
+margin: auto;}
 html{
   background-color: #fffdf9;
 }
@@ -106,7 +106,7 @@ form .button_area a{
 
 header{
   margin: 0 auto;
-  padding: 0 25px;
+  padding: 0px;
 }
 .menu{
   display: flex;
@@ -683,6 +683,7 @@ margin: auto;
 }
 
 footer{
+  width: 100%;
   height: 50px;
   background-color: rgba(118, 21, 74, 1);
   margin-top: 100px;

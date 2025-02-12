@@ -118,7 +118,7 @@ button .dkmode{
 
 /* .dark_mode */
 
-@media (prefers-color-scheme: dark) {
+
 
 #backSky {
   width: 100%;
@@ -241,7 +241,7 @@ button .dkmode{
 #join_alert .dark_mode{
   border-top: 10px solid rgb(120, 200, 250);
   }
-}
+
 
 
 /* 헤더영역 */

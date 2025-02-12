@@ -65,7 +65,7 @@ nav li.active{
 #banner{
   min-width:1000px;
   height:600px;
-  background:url(../img/main.jpg) center/cover;
+  background:url(../img/homepage/main.jpg) center/cover;
   color:#fff;
 }
 #banner h1, h1, #contact h1{

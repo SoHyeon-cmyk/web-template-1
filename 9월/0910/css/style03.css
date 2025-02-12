@@ -47,7 +47,6 @@ header{
 .banner>.container>h1,h3,h2{
   text-align: center;
   font-weight: 400;
-  font-family: ;
 }
 .banner h1{
   color: aliceblue;
@@ -68,12 +67,14 @@ header{
   margin-top: 10px; 
 }
 .mid-bar{
-  width: 1020px;
+  width: 100%;
   height: 60px;
   background-color: gold;
   padding: 0 200px;
+  margin: auto;
 }
 .mid-bar ul{
+  width: 1200px;
   display: flex;
   justify-content: space-around;
   align-items: center;
